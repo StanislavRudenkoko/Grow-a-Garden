@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30906d2e5669d984f852ca442b9640bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlantManager
-  dirt: {fileID: 0}
+  soil: {fileID: 0}
   plant: {fileID: 0}
   growthStages:
   - {fileID: -3735054867023962594, guid: 5cd400be114106b4699467235410126b, type: 3}
@@ -745,7 +745,7 @@ GameObject:
   - component: {fileID: 516278653}
   - component: {fileID: 516278654}
   m_Layer: 0
-  m_Name: dirt_0
+  m_Name: Soil
   m_TagString: Dirt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1110,7 +1110,7 @@ GameObject:
   - component: {fileID: 607072363}
   - component: {fileID: 607072364}
   m_Layer: 0
-  m_Name: pot_front_0
+  m_Name: PotFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1285,7 +1285,7 @@ GameObject:
   - component: {fileID: 740994642}
   - component: {fileID: 740994644}
   m_Layer: 0
-  m_Name: Plant (1)
+  m_Name: Flower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1376,7 +1376,7 @@ GameObject:
   - component: {fileID: 774276366}
   - component: {fileID: 774276367}
   m_Layer: 0
-  m_Name: pot_back_0
+  m_Name: PotBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2285,7 +2285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30906d2e5669d984f852ca442b9640bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlantManager
-  dirt: {fileID: 516278652}
+  soil: {fileID: 516278652}
   plant: {fileID: 740994641}
   growthStages:
   - {fileID: 1508734276152258813, guid: 79c52ad3ca2c55c4b8a4f8e6a83f56c9, type: 3}
