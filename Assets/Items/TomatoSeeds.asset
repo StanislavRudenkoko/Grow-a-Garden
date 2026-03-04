@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d69e21ddc15590f44b57a145b025b65b, type: 3}
-  m_Name: Tomato
+  m_Name: TomatoSeeds
   m_EditorClassIdentifier: Assembly-CSharp::Item
   name: Tomato Seeds
   description: These are tomato seeds.

@@ -1,10 +1,12 @@
-using Microsoft.Unity.VisualStudio.Editor;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PopulateStore : MonoBehaviour
 {
-    public GameObject item;
-    public int numberToCreate;
+    public ItemSlot slot;
+    public List<Item> items;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,11 +20,11 @@ public class PopulateStore : MonoBehaviour
     }
     void Populate()
     {
-        GameObject newObject;
-        for (int i = 0; i < numberToCreate; i++)
+        ItemSlot obj;
+        foreach (Item item in items)
         {
-            newObject = (GameObject)Instantiate(item, transform);
-            Debug.Log(newObject.GetType());
+            obj = Instantiate(slot, transform);
+            obj.GetComponent<Image>().sprite = item.itemSprite;
             
         }
     }
