@@ -155,7 +155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 230.54407, y: -418.84827}
+  m_AnchoredPosition: {x: 230.54407, y: -344}
   m_SizeDelta: {x: 201.6341, y: 37.8064}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &17527182
@@ -288,7 +288,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 230.54407, y: -294.5283}
+  m_AnchoredPosition: {x: 230.54407, y: -219.68}
   m_SizeDelta: {x: 201.6341, y: 37.8064}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &44167990
@@ -500,7 +500,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 230.54407, y: -172.12825}
+  m_AnchoredPosition: {x: 230.54407, y: -97.27996}
   m_SizeDelta: {x: 201.6341, y: 37.8064}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &188584989
@@ -1215,7 +1215,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Continue *when we add save slots
+  m_text: Continue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
