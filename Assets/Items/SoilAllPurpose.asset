@@ -12,9 +12,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d69e21ddc15590f44b57a145b025b65b, type: 3}
   m_Name: SoilAllPurpose
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  name: All-Purpose Soil
-  description: 'Soil good for most occassions. '
-  category: 1
-  cost: 30
-  quantity: 10
-  itemSprite: {fileID: -7383982906349164966, guid: 9cd87df4d4bdb8b479e84f0c339c9a8c, type: 3}
