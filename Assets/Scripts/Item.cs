@@ -1,6 +1,12 @@
 using NUnit.Framework.Internal.Commands;
 using UnityEngine;
 
+/// <summary>
+/// Item ScriptableObject
+/// Author: Tin Trinh
+/// Date: Mar. 4, 2026
+/// Source: None
+/// </summary>
 [CreateAssetMenu(fileName = "Item", menuName = "Scriptable Objects/Item")]
 public class Item : ScriptableObject
 {
