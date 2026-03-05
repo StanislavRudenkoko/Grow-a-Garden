@@ -45,6 +45,7 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         ConfirmationBox box = Instantiate(confirmationBox, store.transform);
+        box.Item = info;
         TextMeshProUGUI boxTitle = box.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         TextMeshProUGUI boxDesc = box.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
         boxTitle.text = $"Buy {info.Name}?";
