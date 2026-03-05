@@ -1,8 +1,12 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlantManager : MonoBehaviour
 {
+    public GameObject plantPrefab;
+    private List<GameObject> spawnedPlants = new List<GameObject>();
+    public Transform potParent;
     public GameObject soil;
     public GameObject plant;
     public Sprite[] growthStages; // drag your 5 sprites in here
@@ -34,26 +38,27 @@ public class PlantManager : MonoBehaviour
 
     void Update()
     {
-        if (isWatered && !isGrowing && currentStage < growthStages.Length - 1)
+        foreach (var plantObj in spawnedPlants)
         {
-            isGrowing = true;
-        }
+            PlantHoverHandler hover = plantObj.GetComponent<PlantHoverHandler>();
+            PlantInstance instance = hover.GetInstance();
+            SpriteRenderer sr = plantObj.GetComponent<SpriteRenderer>();
 
-        if (isGrowing)
-        {
-            timer += Time.deltaTime;
-            if (timer >= growthTime)
+            if (instance.status == PlantStatus.Healthy && instance.waterLevel > 0 && instance.currentGrowthStage < growthStages.Length - 1)
             {
-                timer = 0f;
-                isWatered = false;
-                isGrowing = false;
-                currentStage++;
-                sr.sprite = growthStages[currentStage];
+                instance.status = PlantStatus.Growing;
+            }
 
-                if (currentStage == growthStages.Length - 1)
+            if (instance.status == PlantStatus.Growing)
+            {
+                instance.timer += Time.deltaTime;
+                if (instance.timer >= growthTime)
                 {
-                    waterButton.gameObject.SetActive(false);
-                    harvestButton.gameObject.SetActive(true);
+                    instance.timer = 0f;
+                    instance.waterLevel = 0;
+                    instance.status = PlantStatus.Healthy;
+                    instance.currentGrowthStage++;
+                    sr.sprite = growthStages[instance.currentGrowthStage];
                 }
             }
         }
@@ -75,7 +80,33 @@ public class PlantManager : MonoBehaviour
         if (hasSoil && !hasSeed)
         {
             hasSeed = true;
-            plant.SetActive(true);
+
+            // Instantiate the plant prefab
+            GameObject newPlant = Instantiate(plantPrefab, plant.transform.position, Quaternion.identity);
+
+            // Initialize PlantInstance data
+            PlantInstance instanceData = new PlantInstance
+            {
+                customName = "My Plant",
+                currentGrowthStage = 0,
+                waterLevel = 0,
+                health = 100,
+                status = PlantStatus.Healthy,
+                plantDefinitionId = "example_plant"
+            };
+
+            // Assign to hover handler
+            PlantHoverHandler hover = newPlant.GetComponent<PlantHoverHandler>();
+            hover.Initialize(instanceData);
+
+            // Assign SpriteRenderer for growth
+            SpriteRenderer sr = newPlant.GetComponent<SpriteRenderer>();
+            sr.sprite = growthStages[0];
+
+            // Track spawned plants
+            spawnedPlants.Add(newPlant);
+
+            // Hide seed button, enable water
             seedButton.gameObject.SetActive(false);
             waterButton.gameObject.SetActive(true);
         }
@@ -99,4 +130,19 @@ public class PlantManager : MonoBehaviour
         waterButton.gameObject.SetActive(true);
         harvestButton.gameObject.SetActive(false);
     }
+
+    public void OnAddPotButtonPressed()
+    {
+        if (plantPrefab == null)
+        {
+            Debug.LogError("PlantPotPrefab not assigned in PlantManager!");
+            return;
+        }
+
+        GameObject newPot = Instantiate(plantPrefab, Vector3.zero, Quaternion.identity, potParent);
+
+        //// Optionally, you can position it somewhere in the scene
+        //newPot.transform.position = GetNextPotPosition();
+    }
+
 }

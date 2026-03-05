@@ -1,0 +1,245 @@
+{
+"version": "1.0",
+"plants": [
+{
+"id": "tomato",
+"displayName": "Tomato",
+"scientificName": "Solanum lycopersicum",
+"family": "Solanaceae",
+"descriptionShort": "A warm-season garden favorite that produces juicy red fruits and thrives in sunny conditions.",
+"growth": {
+"totalGrowthStages": 5,
+"daysPerStage": 2,
+"regrowable": false
+},
+"environmentRequirements": {
+"idealSoilTypes": ["Loamy"],
+"waterPerDay": 3,
+"sunlightLevel": "FullSun",
+"temperatureMin": 18,
+"temperatureMax": 30
+},
+"economy": {
+"seedCost": 3,
+"sellValue": 7,
+"experienceReward": 6
+}
+},
+{
+"id": "carrot",
+"displayName": "Carrot",
+"scientificName": "Daucus carota",
+"family": "Apiaceae",
+"descriptionShort": "A root vegetable that grows underground and prefers loose soil and consistent moisture.",
+"growth": {
+"totalGrowthStages": 4,
+"daysPerStage": 2,
+"regrowable": false
+},
+"environmentRequirements": {
+"idealSoilTypes": ["Sandy", "Loamy"],
+"waterPerDay": 2,
+"sunlightLevel": "FullSun",
+"temperatureMin": 10,
+"temperatureMax": 24
+},
+"economy": {
+"seedCost": 2,
+"sellValue": 5,
+"experienceReward": 4
+}
+},
+{
+"id": "lettuce",
+"displayName": "Lettuce",
+"scientificName": "Lactuca sativa",
+"family": "Asteraceae",
+"descriptionShort": "A fast-growing leafy green that prefers cooler weather and partial sunlight.",
+"growth": {
+"totalGrowthStages": 3,
+"daysPerStage": 2,
+"regrowable": false
+},
+"environmentRequirements": {
+"idealSoilTypes": ["Loamy"],
+"waterPerDay": 3,
+"sunlightLevel": "PartialSun",
+"temperatureMin": 8,
+"temperatureMax": 20
+},
+"economy": {
+"seedCost": 2,
+"sellValue": 4,
+"experienceReward": 3
+}
+},
+{
+"id": "strawberry",
+"displayName": "Strawberry",
+"scientificName": "Fragaria × ananassa",
+"family": "Rosaceae",
+"descriptionShort": "A sweet fruiting plant that produces bright red berries and can regrow after harvest.",
+"growth": {
+"totalGrowthStages": 5,
+"daysPerStage": 3,
+"regrowable": true
+},
+"environmentRequirements": {
+"idealSoilTypes": ["Loamy"],
+"waterPerDay": 3,
+"sunlightLevel": "FullSun",
+"temperatureMin": 15,
+"temperatureMax": 26
+},
+"economy": {
+"seedCost": 5,
+"sellValue": 10,
+"experienceReward": 8
+}
+},
+{
+"id": "potato",
+"displayName": "Potato",
+"scientificName": "Solanum tuberosum",
+"family": "Solanaceae",
+"descriptionShort": "A hardy tuber crop that grows well in cool climates and nutrient-rich soil.",
+"growth": {
+"totalGrowthStages": 5,
+"daysPerStage": 3,
+"regrowable": false
+},
+"environmentRequirements": {
+"idealSoilTypes": ["Loamy", "Sandy"],
+"waterPerDay": 2,
+"sunlightLevel": "FullSun",
+"temperatureMin": 10,
+"temperatureMax": 22
+},
+"economy": {
+"seedCost": 4,
+"sellValue": 9,
+"experienceReward": 7
+}
+},
+{
+"id": "basil",
+"displayName": "Basil",
+"scientificName": "Ocimum basilicum",
+"family": "Lamiaceae",
+"descriptionShort": "An aromatic herb that thrives in warm weather and bright sunlight.",
+"growth": {
+"totalGrowthStages": 3,
+"daysPerStage": 2,
+"regrowable": true
+},
+"environmentRequirements": {
+"idealSoilTypes": ["Loamy"],
+"waterPerDay": 2,
+"sunlightLevel": "FullSun",
+"temperatureMin": 18,
+"temperatureMax": 32
+},
+"economy": {
+"seedCost": 3,
+"sellValue": 6,
+"experienceReward": 5
+}
+},
+{
+"id": "spinach",
+"displayName": "Spinach",
+"scientificName": "Spinacia oleracea",
+"family": "Amaranthaceae",
+"descriptionShort": "A nutrient-rich leafy vegetable that prefers cooler temperatures and steady watering.",
+"growth": {
+"totalGrowthStages": 4,
+"daysPerStage": 2,
+"regrowable": false
+},
+"environmentRequirements": {
+"idealSoilTypes": ["Loamy"],
+"waterPerDay": 3,
+"sunlightLevel": "PartialSun",
+"temperatureMin": 5,
+"temperatureMax": 18
+},
+"economy": {
+"seedCost": 2,
+"sellValue": 5,
+"experienceReward": 4
+}
+},
+{
+"id": "blueberry",
+"displayName": "Blueberry",
+"scientificName": "Vaccinium corymbosum",
+"family": "Ericaceae",
+"descriptionShort": "A fruiting shrub that produces sweet blue berries and prefers slightly acidic soil.",
+"growth": {
+"totalGrowthStages": 6,
+"daysPerStage": 3,
+"regrowable": true
+},
+"environmentRequirements": {
+"idealSoilTypes": ["Sandy"],
+"waterPerDay": 3,
+"sunlightLevel": "FullSun",
+"temperatureMin": 12,
+"temperatureMax": 25
+},
+"economy": {
+"seedCost": 6,
+"sellValue": 14,
+"experienceReward": 10
+}
+},
+{
+"id": "pumpkin",
+"displayName": "Pumpkin",
+"scientificName": "Cucurbita pepo",
+"family": "Cucurbitaceae",
+"descriptionShort": "A large vine plant that requires space, warmth, and abundant sunlight to thrive.",
+"growth": {
+"totalGrowthStages": 6,
+"daysPerStage": 4,
+"regrowable": false
+},
+"environmentRequirements": {
+"idealSoilTypes": ["Loamy"],
+"waterPerDay": 4,
+"sunlightLevel": "FullSun",
+"temperatureMin": 18,
+"temperatureMax": 32
+},
+"economy": {
+"seedCost": 7,
+"sellValue": 16,
+"experienceReward": 12
+}
+},
+{
+"id": "mint",
+"displayName": "Mint",
+"scientificName": "Mentha spicata",
+"family": "Lamiaceae",
+"descriptionShort": "A fast-spreading herb that tolerates partial shade and frequent watering.",
+"growth": {
+"totalGrowthStages": 3,
+"daysPerStage": 2,
+"regrowable": true
+},
+"environmentRequirements": {
+"idealSoilTypes": ["Loamy"],
+"waterPerDay": 3,
+"sunlightLevel": "PartialSun",
+"temperatureMin": 12,
+"temperatureMax": 28
+},
+"economy": {
+"seedCost": 3,
+"sellValue": 6,
+"experienceReward": 5
+}
+}
+]
+}
