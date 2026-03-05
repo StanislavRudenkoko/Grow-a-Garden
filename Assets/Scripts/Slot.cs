@@ -5,15 +5,15 @@ using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Image))]
-public class ItemSlot : MonoBehaviour, IPointerEnterHandler
+public class Slot : MonoBehaviour, IPointerEnterHandler
 {
     public Item info;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Image slotImage = GetComponent<Image>();
-        slotImage.sprite = info.itemSprite;
+        // Image slotImage = GetComponent<Image>();
+        // slotImage.sprite = info.itemSprite;
         // slotImage.preserveAspect = true;
     }
 

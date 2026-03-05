@@ -24,7 +24,8 @@ public class PopulateStore : MonoBehaviour
         foreach (Item item in items)
         {
             obj = Instantiate(slot, transform);
-            obj.GetComponent<Image>().sprite = item.itemSprite;
+            obj.info = item;
+
             
         }
     }

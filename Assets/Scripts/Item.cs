@@ -10,6 +10,6 @@ public class Item : ScriptableObject
     public int cost;
     public int quantity;
     public Sprite itemSprite;
-    public string Name { get; }
-    public string Description { get; }
+    public string Name { get => name; }
+    public string Description { get => description; }
 }
