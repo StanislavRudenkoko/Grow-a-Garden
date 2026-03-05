@@ -1,28 +1,22 @@
-using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting;
-using UnityEngine;
 
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+/// <summary>
+/// Store class.
+/// </summary>
 public class Store : MonoBehaviour
 {
-    Object[] Inventory { get; set; }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    /// <summary>
+    /// Takes the player back the the Garden scene when they click on the Go to Garden button.
+    /// </summary>
+    public void BackToGarden()
     {
-
-        Inventory = Resources.LoadAll("Assets/Items");
-        foreach (Item item in Inventory.Cast<Item>())
-        {
-
-            Debug.Log(item.Description);
-        }
-
+        Debug.Log("Need to add data logic that stays between scenes.");
+        SceneManager.LoadScene("Garden");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
+
 }
