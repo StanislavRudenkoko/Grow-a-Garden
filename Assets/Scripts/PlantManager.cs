@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlantManager : MonoBehaviour
 {
@@ -57,6 +58,11 @@ public class PlantManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void BackToGarden()
+    {
+    SceneManager.LoadScene(1);
     }
 
     public void OnSoilButtonPressed()
