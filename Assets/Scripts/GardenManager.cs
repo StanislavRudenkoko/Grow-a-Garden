@@ -3,11 +3,11 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
-//<summary>
-// Scene for the main Garden screen
-// Authors: Joshua Trepanier
-// Date/revisions: March 4th 2026
-//</summary>
+///<summary>
+/// Scene for the main Garden screen
+/// Authors: Joshua Trepanier
+/// Date/revisions: March 4th 2026
+///</summary>
 public class GardenManager : MonoBehaviour
 {
     public GameObject soil;
@@ -17,9 +17,9 @@ public class GardenManager : MonoBehaviour
     private SpriteRenderer sr; 
 
 
-    //<summary>
-    // Load the sprites of the plants from the data passed from the PlantData Object
-    //</summary>
+    ///<summary>
+    /// Load the sprites of the plants from the data passed from the PlantData Object
+    ///</summary>
     void Start()
     {
     int stage = PlantData.Instance.currentStage;
@@ -34,9 +34,10 @@ public class GardenManager : MonoBehaviour
     }
 }
 
-    //<summary>
-    // Load the Plant Manager scene from the Garden Scene
-    //</summary>
+    ///<summary>
+    /// Load the Plant Manager scene from the Garden Scene
+    /// <param name="value"></param>
+    ///</summary>
     public void focusOnPlant(int value)
     {
         SceneManager.LoadScene(0);
