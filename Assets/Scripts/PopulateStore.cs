@@ -23,9 +23,9 @@ public class PopulateStore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-    
+
     /// <summary>
     /// Populates the Store items slots.
     /// </summary>
@@ -41,9 +41,9 @@ public class PopulateStore : MonoBehaviour
             TextMeshProUGUI objPrice = obj.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
             TextMeshProUGUI objQuantity = obj.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
             objImage.sprite = obj.info.ItemSprite;
+            objImage.preserveAspect = true;
             objTitle.text = obj.info.Name;
-            objPrice.text = $"${obj.info.Price}";
-            Debug.Log(obj.info.Price);
+            objPrice.text = $"{obj.info.Price}";
             objQuantity.text = obj.info.Quantity.ToString();
         }
     }

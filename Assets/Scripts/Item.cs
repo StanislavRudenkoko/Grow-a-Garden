@@ -10,12 +10,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Item", menuName = "Scriptable Objects/Item")]
 public class Item : ScriptableObject
 {
-    private new string name;
-    private string description;
-    private ItemCategory category;
-    private int price;
-    private int quantity;
-    private Sprite itemSprite;
+    [SerializeField] private new string name;
+    [SerializeField] private string description;
+    [SerializeField] private ItemCategory category;
+    [SerializeField] private int price;
+    [SerializeField] private int quantity;
+    [SerializeField] private Sprite itemSprite;
 
     public string Name { get => name; }
     public string Description { get => description; }
