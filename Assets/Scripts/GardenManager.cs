@@ -1,27 +1,44 @@
-using System.Diagnostics.Contracts;
-using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
+//<summary>
+// Scene for the main Garden screen
+// Authors: Joshua Trepanier
+// Date/revisions: March 4th 2026
+//</summary>
 public class GardenManager : MonoBehaviour
 {
+    public GameObject soil;
+    public GameObject plant;
+    public Sprite[] growthStages;
 
-    public Button seedButton;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private SpriteRenderer sr; 
+
+
+    //<summary>
+    // Load the sprites of the plants from the data passed from the PlantData Object
+    //</summary>
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
+    int stage = PlantData.Instance.currentStage;
+    bool hasSoil = PlantData.Instance.hasSoil;
+    bool hasSeed = PlantData.Instance.hasSeed;
+    soil.SetActive(hasSoil);
+    plant.SetActive(hasSeed);
+    if (hasSeed)
     {
-        
+        sr = plant.GetComponent<SpriteRenderer>();
+        sr.sprite = growthStages[stage];
     }
+}
 
+    //<summary>
+    // Load the Plant Manager scene from the Garden Scene
+    //</summary>
     public void focusOnPlant(int value)
     {
-        Debug.Log(value);
         SceneManager.LoadScene(0);
     }
 }
