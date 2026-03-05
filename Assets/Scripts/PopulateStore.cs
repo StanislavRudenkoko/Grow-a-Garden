@@ -36,7 +36,6 @@ public class PopulateStore : MonoBehaviour
             objPrice.text = $"${obj.info.Price}";
             Debug.Log(obj.info.Price);
             objQuantity.text = obj.info.Quantity.ToString();
-
         }
     }
 }
