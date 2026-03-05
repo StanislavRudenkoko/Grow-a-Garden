@@ -252,6 +252,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 293711}
   m_CullTransparentMesh: 1
+--- !u!1 &51414424
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 51414426}
+  - component: {fileID: 51414425}
+  m_Layer: 0
+  m_Name: PlantData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &51414425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51414424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef650117eef940b42b8eb83bb62c9a42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameData
+  currentStage: 0
+  hasSoil: 0
+  hasSeed: 0
+--- !u!4 &51414426
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51414424}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.24147, y: 0.33724, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &55357963
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,6 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30906d2e5669d984f852ca442b9640bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlantManager
+  plantData: {fileID: 0}
   soil: {fileID: 0}
   plant: {fileID: 0}
   growthStages:
@@ -2407,6 +2455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30906d2e5669d984f852ca442b9640bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlantManager
+  plantData: {fileID: 0}
   soil: {fileID: 0}
   plant: {fileID: 0}
   growthStages: []
@@ -2577,6 +2626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30906d2e5669d984f852ca442b9640bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlantManager
+  plantData: {fileID: 0}
   soil: {fileID: 516278652}
   plant: {fileID: 740994641}
   growthStages:
@@ -2617,3 +2667,4 @@ SceneRoots:
   - {fileID: 211650126}
   - {fileID: 1857869353}
   - {fileID: 1996410477}
+  - {fileID: 51414426}

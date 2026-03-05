@@ -2,8 +2,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+///<summary>
+/// Scene for the main Garden screen
+/// Authors: Joshua Trepanier, Stanislav Rudenoko
+/// Date/revisions: March 4th 2026
+///</summary>
 public class PlantManager : MonoBehaviour
 {
+    public GameObject plantData;
     public GameObject soil;
     public GameObject plant;
     public Sprite[] growthStages; // drag your 5 sprites in here
@@ -22,6 +28,9 @@ public class PlantManager : MonoBehaviour
     private float timer = 0f;
     private bool isWatered = false;
 
+    ///<summary>
+    /// On Scene start load plant sprites and buttons to correct state
+    ///</summary>
     void Start()
     {
         sr = plant.GetComponent<SpriteRenderer>();
@@ -33,6 +42,10 @@ public class PlantManager : MonoBehaviour
         waterButton.gameObject.SetActive(false);
     }
 
+    ///<summary>
+    /// Every frame check if plant is growing to increase the growth stage
+    /// and update the sprite
+    ///</summary>
     void Update()
     {
         if (isWatered && !isGrowing && currentStage < growthStages.Length - 1)
@@ -60,11 +73,21 @@ public class PlantManager : MonoBehaviour
         }
     }
 
+    ///<summary>
+    /// Switch scene back to the garden and save currents plants data to the
+    /// PlantData gameObject
+    ///</summary>
     public void BackToGarden()
     {
+    PlantData.Instance.currentStage = currentStage;
+    PlantData.Instance.hasSoil = hasSoil;
+    PlantData.Instance.hasSeed = hasSeed;
     SceneManager.LoadScene(1);
     }
 
+    ///<summary>
+    /// If pot has no soil add soil to the pot and update the sprite
+    ///</summary>
     public void OnSoilButtonPressed()
     {
         if (!hasSoil)
@@ -76,6 +99,9 @@ public class PlantManager : MonoBehaviour
         }
     }
 
+    ///<summary>
+    /// If pot has no seed, but has soil. Add a seed to the pot and update the sprite
+    ///</summary>
     public void OnSeedButtonPressed()
     {
         if (hasSoil && !hasSeed)
@@ -87,6 +113,9 @@ public class PlantManager : MonoBehaviour
         }
     }
 
+    ///<summary>
+    /// Water the plant and update a boolean
+    ///</summary>
     public void OnWaterButtonPressed()
     {
         if (!isWatered && hasSeed && currentStage < growthStages.Length - 1)
@@ -95,6 +124,9 @@ public class PlantManager : MonoBehaviour
         }
     }
 
+    ///<summary>
+    /// Remove the plant from the pot and reset the growing process
+    ///</summary>
     public void OnHarvestButtonPressed()
     {
         currentStage = 0;
