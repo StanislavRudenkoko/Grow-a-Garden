@@ -24,7 +24,7 @@ public class Store : MonoBehaviour
 
     public void BuyItem(int amount)
     {
-        Player.UpdateCoins(amount);
+        Player.SpendCoins(amount);
     }
 
 
