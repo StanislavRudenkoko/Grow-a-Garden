@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,44 +10,29 @@ using UnityEngine;
 /// </summary>
 public class Player : MonoBehaviour
 {
-    public string Name { get; set; }
-    public int Coins { get; set; }
-    public List<Item> Inventory { get; set; }
-    public int PlantsHarvested { get; set; }
-    public int DayCount { get; set; }
+    [SerializeField]
+    private string playerName;
+    [SerializeField]
+    private int coins;
+    [SerializeField]
+    private List<Item> inventory;
+    [SerializeField]
+    private int plantsHarvested;
+    [SerializeField]
+    private int dayCount;
+    public string PlayerName { get => playerName; set => playerName = value; }
+    public int Coins { get => coins; set => coins = value; }
+    public List<Item> Inventory { get => inventory; set => inventory = value; }
+    public int PlantsHarvested { get => plantsHarvested; set => plantsHarvested = value; }
+    public int DayCount { get => dayCount; set => dayCount = value; }
 
-    /// <summary>
-    /// Constructor for existing player.
-    /// </summary>
-    /// <param name="name"></param>
-    /// <param name="coins"></param>
-    /// <param name="plantsHarvested"></param>
-    /// <param name="dayCount"></param>
-    public Player(string name, int coins, List<Item> inventory, int plantsHarvested, int dayCount)
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
-        // Set coins to starting amount
-        Name = name;
-        Coins = coins;
-        Inventory = inventory;
-        PlantsHarvested = plantsHarvested;
-        DayCount = dayCount;
-    }
-    /// <summary>
-    /// Constructor for new player.
-    /// </summary>
-    /// <param name="name"></param>
-    public Player(string name)
-    {
-        Name = name;
         Coins = 100;
         Inventory = new List<Item>();
         PlantsHarvested = 0;
         DayCount = 0;
-    }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
     }
 
     // Update is called once per frame
@@ -81,5 +67,10 @@ public class Player : MonoBehaviour
     {
         Coins += amount;
         return true;
+    }
+
+    public override string ToString()
+    {
+        return string.Format("Player: {0} / {1} / {2}", PlayerName, Coins, PlantsHarvested);
     }
 }
