@@ -12,3 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d69e21ddc15590f44b57a145b025b65b, type: 3}
   m_Name: SeedTomato
   m_EditorClassIdentifier: Assembly-CSharp::Item
+  name: Tomato Seeds
+  description: A bag of tomato seeds
+  category: 0
+  price: 15
+  quantity: 5
+  itemSprite: {fileID: 8842680620855116927, guid: 23b9720c7e3f3bd4daec6b6457983b76, type: 3}
