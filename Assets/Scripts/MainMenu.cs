@@ -14,7 +14,9 @@ public class MainMenu : MonoBehaviour
     /// </summary>
     public void NewGame()
     {
+
         SceneManager.LoadScene("Garden");
+
     }
 
     /// <summary>
