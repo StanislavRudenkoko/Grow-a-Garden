@@ -23,7 +23,7 @@ public class PlantDatabaseManager : MonoBehaviour
 
     private void LoadPlants()
     {
-        TextAsset jsonFile = Resources.Load<TextAsset>("plants"); // plants.json inside Resources folder
+        TextAsset jsonFile = Resources.Load<TextAsset>("plants"); // plants.json in Resources/
         if (jsonFile == null)
         {
             Debug.LogError("plants.json not found in Resources!");
@@ -41,14 +41,18 @@ public class PlantDatabaseManager : MonoBehaviour
     public PlantDefinition GetPlantDefinition(string id)
     {
         if (plantDict != null && plantDict.TryGetValue(id, out PlantDefinition def))
-        {
             return def;
-        }
-        else
-        {
-            Debug.LogWarning($"PlantDefinition with id '{id}' not found!");
-            return null;
-        }
+
+        Debug.LogWarning($"PlantDefinition '{id}' not found!");
+        return null;
+    }
+
+    /// <summary>Returns all plant IDs in the database.</summary>
+    public IEnumerable<string> GetAllIds()
+    {
+        if (plantDict == null) yield break;
+        foreach (string key in plantDict.Keys)
+            yield return key;
     }
 
     [System.Serializable]
