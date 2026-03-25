@@ -1,8 +1,15 @@
+using Unity.VectorGraphics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlantManager : MonoBehaviour
 {
+
+    /// <summary>
+    /// TEMP
+    /// </summary>
+    public GameObject player;
     public GameObject soil;
     public GameObject plant;
     public Sprite[] growthStages; // drag your 5 sprites in here
@@ -98,5 +105,14 @@ public class PlantManager : MonoBehaviour
         timer = 0f;
         waterButton.gameObject.SetActive(true);
         harvestButton.gameObject.SetActive(false);
+    }
+
+    /// <summary>
+    /// TEMP
+    /// </summary>
+    public void ToStore()
+    {
+        DontDestroyOnLoad(player);
+        SceneManager.LoadScene("Store");
     }
 }

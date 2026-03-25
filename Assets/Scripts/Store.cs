@@ -8,9 +8,11 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class Store : MonoBehaviour
 {
-    public Player Player { get; }
+    [SerializeField]
+    private GameObject player;
     void Start()
     {
+        
         transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = $"{Player.Coins} coins";
     }
     /// <summary>
