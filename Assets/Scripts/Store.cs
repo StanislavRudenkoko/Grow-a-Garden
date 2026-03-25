@@ -1,4 +1,5 @@
 
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,7 +8,11 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class Store : MonoBehaviour
 {
-
+    public Player Player { get; }
+    void Start()
+    {
+        transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = $"{Player.Coins} coins";
+    }
     /// <summary>
     /// Takes the player back the the Garden scene when they click on the Go to Garden button.
     /// </summary>
@@ -17,6 +22,10 @@ public class Store : MonoBehaviour
         SceneManager.LoadScene("Garden");
     }
 
+    public void BuyItem(int amount)
+    {
+        Player.SpendCoins(amount);
+    }
 
 
 }

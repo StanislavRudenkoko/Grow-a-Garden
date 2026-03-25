@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
     /// </summary>
     public void NewGame()
     {
-        SceneManager.LoadScene("Garden");
+        SceneManager.LoadScene("NewGameNameSetUp");
     }
 
     /// <summary>
@@ -23,6 +23,7 @@ public class MainMenu : MonoBehaviour
     public void ContinueGame()
     {
         Debug.Log("The player data will load");
+        ///Player
         SceneManager.LoadScene("Garden");
     }
 
