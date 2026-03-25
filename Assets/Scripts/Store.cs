@@ -13,7 +13,7 @@ public class Store : MonoBehaviour
     void Start()
     {
         
-        transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = $"{Player.Coins} coins";
+        // transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = $"{player.Coins} coins";
     }
     /// <summary>
     /// Takes the player back the the Garden scene when they click on the Go to Garden button.
@@ -26,7 +26,7 @@ public class Store : MonoBehaviour
 
     public void BuyItem(int amount)
     {
-        Player.SpendCoins(amount);
+        // player.SpendCoins(amount);
     }
 
 
