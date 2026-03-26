@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4180945ba44bb44c9e728b363e761c1, type: 3}
+  m_Name: Carrot_Visual
+  m_EditorClassIdentifier: Assembly-CSharp::PlantVisualData
+  plantDefinitionId: carrot
+  growthStageSprites:
+  - {fileID: 1508734276152258813, guid: 79c52ad3ca2c55c4b8a4f8e6a83f56c9, type: 3}
+  - {fileID: -8703343332176484395, guid: 11ff4246cb07012409a4138c7db7744e, type: 3}
+  - {fileID: 2457715619905715091, guid: 5d7f2ef824e5b0841b500a6db2cbf7ef, type: 3}
+  - {fileID: 5540354210898670013, guid: 6ca164ab831cb3a42bde6eda332c90a9, type: 3}
+  - {fileID: -8157165606216441942, guid: 74e2fbab55dc62946a556104ca116d3f, type: 3}

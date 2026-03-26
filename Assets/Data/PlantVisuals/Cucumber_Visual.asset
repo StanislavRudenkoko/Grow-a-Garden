@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4180945ba44bb44c9e728b363e761c1, type: 3}
+  m_Name: Cucumber_Visual
+  m_EditorClassIdentifier: Assembly-CSharp::PlantVisualData
+  plantDefinitionId: cucumber
+  growthStageSprites:
+  - {fileID: 1508734276152258813, guid: 79c52ad3ca2c55c4b8a4f8e6a83f56c9, type: 3}
+  - {fileID: -2731298025605227900, guid: c5df41bbd193e0d4d99c166f43b32b26, type: 3}
+  - {fileID: -1495403395051926520, guid: d0765d1650aa7174cbfad53f1be9997a, type: 3}
+  - {fileID: 224347870052561255, guid: bb1482952a4700c469e9ea1ee174d67b, type: 3}
+  - {fileID: -3510385314247278713, guid: d04556f67edea9449994d513980f18e6, type: 3}
+  - {fileID: 3213125382791369239, guid: 28ee46b6b51d3e448987aa8d276ef188, type: 3}
