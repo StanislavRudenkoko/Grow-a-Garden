@@ -21,16 +21,16 @@ public class GardenManager : MonoBehaviour
     ///</summary>
     void Start()
     {
-    if (PlantData.Instance == null)
-    {
-        Debug.Log("PlantData not found!");
-        return;
-    }
-    int stage = PlantData.Instance.currentStage;
-    bool hasSoil = PlantData.Instance.hasSoil;
-    bool hasSeed = PlantData.Instance.hasSeed;
-    soil.SetActive(hasSoil);
-    flowerRenderer.gameObject.SetActive(hasSeed);
+        if (PlantData.Instance == null)
+        {
+            Debug.Log("PlantData not found!");
+            return;
+        }
+        int stage = PlantData.Instance.currentStage;
+        bool hasSoil = PlantData.Instance.hasSoil;
+        bool hasSeed = PlantData.Instance.hasSeed;
+        soil.SetActive(hasSoil);
+        flowerRenderer.gameObject.SetActive(hasSeed);
     }
 
     ///<summary>
@@ -39,10 +39,18 @@ public class GardenManager : MonoBehaviour
     ///</summary>
     public void focusOnPlant(int value)
     {
-    if (PlantData.Instance != null)
-    {
-        PlantData.Instance.currentPot = value;
+        if (PlantData.Instance != null)
+        {
+            PlantData.Instance.currentPot = value;
+        }
+        SceneManager.LoadScene(0);
     }
-    SceneManager.LoadScene(0);
+
+    /// <summary>
+    /// Load the shop scene from the garden scene
+    /// </summary>
+    public void moveToShop()
+    {
+        SceneManager.LoadScene("Store");
     }
 }
