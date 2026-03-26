@@ -148,9 +148,18 @@ public class PotDropdownUI : MonoBehaviour
     {
         if (gameObject.activeSelf && Input.GetMouseButtonDown(0))
         {
-            // Check if the click is outside this panel
-            if (!RectTransformUtility.RectangleContainsScreenPoint(
-                    GetComponent<RectTransform>(), Input.mousePosition))
+            bool insideDropdown = RectTransformUtility.RectangleContainsScreenPoint(
+                GetComponent<RectTransform>(), Input.mousePosition);
+
+            bool insideSoilPicker = soilPicker.gameObject.activeSelf &&
+                RectTransformUtility.RectangleContainsScreenPoint(
+                    soilPicker.GetComponent<RectTransform>(), Input.mousePosition);
+
+            bool insideSeedPicker = seedPicker.gameObject.activeSelf &&
+                RectTransformUtility.RectangleContainsScreenPoint(
+                    seedPicker.GetComponent<RectTransform>(), Input.mousePosition);
+
+            if (!insideDropdown && !insideSoilPicker && !insideSeedPicker)
             {
                 Close();
             }

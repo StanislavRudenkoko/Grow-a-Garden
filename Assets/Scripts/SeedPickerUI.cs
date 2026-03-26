@@ -62,6 +62,7 @@ public class SeedPickerUI : MonoBehaviour
 
     private void OnSeedSelected(PlantDefinition def)
     {
+        Debug.Log("Seed selected: " + def.id);
         PlantInstance data = targetPot.potData;
         data.plantDefinitionId = def.id;
         data.customName = def.displayName;

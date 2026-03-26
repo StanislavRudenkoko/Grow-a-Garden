@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantVisualData
   plantDefinitionId: 
   growthStageSprites:
-  - {fileID: -2241692373911561211, guid: 75d38ee522575c94988cc02a54365c49, type: 3}
-  - {fileID: -5166898942785920218, guid: dd9fd8d20bfa1f74d85ac8d9f01242e2, type: 3}
-  - {fileID: -2029283421762632068, guid: 01999741f3a24ea458fba90440c08648, type: 3}
-  - {fileID: -4000494721968348369, guid: a42cafde03c1d594ca70829f62409ba3, type: 3}
-  - {fileID: 3193683187937870592, guid: 2c1a7ad3e61382d44b8b6d08fb88c114, type: 3}
-  - {fileID: -3148175719676828294, guid: 8829c95e84bba9640b7c66457df16cf4, type: 3}
+  - {fileID: -9153205074856453415, guid: 0b29a7ecff733834d95e53b6ac031202, type: 3}
+  - {fileID: -2855458541216367180, guid: fe7219086542af1499a5d648f0f4ca66, type: 3}
+  - {fileID: -4575287778358752165, guid: cdb2919984832fa4d8bf47576dbcf019, type: 3}
+  - {fileID: -7725991611584973435, guid: 8a20b3bfb9c648547bc7c4637c730bcc, type: 3}
+  - {fileID: -6967855912136508845, guid: a9f79fbf5f0021340a2fa196925c50d8, type: 3}
+  - {fileID: 3251643130968308709, guid: eb202fddffda938499e28d33ec6af40f, type: 3}

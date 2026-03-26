@@ -13,7 +13,7 @@
         "regrowable": true
       },
       "environmentRequirements": {
-        "idealSoilTypes": ["Loamy"],
+        "idealSoilTypes": ["Dirt"],
         "waterPerDay": 1,
         "sunlightLevel": "PartialSun",
         "temperatureMin": 16,
@@ -37,7 +37,7 @@
         "regrowable": true
       },
       "environmentRequirements": {
-        "idealSoilTypes": ["Loamy", "Sandy"],
+        "idealSoilTypes": ["Dirt"],
         "waterPerDay": 2,
         "sunlightLevel": "FullSun",
         "temperatureMin": 7,
@@ -61,7 +61,7 @@
         "regrowable": true
       },
       "environmentRequirements": {
-        "idealSoilTypes": ["Loamy"],
+        "idealSoilTypes": ["Dirt"],
         "waterPerDay": 3,
         "sunlightLevel": "FullSun",
         "temperatureMin": 15,
@@ -85,7 +85,7 @@
         "regrowable": false
       },
       "environmentRequirements": {
-        "idealSoilTypes": ["Loamy"],
+        "idealSoilTypes": ["Dirt"],
         "waterPerDay": 3,
         "sunlightLevel": "FullSun",
         "temperatureMin": 18,
@@ -109,7 +109,7 @@
         "regrowable": false
       },
       "environmentRequirements": {
-        "idealSoilTypes": ["Loamy"],
+        "idealSoilTypes": ["Dirt"],
         "waterPerDay": 3,
         "sunlightLevel": "FullSun",
         "temperatureMin": 20,
@@ -133,7 +133,7 @@
         "regrowable": false
       },
       "environmentRequirements": {
-        "idealSoilTypes": ["Sandy"],
+        "idealSoilTypes": ["Dirt"],
         "waterPerDay": 1,
         "sunlightLevel": "FullSun",
         "temperatureMin": 22,
@@ -157,7 +157,7 @@
         "regrowable": true
       },
       "environmentRequirements": {
-        "idealSoilTypes": ["Sandy", "Loamy"],
+        "idealSoilTypes": ["Dirt"],
         "waterPerDay": 1,
         "sunlightLevel": "PartialSun",
         "temperatureMin": 5,
@@ -181,7 +181,7 @@
         "regrowable": false
       },
       "environmentRequirements": {
-        "idealSoilTypes": ["Sandy", "Loamy"],
+        "idealSoilTypes": ["Dirt"],
         "waterPerDay": 2,
         "sunlightLevel": "FullSun",
         "temperatureMin": 10,
@@ -205,7 +205,7 @@
         "regrowable": false
       },
       "environmentRequirements": {
-        "idealSoilTypes": ["Sandy"],
+        "idealSoilTypes": ["Dirt"],
         "waterPerDay": 1,
         "sunlightLevel": "FullSun",
         "temperatureMin": 4,
@@ -229,7 +229,7 @@
         "regrowable": false
       },
       "environmentRequirements": {
-        "idealSoilTypes": ["Loamy", "Sandy"],
+        "idealSoilTypes": ["Dirt"],
         "waterPerDay": 2,
         "sunlightLevel": "FullSun",
         "temperatureMin": 10,
@@ -253,7 +253,7 @@
         "regrowable": false
       },
       "environmentRequirements": {
-        "idealSoilTypes": ["Loamy"],
+        "idealSoilTypes": ["Dirt"],
         "waterPerDay": 4,
         "sunlightLevel": "FullSun",
         "temperatureMin": 18,
@@ -277,7 +277,7 @@
         "regrowable": true
       },
       "environmentRequirements": {
-        "idealSoilTypes": ["Loamy", "Sandy"],
+        "idealSoilTypes": ["Dirt"],
         "waterPerDay": 2,
         "sunlightLevel": "FullSun",
         "temperatureMin": 16,

@@ -40,6 +40,11 @@ public class SoilPickerUI : MonoBehaviour
             string captured = soil; // capture for lambda
             GameObject go = Instantiate(buttonPrefab, transform);
             go.GetComponentInChildren<TMP_Text>().text = soil;
+            go.GetComponent<Button>().onClick.AddListener(() =>
+            {
+                Debug.Log("Soil button clicked: " + captured);
+                OnSoilSelected(captured);
+            });
             go.GetComponent<Button>().onClick.AddListener(() => OnSoilSelected(captured));
         }
 
@@ -50,7 +55,8 @@ public class SoilPickerUI : MonoBehaviour
 
     private void OnSoilSelected(string soilType)
     {
-        targetPot.potData.soilType = soilType;
+        //targetPot.potData.soilType = soilType; use dirt for now
+        targetPot.potData.soilType = "Dirt";
         targetPot.RefreshVisuals();
 
         gameObject.SetActive(false);
