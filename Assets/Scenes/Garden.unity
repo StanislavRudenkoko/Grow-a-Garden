@@ -362,7 +362,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -865, y: 453}
+  m_AnchoredPosition: {x: -556, y: 367.6}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &68244209
@@ -713,7 +713,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.0341, y: 2.0341, z: 2.0341}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -886,71 +886,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 266036710}
   m_CullTransparentMesh: 1
---- !u!1001 &291950819
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3672646632838343176, guid: 05017cc7c8b04c54ead9fbff93307b84, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 515.5984
-      objectReference: {fileID: 0}
-    - target: {fileID: 3672646632838343176, guid: 05017cc7c8b04c54ead9fbff93307b84, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 318.10904
-      objectReference: {fileID: 0}
-    - target: {fileID: 3672646632838343176, guid: 05017cc7c8b04c54ead9fbff93307b84, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3672646632838343176, guid: 05017cc7c8b04c54ead9fbff93307b84, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3672646632838343176, guid: 05017cc7c8b04c54ead9fbff93307b84, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3672646632838343176, guid: 05017cc7c8b04c54ead9fbff93307b84, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3672646632838343176, guid: 05017cc7c8b04c54ead9fbff93307b84, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3672646632838343176, guid: 05017cc7c8b04c54ead9fbff93307b84, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3672646632838343176, guid: 05017cc7c8b04c54ead9fbff93307b84, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3672646632838343176, guid: 05017cc7c8b04c54ead9fbff93307b84, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5971184011702448740, guid: 05017cc7c8b04c54ead9fbff93307b84, type: 3}
-      propertyPath: m_Size.y
-      value: 3.0063987
-      objectReference: {fileID: 0}
-    - target: {fileID: 5971184011702448740, guid: 05017cc7c8b04c54ead9fbff93307b84, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.3400929
-      objectReference: {fileID: 0}
-    - target: {fileID: 7545538282459222390, guid: 05017cc7c8b04c54ead9fbff93307b84, type: 3}
-      propertyPath: m_Name
-      value: PlantPot
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 05017cc7c8b04c54ead9fbff93307b84, type: 3}
 --- !u!1 &303546758
 GameObject:
   m_ObjectHideFlags: 0
@@ -2349,7 +2284,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -669.8, y: 452.4}
+  m_AnchoredPosition: {x: -360.7999, y: 366.99997}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &962210695
@@ -3661,7 +3596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlantManager
   visualDatabase: {fileID: 11400000, guid: 03803e5740d8b8f4c919b8cb4b29a9fa, type: 2}
-  plantPotPrefab: {fileID: 7545538282459222390, guid: 05017cc7c8b04c54ead9fbff93307b84, type: 3}
+  plantPotPrefab: {fileID: 2306526342097084655, guid: 0f43408924e84964094b8c10e869efd7, type: 3}
   potParent: {fileID: 8687717}
   potSlots:
   - {fileID: 4735536}
@@ -4047,4 +3982,3 @@ SceneRoots:
   - {fileID: 453169078}
   - {fileID: 8687717}
   - {fileID: 1750182556}
-  - {fileID: 291950819}
