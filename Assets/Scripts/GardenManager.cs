@@ -20,7 +20,7 @@ public class GardenManager : MonoBehaviour
     /// Load the sprites of the plants from the data passed from the PlantData Object
     ///</summary>
     void Start()
-{
+    {
     if (PlantData.Instance == null)
     {
         Debug.Log("PlantData not found!");
@@ -31,7 +31,7 @@ public class GardenManager : MonoBehaviour
     bool hasSeed = PlantData.Instance.hasSeed;
     soil.SetActive(hasSoil);
     flowerRenderer.gameObject.SetActive(hasSeed);
-}
+    }
 
     ///<summary>
     /// Load the Plant Manager scene from the Garden Scene
@@ -39,6 +39,10 @@ public class GardenManager : MonoBehaviour
     ///</summary>
     public void focusOnPlant(int value)
     {
-        SceneManager.LoadScene(0);
+    if (PlantData.Instance != null)
+    {
+        PlantData.Instance.currentPot = value;
+    }
+    SceneManager.LoadScene(0);
     }
 }

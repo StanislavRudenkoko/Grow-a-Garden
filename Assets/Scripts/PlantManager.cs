@@ -27,6 +27,7 @@ public class PlantManager : MonoBehaviour
     private bool isGrowing = false;
     private float timer = 0f;
     private bool isWatered = false;
+    private int currentPot;
 
     ///<summary>
     /// On Scene start load plant sprites and buttons to correct state
@@ -34,10 +35,11 @@ public class PlantManager : MonoBehaviour
     void Start()
 {
     var data = PlantData.Instance;
-
     hasSoil = data.hasSoil;
     hasSeed = data.hasSeed;
     currentStage = data.currentStage;
+    currentPot = data.currentPot;
+    Debug.Log(currentPot);
 
     soil.SetActive(hasSoil);
     plant.SetActive(hasSeed);
@@ -84,7 +86,7 @@ public class PlantManager : MonoBehaviour
     {
     if (PlantData.Instance == null)
     {
-        Debug.LogError("PlantData instance not found!");
+        Debug.Log("PlantData instance not found");
         return;
     }
     PlantData.Instance.currentStage = currentStage;

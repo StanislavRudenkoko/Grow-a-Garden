@@ -13,6 +13,7 @@ public class PlantData : MonoBehaviour
     public int currentStage;
     public bool hasSoil;
     public bool hasSeed;
+    public int currentPot;
 
     ///<summary>
     /// Singleton disign pattern to make sure only one PlantData object is made
