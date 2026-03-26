@@ -90,7 +90,7 @@ SpriteRenderer:
   m_Size: {x: 4.08, y: 3.22}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
 --- !u!114 &3364264386190716149
 MonoBehaviour:
@@ -104,10 +104,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30906d2e5669d984f852ca442b9640bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlantManager
-  visualDatabase: {fileID: 0}
-  plantPotPrefab: {fileID: 0}
-  potParent: {fileID: 0}
-  potSlots: []
-  growthTimePerStage: 10
-  soilTypes:
-  - Dirt
+  growthStages:
+  - {fileID: -3735054867023962594, guid: 5cd400be114106b4699467235410126b, type: 3}
+  - {fileID: 5989643719231090162, guid: 7f65604d784c7a54695e1334e6ab255a, type: 3}
+  - {fileID: 4574653076701713686, guid: 1e1952c5535cb5b4ba83fd20889d5672, type: 3}
+  - {fileID: 6393352377757650912, guid: 9876252a0cf7b9f469423d6270ffa74c, type: 3}
+  - {fileID: 2286000123702718619, guid: 02f675b58e9dd7342b550e97582ccf48, type: 3}
+  growthTime: 0.7
+  waterButton: {fileID: 0}
+  harvestButton: {fileID: 0}
