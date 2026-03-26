@@ -2897,10 +2897,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db01de43b0d2dd94aa6984315c7bee0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GardenManager
-  soil: {fileID: 637553318}
-  plant: {fileID: 211258838}
+  soil: {fileID: 1854991397}
+  plant: {fileID: 2088286074}
   growthStages: []
-  flowerRenderer: {fileID: 211258840}
+  flowerRenderer: {fileID: 2088286076}
 --- !u!4 &1251632426
 Transform:
   m_ObjectHideFlags: 0
@@ -4502,8 +4502,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlantManager
   plantData: {fileID: 0}
-  soil: {fileID: 637553318}
-  plant: {fileID: 211258838}
+  soil: {fileID: 1854991397}
+  plant: {fileID: 2088286074}
   growthStages:
   - {fileID: 1508734276152258813, guid: 79c52ad3ca2c55c4b8a4f8e6a83f56c9, type: 3}
   - {fileID: 6223568682805356479, guid: 9e373fa13073afa41bc4a4db3f1d03b3, type: 3}
