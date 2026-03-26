@@ -14,30 +14,28 @@ public class GardenManager : MonoBehaviour
     public GameObject plant;
     public Sprite[] growthStages;
 
-    private SpriteRenderer sr; 
-
+    public SpriteRenderer flowerRenderer;
 
     ///<summary>
     /// Load the sprites of the plants from the data passed from the PlantData Object
     ///</summary>
     void Start()
+{
+    if (PlantData.Instance == null)
     {
-        if (PlantData.Instance == null)
-        {
-            Debug.LogError("PlantData not found!");
-            return;
-        }
-        sr = plant.GetComponent<SpriteRenderer>();
-        int stage = Mathf.Clamp(PlantData.Instance.currentStage, 0, growthStages.Length - 1);
-        bool hasSoil = PlantData.Instance.hasSoil;
-        bool hasSeed = PlantData.Instance.hasSeed;
-        soil.SetActive(hasSoil);
-        plant.SetActive(hasSeed);
-        if (hasSeed)
-        {
-            sr.sprite = growthStages[stage];
-        }
+        Debug.LogError("PlantData not found!");
+        return;
     }
+    int stage = Mathf.Clamp(PlantData.Instance.currentStage, 0, growthStages.Length - 1);
+    bool hasSoil = PlantData.Instance.hasSoil;
+    bool hasSeed = PlantData.Instance.hasSeed;
+    soil.SetActive(hasSoil);
+    flowerRenderer.gameObject.SetActive(hasSeed);
+    if (hasSeed)
+    {
+        flowerRenderer.sprite = growthStages[stage];
+    }
+}
 
     ///<summary>
     /// Load the Plant Manager scene from the Garden Scene
