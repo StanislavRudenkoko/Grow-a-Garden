@@ -42,19 +42,18 @@ public class Player : MonoBehaviour
     }
 
     /// <summary>
-    /// Method to spend player coins.
+    /// Method to buy an item.
     /// </summary>
     /// <param name="amount"></param>
-    /// <returns></returns>
-    public bool SpendCoins(int amount)
+    /// <returns>a bool</returns>
+    public bool BuyItem(int amount, Item item)
     {
         if (amount > Coins)
         {
-            Debug.Log("Player does not have enough coins, alert pop up");
             return false;
         }
-        Debug.Log("Player's Coins get updated. Remember to update Store");
         Coins -= amount;
+        Inventory.Add(item);
         return true;
     }
 

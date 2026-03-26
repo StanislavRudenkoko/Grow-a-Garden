@@ -12,12 +12,11 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
 {
     public Item info;
     public ConfirmationBox confirmationBox;
-    public GameObject store;
+    public Store Store {get; set;}
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        store = GameObject.Find("Store");
     }
 
     // Update is called once per frame
@@ -44,8 +43,9 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
     /// <param name="eventData"></param>
     public void OnPointerClick(PointerEventData eventData)
     {
-        ConfirmationBox box = Instantiate(confirmationBox, store.transform);
+        ConfirmationBox box = Instantiate(confirmationBox, Store.transform);
         box.Item = info;
+        box.Store = Store;
         TextMeshProUGUI boxTitle = box.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         TextMeshProUGUI boxDesc = box.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
         boxTitle.text = $"Buy {info.Name}?";

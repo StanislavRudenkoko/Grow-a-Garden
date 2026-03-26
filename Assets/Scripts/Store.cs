@@ -9,11 +9,11 @@ using UnityEngine.SceneManagement;
 public class Store : MonoBehaviour
 {
     [SerializeField]
-    private GameObject player;
+    private Player player;
     void Start()
     {
-        
-        // transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = $"{player.Coins} coins";
+        player = PlayerGetter.GetInstance.player;
+        transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = $"{player.Coins} coins";
     }
     /// <summary>
     /// Takes the player back the the Garden scene when they click on the Go to Garden button.
@@ -24,9 +24,9 @@ public class Store : MonoBehaviour
         SceneManager.LoadScene("Garden");
     }
 
-    public void BuyItem(int amount)
+    public void BuyItem(int amount, Item item)
     {
-        // player.SpendCoins(amount);
+        player.BuyItem(amount, item);
     }
 
 

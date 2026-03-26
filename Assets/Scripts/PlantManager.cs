@@ -9,7 +9,7 @@ public class PlantManager : MonoBehaviour
     /// <summary>
     /// TEMP
     /// </summary>
-    public GameObject player;
+    public Player player;
     public GameObject soil;
     public GameObject plant;
     public Sprite[] growthStages; // drag your 5 sprites in here
@@ -30,6 +30,7 @@ public class PlantManager : MonoBehaviour
 
     void Start()
     {
+        player = PlayerGetter.GetInstance.player;
         sr = plant.GetComponent<SpriteRenderer>();
         soil.SetActive(false);
         plant.SetActive(false);

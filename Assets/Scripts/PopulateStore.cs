@@ -12,6 +12,7 @@ using UnityEngine.UI;
 public class PopulateStore : MonoBehaviour
 {
     public Slot slot;
+    public Store store;
     public List<Item> items;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -36,6 +37,7 @@ public class PopulateStore : MonoBehaviour
         {
             obj = Instantiate(slot, transform);
             obj.info = item;
+            obj.Store = store;
             Image objImage = obj.transform.GetChild(0).GetComponent<Image>();
             TextMeshProUGUI objTitle = obj.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
             TextMeshProUGUI objPrice = obj.transform.GetChild(2).GetComponent<TextMeshProUGUI>();

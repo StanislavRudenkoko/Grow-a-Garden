@@ -245,6 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   slot: {fileID: -4919192478548750739, guid: 61151427833de8e41911e49a6c6c7bd3, type: 3}
+  store: {fileID: 1751509998}
   items:
   - {fileID: 11400000, guid: 6125d02753e9b6b4fae560e3a4e9ef9b, type: 2}
   - {fileID: 11400000, guid: 5a54ce1b093b7844f9f64eee57208a7a, type: 2}
@@ -1774,6 +1775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f74fcabe7845c4dbc6bac153b08687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Store
+  player: {fileID: 0}
 --- !u!1 &1854588060
 GameObject:
   m_ObjectHideFlags: 0

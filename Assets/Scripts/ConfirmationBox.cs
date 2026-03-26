@@ -8,6 +8,7 @@ using UnityEngine;
 public class ConfirmationBox : MonoBehaviour
 {
     public Item Item { get; set; }
+    public Store Store {get; set;}
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,8 +25,8 @@ public class ConfirmationBox : MonoBehaviour
     /// </summary>
     public void Buy()
     {
-        Debug.Log("Player buys Item if coins are sufficient.");
-
+        // Debug.Log("Player buys Item if coins are sufficient.");
+        Store.BuyItem(Item.Price, Item);
         // logic here
         Destroy(gameObject);
     }
