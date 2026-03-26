@@ -1,3 +1,10 @@
+/// <summary>
+/// PotDropdownUI
+/// Author: Stanislav Rudenko
+/// Date: Mar. 12 - Mar. 26, 2026
+/// Source: with help of Claude AI
+/// </summary>
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -35,6 +42,7 @@ public class PotDropdownUI : MonoBehaviour
 
     // ── Public API ────────────────────────────────────────────────────────────
 
+    /// <summary>Opens the menu for <paramref name="pot"/> and builds context actions.</summary>
     public void OpenFor(PlantPotController pot)
     {
         // Close sub-panels
@@ -51,6 +59,7 @@ public class PotDropdownUI : MonoBehaviour
         gameObject.SetActive(true);
     }
 
+    /// <summary>Hides this panel and sub-pickers.</summary>
     public void Close()
     {
         gameObject.SetActive(false);

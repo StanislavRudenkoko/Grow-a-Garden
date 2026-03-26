@@ -1,3 +1,10 @@
+/// <summary>
+/// PlantManager
+/// Author: Stanislav Rudenko
+/// Date: Mar. 12 - Mar. 26, 2026
+/// Source: with help of Claude AI
+/// </summary>
+
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -128,6 +135,7 @@ public class PlantManager : MonoBehaviour
         Debug.Log("All slots full or no valid slot found");
     }
 
+    /// <summary>Removes the pot from tracking and destroys its GameObject.</summary>
     public void RemovePot(PlantPotController pot)
     {
         activePots.Remove(pot);

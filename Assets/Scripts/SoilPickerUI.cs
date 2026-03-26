@@ -1,3 +1,10 @@
+/// <summary>
+/// SoilPickerUI
+/// Author: Stanislav Rudenko
+/// Date: Mar. 12 - Mar. 26, 2026
+/// Source: with help of Claude AI
+/// </summary>
+
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -25,6 +32,8 @@ public class SoilPickerUI : MonoBehaviour
         Instance = this;
         gameObject.SetActive(false);
     }
+
+    /// <summary>Builds one button per entry in <see cref="PlantManager.soilTypes"/>.</summary>
     public void OpenFor(PlantPotController pot, PotDropdownUI dropdown)
     {
         targetPot = pot;

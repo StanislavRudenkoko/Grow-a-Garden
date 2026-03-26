@@ -1,6 +1,16 @@
+/// <summary>
+/// PlantDefinition
+/// Author: Stanislav Rudenko
+/// Date: Mar. 12 - Mar. 26, 2026
+/// Source: with help of Claude AI
+/// </summary>
+
 using UnityEngine;
 using System.Collections.Generic;
 
+/// <summary>
+/// Serializable plant species data (identity, growth, environment, economy).
+/// </summary>
 [System.Serializable]
 public class PlantDefinition
 {
@@ -10,6 +20,7 @@ public class PlantDefinition
     public string family;
     public string descriptionShort;
 
+    /// <summary>Growth timing and stage configuration.</summary>
     [System.Serializable]
     public class GrowthInfo
     {
@@ -19,6 +30,7 @@ public class PlantDefinition
     }
     public GrowthInfo growth;
 
+    /// <summary>Soil, water, light, and temperature needs.</summary>
     [System.Serializable]
     public class EnvironmentRequirements
     {
@@ -30,6 +42,7 @@ public class PlantDefinition
     }
     public EnvironmentRequirements environmentRequirements;
 
+    /// <summary>Shop and progression values.</summary>
     [System.Serializable]
     public class Economy
     {

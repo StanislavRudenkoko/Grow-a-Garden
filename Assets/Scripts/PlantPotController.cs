@@ -1,6 +1,16 @@
+/// <summary>
+/// PlantPotController
+/// Author: Stanislav Rudenko
+/// Date: Mar. 12 - Mar. 26, 2026
+/// Source: with help of Claude AI
+/// </summary>
+
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// Per-pot behaviour: click opens the dropdown; updates soil/plant sprites from <see cref="PlantVisualDatabase"/>.
+/// </summary>
 [RequireComponent(typeof(PlantInstance))]
 [RequireComponent(typeof(PlantHoverHandler))]
 public class PlantPotController : MonoBehaviour, IPointerClickHandler
@@ -35,6 +45,7 @@ public class PlantPotController : MonoBehaviour, IPointerClickHandler
             PotDropdownUI.Instance.OpenFor(this);
     }
 
+    /// <summary>Syncs soil and plant sprites to <see cref="PlantInstance"/> state.</summary>
     public void RefreshVisuals()
     {
         PlantVisualDatabase db = PlantManager.Instance.visualDatabase;

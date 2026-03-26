@@ -1,6 +1,16 @@
+/// <summary>
+/// TooltipManager
+/// Author: Stanislav Rudenko
+/// Date: Mar. 12 - Mar. 26, 2026
+/// Source: with help of Claude AI
+/// </summary>
+
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Coordinates instance and definition tooltips: delayed show on hover, hide-all, and “show more” definition panel.
+/// </summary>
 public class TooltipManager : MonoBehaviour
 {
     public static TooltipManager Instance;
@@ -19,6 +29,7 @@ public class TooltipManager : MonoBehaviour
         Instance = this;
     }
 
+    /// <summary>Schedules the instance tooltip after <see cref="hoverDelay"/>.</summary>
     public void RequestShow(PlantInstance instance, Vector2 mousePos)
     {
         pendingInstance = instance;
@@ -40,6 +51,7 @@ public class TooltipManager : MonoBehaviour
         instanceTooltip.Show(pendingMousePos);
     }
 
+    /// <summary>Hides both tooltips and cancels a pending delayed show.</summary>
     public void HideAll()
     {
         if (showCoroutine != null)
@@ -49,6 +61,7 @@ public class TooltipManager : MonoBehaviour
         definitionTooltip.Hide();
     }
 
+    /// <summary>Shows the definition tooltip beside an anchor (e.g. instance tooltip position).</summary>
     public void ShowDefinition(PlantDefinition definition, Vector2 anchorPosition)
     {
         definitionTooltip.SetData(definition);

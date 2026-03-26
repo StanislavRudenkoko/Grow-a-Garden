@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantVisualData
   plantDefinitionId: orchid
   growthStageSprites:
-  - {fileID: -9153205074856453415, guid: 0b29a7ecff733834d95e53b6ac031202, type: 3}
+  - {fileID: 1508734276152258813, guid: 79c52ad3ca2c55c4b8a4f8e6a83f56c9, type: 3}
   - {fileID: -2855458541216367180, guid: fe7219086542af1499a5d648f0f4ca66, type: 3}
   - {fileID: -4575287778358752165, guid: cdb2919984832fa4d8bf47576dbcf019, type: 3}
   - {fileID: -7725991611584973435, guid: 8a20b3bfb9c648547bc7c4637c730bcc, type: 3}

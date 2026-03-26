@@ -1,3 +1,10 @@
+/// <summary>
+/// SeedPickerUI
+/// Author: Stanislav Rudenko
+/// Date: Mar. 12 - Mar. 26, 2026
+/// Source: with help of Claude AI
+/// </summary>
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,6 +32,8 @@ public class SeedPickerUI : MonoBehaviour
         Instance = this;
         gameObject.SetActive(false);
     }
+
+    /// <summary>Builds seed buttons for soil-compatible plants and shows beside the dropdown.</summary>
     public void OpenFor(PlantPotController pot, PotDropdownUI dropdown)
     {
         targetPot = pot;

@@ -1,3 +1,10 @@
+/// <summary>
+/// PlantInstance
+/// Author: Stanislav Rudenko
+/// Date: Mar. 12 - Mar. 26, 2026
+/// Source: with help of Claude AI
+/// </summary>
+
 using UnityEngine;
 
 /// <summary>
@@ -43,6 +50,7 @@ public class PlantInstance : MonoBehaviour
     }
 }
 
+/// <summary>High-level plant condition for growth and UI.</summary>
 public enum PlantStatus
 {
     Healthy,

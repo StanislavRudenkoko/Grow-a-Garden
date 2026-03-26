@@ -1,6 +1,16 @@
+/// <summary>
+/// PlantInstanceTooltipUI
+/// Author: Stanislav Rudenko
+/// Date: Mar. 12 - Mar. 26, 2026
+/// Source: with help of Claude AI
+/// </summary>
+
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Tooltip UI for live <see cref="PlantInstance"/> stats (name, growth, water, health, status).
+/// </summary>
 public class PlantInstanceTooltipUI : TooltipBase
 {
     public TMP_Text nameText;
@@ -17,6 +27,7 @@ public class PlantInstanceTooltipUI : TooltipBase
         Debug.Log("PlantInstanceTooltipUI Awake - rectTransform null: " + (rectTransform == null));
     }
 
+    /// <summary>Updates labels from the given instance.</summary>
     public void SetData(PlantInstance instance)
     {
         currentInstance = instance;
@@ -27,12 +38,14 @@ public class PlantInstanceTooltipUI : TooltipBase
         statusText.text = instance.status.ToString();
     }
 
+    /// <summary>Positions near the cursor and fades in.</summary>
     public void Show(Vector2 mousePosition)
     {
         Position(mousePosition);
         FadeIn();
     }
 
+    /// <summary>Places the tooltip to the left or right of the pointer depending on screen half.</summary>
     private void Position(Vector2 mousePosition)
     {
         // Initialize if Awake hasn't run yet
@@ -53,6 +66,7 @@ public class PlantInstanceTooltipUI : TooltipBase
         ClampToScreen();
     }
 
+    /// <summary>Opens the definition tooltip for the current plant.</summary>
     public void OnShowMoreHover()
     {
         PlantDefinition def = PlantDatabaseManager.Instance

@@ -1,6 +1,16 @@
+/// <summary>
+/// TooltipBase
+/// Author: Stanislav Rudenko
+/// Date: Mar. 12 - Mar. 26, 2026
+/// Source: with help of Claude AI
+/// </summary>
+
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Shared fade and screen-clamp behaviour for tooltip panels (requires <see cref="CanvasGroup"/> + <see cref="RectTransform"/>).
+/// </summary>
 public class TooltipBase : MonoBehaviour
 {
     protected CanvasGroup canvasGroup;
@@ -18,6 +28,7 @@ public class TooltipBase : MonoBehaviour
         Debug.Log(gameObject.name + " TooltipBase Awake - canvasGroup null: " + (canvasGroup == null));
     }
 
+    /// <summary>Fades alpha in and activates the GameObject.</summary>
     protected void FadeIn()
     {
         if (rectTransform == null) rectTransform = GetComponent<RectTransform>();
@@ -29,6 +40,7 @@ public class TooltipBase : MonoBehaviour
         fadeCoroutine = StartCoroutine(Fade(0f, 1f));
     }
 
+    /// <summary>Fades out and deactivates when alpha reaches zero.</summary>
     public void Hide()
     {
         if (!gameObject.activeSelf)
@@ -58,6 +70,7 @@ public class TooltipBase : MonoBehaviour
             gameObject.SetActive(false);
     }
 
+    /// <summary>Keeps the rect fully on-screen by shifting position.</summary>
     protected void ClampToScreen()
     {
         Vector3[] corners = new Vector3[4];
