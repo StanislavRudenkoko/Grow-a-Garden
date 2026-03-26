@@ -1,0 +1,293 @@
+{
+  "version": "1.0",
+  "plants": [
+    {
+      "id": "orchid",
+      "displayName": "Orchid",
+      "scientificName": "Phalaenopsis amabilis",
+      "family": "Orchidaceae",
+      "descriptionShort": "An elegant flowering plant prized for its delicate blooms and long-lasting beauty.",
+      "growth": {
+        "totalGrowthStages": 4,
+        "daysPerStage": 4,
+        "regrowable": true
+      },
+      "environmentRequirements": {
+        "idealSoilTypes": ["Loamy"],
+        "waterPerDay": 1,
+        "sunlightLevel": "PartialSun",
+        "temperatureMin": 16,
+        "temperatureMax": 29
+      },
+      "economy": {
+        "seedCost": 8,
+        "sellValue": 18,
+        "experienceReward": 10
+      }
+    },
+    {
+      "id": "green_onion",
+      "displayName": "Green Onion",
+      "scientificName": "Allium fistulosum",
+      "family": "Amaryllidaceae",
+      "descriptionShort": "A quick-growing allium with a mild flavor, harvested young for its tender green stalks.",
+      "growth": {
+        "totalGrowthStages": 3,
+        "daysPerStage": 2,
+        "regrowable": true
+      },
+      "environmentRequirements": {
+        "idealSoilTypes": ["Loamy", "Sandy"],
+        "waterPerDay": 2,
+        "sunlightLevel": "FullSun",
+        "temperatureMin": 7,
+        "temperatureMax": 24
+      },
+      "economy": {
+        "seedCost": 2,
+        "sellValue": 4,
+        "experienceReward": 3
+      }
+    },
+    {
+      "id": "strawberry",
+      "displayName": "Strawberry",
+      "scientificName": "Fragaria × ananassa",
+      "family": "Rosaceae",
+      "descriptionShort": "A sweet fruiting plant that produces bright red berries and can regrow after harvest.",
+      "growth": {
+        "totalGrowthStages": 5,
+        "daysPerStage": 3,
+        "regrowable": true
+      },
+      "environmentRequirements": {
+        "idealSoilTypes": ["Loamy"],
+        "waterPerDay": 3,
+        "sunlightLevel": "FullSun",
+        "temperatureMin": 15,
+        "temperatureMax": 26
+      },
+      "economy": {
+        "seedCost": 5,
+        "sellValue": 10,
+        "experienceReward": 8
+      }
+    },
+    {
+      "id": "tomato",
+      "displayName": "Tomato",
+      "scientificName": "Solanum lycopersicum",
+      "family": "Solanaceae",
+      "descriptionShort": "A warm-season garden favorite that produces juicy red fruits and thrives in sunny conditions.",
+      "growth": {
+        "totalGrowthStages": 5,
+        "daysPerStage": 2,
+        "regrowable": false
+      },
+      "environmentRequirements": {
+        "idealSoilTypes": ["Loamy"],
+        "waterPerDay": 3,
+        "sunlightLevel": "FullSun",
+        "temperatureMin": 18,
+        "temperatureMax": 30
+      },
+      "economy": {
+        "seedCost": 3,
+        "sellValue": 7,
+        "experienceReward": 6
+      }
+    },
+    {
+      "id": "eggplant",
+      "displayName": "Eggplant",
+      "scientificName": "Solanum melongena",
+      "family": "Solanaceae",
+      "descriptionShort": "A heat-loving vegetable with deep purple fruits that takes patience to grow but rewards generously.",
+      "growth": {
+        "totalGrowthStages": 5,
+        "daysPerStage": 4,
+        "regrowable": false
+      },
+      "environmentRequirements": {
+        "idealSoilTypes": ["Loamy"],
+        "waterPerDay": 3,
+        "sunlightLevel": "FullSun",
+        "temperatureMin": 20,
+        "temperatureMax": 34
+      },
+      "economy": {
+        "seedCost": 5,
+        "sellValue": 11,
+        "experienceReward": 9
+      }
+    },
+    {
+      "id": "reaper",
+      "displayName": "Reaper",
+      "scientificName": "Capsicum chinense 'Carolina Reaper'",
+      "family": "Solanaceae",
+      "descriptionShort": "The world's hottest pepper. Thrives in dry, sandy soil under intense heat — not for the faint of heart.",
+      "growth": {
+        "totalGrowthStages": 6,
+        "daysPerStage": 4,
+        "regrowable": false
+      },
+      "environmentRequirements": {
+        "idealSoilTypes": ["Sandy"],
+        "waterPerDay": 1,
+        "sunlightLevel": "FullSun",
+        "temperatureMin": 22,
+        "temperatureMax": 38
+      },
+      "economy": {
+        "seedCost": 10,
+        "sellValue": 22,
+        "experienceReward": 15
+      }
+    },
+    {
+      "id": "daisy",
+      "displayName": "Daisy",
+      "scientificName": "Bellis perennis",
+      "family": "Asteraceae",
+      "descriptionShort": "A cheerful wildflower with white petals and a yellow center, blooming reliably in cool conditions.",
+      "growth": {
+        "totalGrowthStages": 3,
+        "daysPerStage": 2,
+        "regrowable": true
+      },
+      "environmentRequirements": {
+        "idealSoilTypes": ["Sandy", "Loamy"],
+        "waterPerDay": 1,
+        "sunlightLevel": "PartialSun",
+        "temperatureMin": 5,
+        "temperatureMax": 22
+      },
+      "economy": {
+        "seedCost": 2,
+        "sellValue": 5,
+        "experienceReward": 4
+      }
+    },
+    {
+      "id": "carrot",
+      "displayName": "Carrot",
+      "scientificName": "Daucus carota",
+      "family": "Apiaceae",
+      "descriptionShort": "A root vegetable that grows underground and prefers loose soil and consistent moisture.",
+      "growth": {
+        "totalGrowthStages": 4,
+        "daysPerStage": 2,
+        "regrowable": false
+      },
+      "environmentRequirements": {
+        "idealSoilTypes": ["Sandy", "Loamy"],
+        "waterPerDay": 2,
+        "sunlightLevel": "FullSun",
+        "temperatureMin": 10,
+        "temperatureMax": 24
+      },
+      "economy": {
+        "seedCost": 2,
+        "sellValue": 5,
+        "experienceReward": 4
+      }
+    },
+    {
+      "id": "tulip",
+      "displayName": "Tulip",
+      "scientificName": "Tulipa gesneriana",
+      "family": "Liliaceae",
+      "descriptionShort": "A classic spring bulb flower that blooms in vivid colors and prefers cool, well-drained soil.",
+      "growth": {
+        "totalGrowthStages": 4,
+        "daysPerStage": 3,
+        "regrowable": false
+      },
+      "environmentRequirements": {
+        "idealSoilTypes": ["Sandy"],
+        "waterPerDay": 1,
+        "sunlightLevel": "FullSun",
+        "temperatureMin": 4,
+        "temperatureMax": 18
+      },
+      "economy": {
+        "seedCost": 4,
+        "sellValue": 9,
+        "experienceReward": 7
+      }
+    },
+    {
+      "id": "potato",
+      "displayName": "Potato",
+      "scientificName": "Solanum tuberosum",
+      "family": "Solanaceae",
+      "descriptionShort": "A hardy tuber crop that grows well in cool climates and nutrient-rich soil.",
+      "growth": {
+        "totalGrowthStages": 5,
+        "daysPerStage": 3,
+        "regrowable": false
+      },
+      "environmentRequirements": {
+        "idealSoilTypes": ["Loamy", "Sandy"],
+        "waterPerDay": 2,
+        "sunlightLevel": "FullSun",
+        "temperatureMin": 10,
+        "temperatureMax": 22
+      },
+      "economy": {
+        "seedCost": 4,
+        "sellValue": 9,
+        "experienceReward": 7
+      }
+    },
+    {
+      "id": "cucumber",
+      "displayName": "Cucumber",
+      "scientificName": "Cucumis sativus",
+      "family": "Cucurbitaceae",
+      "descriptionShort": "A fast-growing vine vegetable that loves heat, moisture, and plenty of room to sprawl.",
+      "growth": {
+        "totalGrowthStages": 5,
+        "daysPerStage": 2,
+        "regrowable": false
+      },
+      "environmentRequirements": {
+        "idealSoilTypes": ["Loamy"],
+        "waterPerDay": 4,
+        "sunlightLevel": "FullSun",
+        "temperatureMin": 18,
+        "temperatureMax": 32
+      },
+      "economy": {
+        "seedCost": 4,
+        "sellValue": 8,
+        "experienceReward": 6
+      }
+    },
+    {
+      "id": "green_beans",
+      "displayName": "Green Beans",
+      "scientificName": "Phaseolus vulgaris",
+      "family": "Fabaceae",
+      "descriptionShort": "A productive bush plant that yields tender pods over several harvests in warm, sunny weather.",
+      "growth": {
+        "totalGrowthStages": 4,
+        "daysPerStage": 2,
+        "regrowable": true
+      },
+      "environmentRequirements": {
+        "idealSoilTypes": ["Loamy", "Sandy"],
+        "waterPerDay": 2,
+        "sunlightLevel": "FullSun",
+        "temperatureMin": 16,
+        "temperatureMax": 30
+      },
+      "economy": {
+        "seedCost": 3,
+        "sellValue": 7,
+        "experienceReward": 6
+      }
+    }
+  ]
+}

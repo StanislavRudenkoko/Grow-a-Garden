@@ -1,102 +1,185 @@
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
+/// <summary>
+/// Manages all pots in the scene:
+///   • Spawning / removing pots
+///   • The growth update loop
+///   • Soil type registry
+///   • Plant compatibility queries
+/// </summary>
 public class PlantManager : MonoBehaviour
 {
-    public GameObject soil;
-    public GameObject plant;
-    public Sprite[] growthStages; // drag your 5 sprites in here
-    public float growthTime = 3f; // seconds per stage
+    public static PlantManager Instance;
 
-    public Button soilButton;
-    public Button seedButton;
-    public Button waterButton;
-    public Button harvestButton;
+    // ── Inspector ─────────────────────────────────────────────────────────────
+    [Header("Visuals")]
+    public PlantVisualDatabase visualDatabase;
 
-    private SpriteRenderer sr;
-    private bool hasSoil = false;
-    private bool hasSeed = false;
-    private int currentStage = 0;
-    private bool isGrowing = false;
-    private float timer = 0f;
-    private bool isWatered = false;
+    [Header("Prefab & Layout")]
+    public GameObject plantPotPrefab;   // the PlantPot prefab
+    public Transform potParent;        // empty GameObject that holds all pots
+    public Transform[] potSlots;        // 12 pre-placed slot transforms in the scene
 
-    void Start()
+    [Header("Growth")]
+    public float growthTimePerStage = 10f;  // seconds per growth stage
+
+    [Header("Soil Types")]
+    // Fill this list in the Inspector with your soil names, e.g. Dirt, Loamy, Sandy, Clay
+    public List<string> soilTypes = new List<string> { "Dirt" };
+
+    // ── Runtime ───────────────────────────────────────────────────────────────
+
+    private readonly List<PlantPotController> activePots = new List<PlantPotController>();
+
+    // ── Unity lifecycle ───────────────────────────────────────────────────────
+
+    private void Awake()
     {
-        sr = plant.GetComponent<SpriteRenderer>();
-        soil.SetActive(false);
-        plant.SetActive(false);
-        sr.sprite = growthStages[0];
-        harvestButton.gameObject.SetActive(false);
-        seedButton.gameObject.SetActive(false);
-        waterButton.gameObject.SetActive(false);
+        Debug.Log("PlantManager Awake called. Instance is null: " + (Instance == null));
+        if (Instance == null)
+        {
+            Instance = this;
+            Debug.Log("This instance is now the singleton");
+        }
+        else
+        {
+            Debug.Log("Duplicate found! Destroying this one. Existing instance: " + Instance.gameObject.name);
+            Destroy(gameObject);
+            return;
+        }
     }
 
-    void Update()
+    private void Update()
     {
-        if (isWatered && !isGrowing && currentStage < growthStages.Length - 1)
+        foreach (PlantPotController pot in activePots)
         {
-            isGrowing = true;
-        }
+            PlantInstance data = pot.potData;
 
-        if (isGrowing)
-        {
-            timer += Time.deltaTime;
-            if (timer >= growthTime)
+            if (!data.hasPlant) continue;
+
+            PlantDefinition def = PlantDatabaseManager.Instance
+                .GetPlantDefinition(data.plantDefinitionId);
+            if (def == null) continue;
+
+            int maxStage = def.growth.totalGrowthStages - 1;
+            if (data.currentGrowthStage >= maxStage) continue;
+
+            // Start growing if watered
+            if (data.status == PlantStatus.Healthy && data.waterLevel > 0)
+                data.status = PlantStatus.Growing;
+
+            if (data.status == PlantStatus.Growing)
             {
-                timer = 0f;
-                isWatered = false;
-                isGrowing = false;
-                currentStage++;
-                sr.sprite = growthStages[currentStage];
-
-                if (currentStage == growthStages.Length - 1)
+                data.timer += Time.deltaTime;
+                if (data.timer >= growthTimePerStage)
                 {
-                    waterButton.gameObject.SetActive(false);
-                    harvestButton.gameObject.SetActive(true);
+                    data.timer = 0f;
+                    data.waterLevel = 0f;
+                    data.status = PlantStatus.Healthy;
+                    data.currentGrowthStage = Mathf.Min(data.currentGrowthStage + 1, maxStage);
+                    pot.RefreshVisuals();
                 }
             }
         }
     }
 
-    public void OnSoilButtonPressed()
+    // ── Public API ────────────────────────────────────────────────────────────
+
+    /// <summary>
+    /// Called by the "Add Pot" button. Finds the first empty slot and spawns a pot.
+    /// </summary>
+    public void AddPot()
     {
-        if (!hasSoil)
+        Debug.Log("AddPot called");
+
+        if (plantPotPrefab == null)
         {
-            hasSoil = true;
-            soil.SetActive(true);
-            soilButton.gameObject.SetActive(false);
-            seedButton.gameObject.SetActive(true);
+            Debug.LogError("plantPotPrefab is NULL");
+            return;
         }
+
+        if (potSlots == null || potSlots.Length == 0)
+        {
+            Debug.LogError("potSlots is empty!");
+            return;
+        }
+
+        Debug.Log("Slot count: " + potSlots.Length);
+
+        foreach (Transform slot in potSlots)
+        {
+            if (slot == null)
+            {
+                Debug.LogWarning("A slot entry is null, skipping");
+                continue;
+            }
+
+            bool occupied = activePots.Exists(p => p.transform.position == slot.position);
+
+            if (!occupied)
+            {
+                Debug.Log("Spawning pot at: " + slot.position);
+                SpawnPot(slot.position);
+                return;
+            }
+        }
+
+        Debug.Log("All slots full or no valid slot found");
     }
 
-    public void OnSeedButtonPressed()
+    public void RemovePot(PlantPotController pot)
     {
-        if (hasSoil && !hasSeed)
-        {
-            hasSeed = true;
-            plant.SetActive(true);
-            seedButton.gameObject.SetActive(false);
-            waterButton.gameObject.SetActive(true);
-        }
+        activePots.Remove(pot);
+        Destroy(pot.gameObject);
     }
 
-    public void OnWaterButtonPressed()
+    /// <summary>Returns the index of a soil name in soilTypes (for sprite lookup).</summary>
+    public int GetSoilIndex(string soilName)
     {
-        if (!isWatered && hasSeed && currentStage < growthStages.Length - 1)
-        {
-            isWatered = true;
-        }
+        return soilTypes.IndexOf(soilName);
     }
 
-    public void OnHarvestButtonPressed()
+    /// <summary>
+    /// Returns all PlantDefinitions whose idealSoilTypes include the given soil.
+    /// In a real game you would also filter by the player's seed inventory.
+    /// </summary>
+    public List<PlantDefinition> GetCompatiblePlants(string soilType)
     {
-        currentStage = 0;
-        sr.sprite = growthStages[0];
-        isWatered = false;
-        isGrowing = false;
-        timer = 0f;
-        waterButton.gameObject.SetActive(true);
-        harvestButton.gameObject.SetActive(false);
+        List<PlantDefinition> result = new List<PlantDefinition>();
+
+        // PlantDatabaseManager holds all definitions loaded from plants.json
+        // We iterate by asking it for each known id — extend this if you add
+        // a public GetAll() method to PlantDatabaseManager.
+        foreach (string id in PlantDatabaseManager.Instance.GetAllIds())
+        {
+            PlantDefinition def = PlantDatabaseManager.Instance.GetPlantDefinition(id);
+            if (def != null &&
+                def.environmentRequirements != null &&
+                def.environmentRequirements.idealSoilTypes.Contains(soilType))
+            {
+                result.Add(def);
+            }
+        }
+        return result;
+    }
+
+    // ── Private ───────────────────────────────────────────────────────────────
+
+    private void SpawnPot(Vector3 position)
+    {
+        GameObject go = Instantiate(plantPotPrefab, position, Quaternion.identity, potParent);
+        PlantPotController ctrl = go.GetComponent<PlantPotController>();
+        activePots.Add(ctrl);
+    }
+
+    private void OnDestroy()
+    {
+        Debug.Log("PlantManager was DESTROYED");
+    }
+
+    private void OnDisable()
+    {
+        Debug.Log("PlantManager was DISABLED");
     }
 }
