@@ -36,8 +36,18 @@ public class PlantManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null) Instance = this;
-        else { Destroy(gameObject); return; }
+        Debug.Log("PlantManager Awake called. Instance is null: " + (Instance == null));
+        if (Instance == null)
+        {
+            Instance = this;
+            Debug.Log("This instance is now the singleton");
+        }
+        else
+        {
+            Debug.Log("Duplicate found! Destroying this one. Existing instance: " + Instance.gameObject.name);
+            Destroy(gameObject);
+            return;
+        }
     }
 
     private void Update()
@@ -81,16 +91,41 @@ public class PlantManager : MonoBehaviour
     /// </summary>
     public void AddPot()
     {
+        Debug.Log("AddPot called");
+
+        if (plantPotPrefab == null)
+        {
+            Debug.LogError("plantPotPrefab is NULL");
+            return;
+        }
+
+        if (potSlots == null || potSlots.Length == 0)
+        {
+            Debug.LogError("potSlots is empty!");
+            return;
+        }
+
+        Debug.Log("Slot count: " + potSlots.Length);
+
         foreach (Transform slot in potSlots)
         {
+            if (slot == null)
+            {
+                Debug.LogWarning("A slot entry is null, skipping");
+                continue;
+            }
+
             bool occupied = activePots.Exists(p => p.transform.position == slot.position);
+
             if (!occupied)
             {
+                Debug.Log("Spawning pot at: " + slot.position);
                 SpawnPot(slot.position);
                 return;
             }
         }
-        Debug.Log("All pot slots are full!");
+
+        Debug.Log("All slots full or no valid slot found");
     }
 
     public void RemovePot(PlantPotController pot)
@@ -136,5 +171,15 @@ public class PlantManager : MonoBehaviour
         GameObject go = Instantiate(plantPotPrefab, position, Quaternion.identity, potParent);
         PlantPotController ctrl = go.GetComponent<PlantPotController>();
         activePots.Add(ctrl);
+    }
+
+    private void OnDestroy()
+    {
+        Debug.Log("PlantManager was DESTROYED");
+    }
+
+    private void OnDisable()
+    {
+        Debug.Log("PlantManager was DISABLED");
     }
 }

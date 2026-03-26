@@ -11,10 +11,15 @@ public class PlantInstanceTooltipUI : TooltipBase
 
     private PlantInstance currentInstance;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        Debug.Log("PlantInstanceTooltipUI Awake - rectTransform null: " + (rectTransform == null));
+    }
+
     public void SetData(PlantInstance instance)
     {
         currentInstance = instance;
-
         nameText.text = instance.customName;
         growthText.text = "Stage: " + instance.currentGrowthStage;
         waterText.text = "Water: " + instance.waterLevel;
@@ -30,6 +35,12 @@ public class PlantInstanceTooltipUI : TooltipBase
 
     private void Position(Vector2 mousePosition)
     {
+        // Initialize if Awake hasn't run yet
+        if (rectTransform == null)
+            rectTransform = GetComponent<RectTransform>();
+        if (canvasGroup == null)
+            canvasGroup = GetComponent<CanvasGroup>();
+
         rectTransform.pivot = mousePosition.x > Screen.width / 2f
             ? new Vector2(1, 0.5f)
             : new Vector2(0, 0.5f);
@@ -46,7 +57,6 @@ public class PlantInstanceTooltipUI : TooltipBase
     {
         PlantDefinition def = PlantDatabaseManager.Instance
             .GetPlantDefinition(currentInstance.plantDefinitionId);
-
         TooltipManager.Instance.ShowDefinition(def, rectTransform.position);
     }
 }

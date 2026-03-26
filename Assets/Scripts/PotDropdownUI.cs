@@ -19,15 +19,16 @@ public class PotDropdownUI : MonoBehaviour
     public static PotDropdownUI Instance;
 
     [Header("References")]
-    public GameObject      buttonPrefab;   // a Button prefab with TMP_Text child
-    public SoilPickerUI    soilPicker;
-    public SeedPickerUI    seedPicker;
+    public GameObject buttonPrefab;   // a Button prefab with TMP_Text child
+    public SoilPickerUI soilPicker;
+    public SeedPickerUI seedPicker;
 
     private PlantPotController currentPot;
     private readonly List<GameObject> spawnedButtons = new List<GameObject>();
 
     private void Awake()
     {
+        Debug.Log("PotDropdownUI Awake called");
         Instance = this;
         gameObject.SetActive(false);
     }
@@ -69,20 +70,20 @@ public class PotDropdownUI : MonoBehaviour
 
         if (!data.hasSoil)
         {
-            AddButton("Add Soil",    OnAddSoil);
-            AddButton("Remove Pot",  OnRemovePot);
+            AddButton("Add Soil", OnAddSoil);
+            AddButton("Remove Pot", OnRemovePot);
         }
         else if (!data.hasPlant)
         {
-            AddButton("Add Plant",   OnAddPlant);
+            AddButton("Add Plant", OnAddPlant);
             AddButton("Remove Soil", OnRemoveSoil);
-            AddButton("Remove Pot",  OnRemovePot);
+            AddButton("Remove Pot", OnRemovePot);
         }
         else
         {
-            AddButton("Harvest",        OnHarvest);
+            AddButton("Harvest", OnHarvest);
             AddButton("Add Fertilizer", OnAddFertilizer);
-            AddButton("Remove Plant",   OnRemovePlant);
+            AddButton("Remove Plant", OnRemovePlant);
         }
     }
 

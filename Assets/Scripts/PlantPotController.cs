@@ -24,6 +24,10 @@ public class PlantPotController : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        Debug.Log("Pot clicked");
+        Debug.Log("PotDropdownUI.Instance is null: " + (PotDropdownUI.Instance == null));
+        Debug.Log("TooltipManager.Instance is null: " + (TooltipManager.Instance == null));
+
         if (TooltipManager.Instance != null)
             TooltipManager.Instance.HideAll();
 

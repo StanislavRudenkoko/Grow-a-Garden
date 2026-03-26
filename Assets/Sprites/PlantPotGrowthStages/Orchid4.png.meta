@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7f65604d784c7a54695e1334e6ab255a
+guid: 2c1a7ad3e61382d44b8b6d08fb88c114
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5989643719231090162
-    second: PlantPot_Stage1_0
+      213: 3193683187937870592
+    second: Orchid4_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlantPot_Stage1_0
+      name: Orchid4_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 408
-        height: 322
+        x: 54
+        y: 221
+        width: 167
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2fd2be76a3d7f1350800000000000000
-      internalID: 5989643719231090162
+      spriteID: 0038c2640fd325c20800000000000000
+      internalID: 3193683187937870592
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PlantPot_Stage1_0: 5989643719231090162
+      Orchid4_0: 3193683187937870592
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

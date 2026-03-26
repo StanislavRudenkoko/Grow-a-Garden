@@ -8,6 +8,11 @@ public class PlantDefinitionTooltipUI : TooltipBase
     public TMP_Text familyText;
     public TMP_Text descriptionText;
 
+    protected override void Awake()
+    {
+        base.Awake();
+    }
+
     public void SetData(PlantDefinition def)
     {
         displayNameText.text = def.displayName;

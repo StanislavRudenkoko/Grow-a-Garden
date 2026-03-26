@@ -34,6 +34,8 @@ public class TooltipManager : MonoBehaviour
     {
         yield return new WaitForSeconds(hoverDelay);
 
+        Debug.Log("Showing tooltip at mouse pos: " + pendingMousePos);
+
         instanceTooltip.SetData(pendingInstance);
         instanceTooltip.Show(pendingMousePos);
     }

@@ -16,11 +16,18 @@ public class SoilPickerUI : MonoBehaviour
     public GameObject buttonPrefab;
 
     private PlantPotController targetPot;
-    private PotDropdownUI      ownerDropdown;
+    private PotDropdownUI ownerDropdown;
 
+    public static SoilPickerUI Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+        gameObject.SetActive(false);
+    }
     public void OpenFor(PlantPotController pot, PotDropdownUI dropdown)
     {
-        targetPot     = pot;
+        targetPot = pot;
         ownerDropdown = dropdown;
 
         // Clear old buttons

@@ -13,15 +13,19 @@ public class TooltipBase : MonoBehaviour
     {
         canvasGroup = GetComponent<CanvasGroup>();
         rectTransform = GetComponent<RectTransform>();
+
+        Debug.Log(gameObject.name + " TooltipBase Awake - rectTransform null: " + (rectTransform == null));
+        Debug.Log(gameObject.name + " TooltipBase Awake - canvasGroup null: " + (canvasGroup == null));
     }
 
     protected void FadeIn()
     {
-        gameObject.SetActive(true);
+        if (rectTransform == null) rectTransform = GetComponent<RectTransform>();
+        if (canvasGroup == null) canvasGroup = GetComponent<CanvasGroup>();
 
+        gameObject.SetActive(true);
         if (fadeCoroutine != null)
             StopCoroutine(fadeCoroutine);
-
         fadeCoroutine = StartCoroutine(Fade(0f, 1f));
     }
 

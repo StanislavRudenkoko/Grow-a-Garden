@@ -16,11 +16,18 @@ public class SeedPickerUI : MonoBehaviour
     public GameObject buttonPrefab;
 
     private PlantPotController targetPot;
-    private PotDropdownUI      ownerDropdown;
+    private PotDropdownUI ownerDropdown;
 
+    public static SeedPickerUI Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+        gameObject.SetActive(false);
+    }
     public void OpenFor(PlantPotController pot, PotDropdownUI dropdown)
     {
-        targetPot     = pot;
+        targetPot = pot;
         ownerDropdown = dropdown;
 
         // Clear old buttons
@@ -56,12 +63,12 @@ public class SeedPickerUI : MonoBehaviour
     private void OnSeedSelected(PlantDefinition def)
     {
         PlantInstance data = targetPot.potData;
-        data.plantDefinitionId  = def.id;
-        data.customName         = def.displayName;
+        data.plantDefinitionId = def.id;
+        data.customName = def.displayName;
         data.currentGrowthStage = 0;
-        data.waterLevel         = 0f;
-        data.health             = 100f;
-        data.status             = PlantStatus.Healthy;
+        data.waterLevel = 0f;
+        data.health = 100f;
+        data.status = PlantStatus.Healthy;
 
         targetPot.RefreshVisuals();
 
