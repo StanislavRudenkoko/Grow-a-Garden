@@ -256,12 +256,12 @@ GameObject:
   - component: {fileID: 26575596}
   - component: {fileID: 26575597}
   m_Layer: 0
-  m_Name: Flower
+  m_Name: Flower6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &26575596
 Transform:
   m_ObjectHideFlags: 0
@@ -778,12 +778,12 @@ GameObject:
   - component: {fileID: 211258839}
   - component: {fileID: 211258840}
   m_Layer: 0
-  m_Name: Flower
+  m_Name: Flower1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &211258839
 Transform:
   m_ObjectHideFlags: 0
@@ -1172,12 +1172,12 @@ GameObject:
   - component: {fileID: 368185554}
   - component: {fileID: 368185555}
   m_Layer: 0
-  m_Name: Soil
+  m_Name: Soil3
   m_TagString: Dirt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &368185554
 Transform:
   m_ObjectHideFlags: 0
@@ -1565,7 +1565,7 @@ GameObject:
   - component: {fileID: 528153941}
   - component: {fileID: 528153942}
   m_Layer: 0
-  m_Name: PotBack
+  m_Name: PotBack1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1789,12 +1789,12 @@ GameObject:
   - component: {fileID: 637553319}
   - component: {fileID: 637553320}
   m_Layer: 0
-  m_Name: Soil
+  m_Name: Soil1
   m_TagString: Dirt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &637553319
 Transform:
   m_ObjectHideFlags: 0
@@ -2241,12 +2241,12 @@ GameObject:
   - component: {fileID: 757761727}
   - component: {fileID: 757761728}
   m_Layer: 0
-  m_Name: Soil
+  m_Name: Soil5
   m_TagString: Dirt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &757761727
 Transform:
   m_ObjectHideFlags: 0
@@ -2697,12 +2697,12 @@ GameObject:
   - component: {fileID: 1110794038}
   - component: {fileID: 1110794039}
   m_Layer: 0
-  m_Name: Flower
+  m_Name: Flower3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1110794038
 Transform:
   m_ObjectHideFlags: 0
@@ -2788,12 +2788,12 @@ GameObject:
   - component: {fileID: 1156814624}
   - component: {fileID: 1156814625}
   m_Layer: 0
-  m_Name: Soil
+  m_Name: Soil4
   m_TagString: Dirt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1156814624
 Transform:
   m_ObjectHideFlags: 0
@@ -2898,8 +2898,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GardenManager
   soil: {fileID: 637553318}
-  plant: {fileID: 2067007906}
+  plant: {fileID: 211258838}
   growthStages: []
+  flowerRenderer: {fileID: 211258840}
 --- !u!4 &1251632426
 Transform:
   m_ObjectHideFlags: 0
@@ -2926,12 +2927,12 @@ GameObject:
   - component: {fileID: 1271980947}
   - component: {fileID: 1271980948}
   m_Layer: 0
-  m_Name: Flower
+  m_Name: Flower4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1271980947
 Transform:
   m_ObjectHideFlags: 0
@@ -3241,12 +3242,12 @@ GameObject:
   - component: {fileID: 1386955887}
   - component: {fileID: 1386955888}
   m_Layer: 0
-  m_Name: Soil
+  m_Name: Soil6
   m_TagString: Dirt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1386955887
 Transform:
   m_ObjectHideFlags: 0
@@ -3682,12 +3683,12 @@ GameObject:
   - component: {fileID: 1591083928}
   - component: {fileID: 1591083929}
   m_Layer: 0
-  m_Name: Flower
+  m_Name: Flower5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1591083928
 Transform:
   m_ObjectHideFlags: 0
@@ -4264,7 +4265,7 @@ GameObject:
   - component: {fileID: 1822868276}
   - component: {fileID: 1822868277}
   m_Layer: 0
-  m_Name: PotFront
+  m_Name: PotFront1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4355,12 +4356,12 @@ GameObject:
   - component: {fileID: 1854991398}
   - component: {fileID: 1854991399}
   m_Layer: 0
-  m_Name: Soil
+  m_Name: Soil2
   m_TagString: Dirt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1854991398
 Transform:
   m_ObjectHideFlags: 0
@@ -4487,7 +4488,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2067007907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4501,14 +4502,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlantManager
   plantData: {fileID: 0}
-  soil: {fileID: 0}
-  plant: {fileID: 0}
+  soil: {fileID: 637553318}
+  plant: {fileID: 211258838}
   growthStages:
-  - {fileID: -3735054867023962594, guid: 5cd400be114106b4699467235410126b, type: 3}
-  - {fileID: 5989643719231090162, guid: 7f65604d784c7a54695e1334e6ab255a, type: 3}
-  - {fileID: 4574653076701713686, guid: 1e1952c5535cb5b4ba83fd20889d5672, type: 3}
-  - {fileID: 6393352377757650912, guid: 9876252a0cf7b9f469423d6270ffa74c, type: 3}
-  - {fileID: 2286000123702718619, guid: 02f675b58e9dd7342b550e97582ccf48, type: 3}
+  - {fileID: 1508734276152258813, guid: 79c52ad3ca2c55c4b8a4f8e6a83f56c9, type: 3}
+  - {fileID: 6223568682805356479, guid: 9e373fa13073afa41bc4a4db3f1d03b3, type: 3}
+  - {fileID: -1605047033545464262, guid: 5e02340b0465cc64ca16edc5aa63c195, type: 3}
+  - {fileID: -450928700761594221, guid: 0a9ac0bb38680cd46947dc60a16ee30d, type: 3}
+  - {fileID: -1469759646845738395, guid: 098bc0c10f2a4d940ad7018b92d95635, type: 3}
   growthTime: 0.7
   soilButton: {fileID: 0}
   seedButton: {fileID: 0}
@@ -4563,7 +4564,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -3735054867023962594, guid: 5cd400be114106b4699467235410126b, type: 3}
+  m_Sprite: {fileID: 1508734276152258813, guid: 79c52ad3ca2c55c4b8a4f8e6a83f56c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4599,12 +4600,12 @@ GameObject:
   - component: {fileID: 2088286075}
   - component: {fileID: 2088286076}
   m_Layer: 0
-  m_Name: Flower
+  m_Name: Flower2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2088286075
 Transform:
   m_ObjectHideFlags: 0
