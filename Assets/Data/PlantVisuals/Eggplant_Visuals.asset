@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4180945ba44bb44c9e728b363e761c1, type: 3}
-  m_Name: Carrot_Visual
+  m_Name: Eggplant_Visuals
   m_EditorClassIdentifier: Assembly-CSharp::PlantVisualData
-  plantDefinitionId: carrot
+  plantDefinitionId: eggplant
   growthStageSprites:
   - {fileID: 1508734276152258813, guid: 79c52ad3ca2c55c4b8a4f8e6a83f56c9, type: 3}
-  - {fileID: -8703343332176484395, guid: 11ff4246cb07012409a4138c7db7744e, type: 3}
-  - {fileID: 2457715619905715091, guid: 5d7f2ef824e5b0841b500a6db2cbf7ef, type: 3}
-  - {fileID: 5540354210898670013, guid: 6ca164ab831cb3a42bde6eda332c90a9, type: 3}
-  - {fileID: -8157165606216441942, guid: 74e2fbab55dc62946a556104ca116d3f, type: 3}
+  - {fileID: 5700950279665927423, guid: b52806bf8229d1443bc27341510a044a, type: 3}
+  - {fileID: 4576279890150973432, guid: 134f14191eaa3b84cb9ca77f6a65cbb8, type: 3}
+  - {fileID: 2610891382841225824, guid: bfa2534bd86012c4888ae11c9de0cfaa, type: 3}
+  - {fileID: -9162957260123843602, guid: 210a08789fe432c459de8929d30f47cc, type: 3}

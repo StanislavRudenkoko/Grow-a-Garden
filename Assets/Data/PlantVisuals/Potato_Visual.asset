@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4180945ba44bb44c9e728b363e761c1, type: 3}
-  m_Name: Carrot_Visual
+  m_Name: Potato_Visual
   m_EditorClassIdentifier: Assembly-CSharp::PlantVisualData
-  plantDefinitionId: carrot
+  plantDefinitionId: potato
   growthStageSprites:
   - {fileID: 1508734276152258813, guid: 79c52ad3ca2c55c4b8a4f8e6a83f56c9, type: 3}
-  - {fileID: -8703343332176484395, guid: 11ff4246cb07012409a4138c7db7744e, type: 3}
-  - {fileID: 2457715619905715091, guid: 5d7f2ef824e5b0841b500a6db2cbf7ef, type: 3}
-  - {fileID: 5540354210898670013, guid: 6ca164ab831cb3a42bde6eda332c90a9, type: 3}
-  - {fileID: -8157165606216441942, guid: 74e2fbab55dc62946a556104ca116d3f, type: 3}
+  - {fileID: 1889158031495529450, guid: 81a043ffc34038b48aeb17b3de7f62be, type: 3}
+  - {fileID: 7220509810093316105, guid: d714cf855cb1cf34ea479bea079873ec, type: 3}
+  - {fileID: 364867078988347017, guid: 7704dae055f00f940830fcaae9993b96, type: 3}
+  - {fileID: -4613718620243013361, guid: 13cc21024e817494d8269bc064ebe631, type: 3}
+  - {fileID: -2458193797527327474, guid: 0de995a45f4e71f47b8c1580a177f2e8, type: 3}

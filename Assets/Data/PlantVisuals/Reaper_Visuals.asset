@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4180945ba44bb44c9e728b363e761c1, type: 3}
-  m_Name: Carrot_Visual
+  m_Name: Reaper_Visuals
   m_EditorClassIdentifier: Assembly-CSharp::PlantVisualData
-  plantDefinitionId: carrot
+  plantDefinitionId: reaper
   growthStageSprites:
   - {fileID: 1508734276152258813, guid: 79c52ad3ca2c55c4b8a4f8e6a83f56c9, type: 3}
-  - {fileID: -8703343332176484395, guid: 11ff4246cb07012409a4138c7db7744e, type: 3}
-  - {fileID: 2457715619905715091, guid: 5d7f2ef824e5b0841b500a6db2cbf7ef, type: 3}
-  - {fileID: 5540354210898670013, guid: 6ca164ab831cb3a42bde6eda332c90a9, type: 3}
-  - {fileID: -8157165606216441942, guid: 74e2fbab55dc62946a556104ca116d3f, type: 3}
+  - {fileID: -4937160287474473323, guid: 16b41de8e0c44e14f8bb4730e3c344b4, type: 3}
+  - {fileID: 2721742990610538885, guid: 7a599f237ea89b34fbb17df3a40cac75, type: 3}
+  - {fileID: 7915852741720774165, guid: 1f4d4a433b061f74bb33d5c69f2b21e8, type: 3}
+  - {fileID: -5688630728989771117, guid: 551a3d15256ded0418c92925a67cf631, type: 3}

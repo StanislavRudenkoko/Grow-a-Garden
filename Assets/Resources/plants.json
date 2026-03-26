@@ -37,7 +37,7 @@
         "regrowable": true
       },
       "environmentRequirements": {
-        "idealSoilTypes": ["Dirt"],
+        "idealSoilTypes": [""],
         "waterPerDay": 2,
         "sunlightLevel": "FullSun",
         "temperatureMin": 7,
@@ -61,7 +61,7 @@
         "regrowable": true
       },
       "environmentRequirements": {
-        "idealSoilTypes": ["Dirt"],
+        "idealSoilTypes": [""],
         "waterPerDay": 3,
         "sunlightLevel": "FullSun",
         "temperatureMin": 15,
@@ -85,7 +85,7 @@
         "regrowable": false
       },
       "environmentRequirements": {
-        "idealSoilTypes": ["Dirt"],
+        "idealSoilTypes": [""],
         "waterPerDay": 3,
         "sunlightLevel": "FullSun",
         "temperatureMin": 18,
