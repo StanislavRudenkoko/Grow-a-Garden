@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 75d38ee522575c94988cc02a54365c49
+guid: 81a043ffc34038b48aeb17b3de7f62be
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2241692373911561211
-    second: Orchid0_0
+      213: 1889158031495529450
+    second: potato_1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Orchid0_0
+      name: potato_1_0
       rect:
         serializedVersion: 2
-        x: 74
-        y: 223
-        width: 128
-        height: 33
+        x: 66
+        y: 198
+        width: 171
+        height: 133
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 50c9c45b9a8e3e0e0800000000000000
-      internalID: -2241692373911561211
+      spriteID: ae30edf6833a73a10800000000000000
+      internalID: 1889158031495529450
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Orchid0_0: -2241692373911561211
+      potato_1_0: 1889158031495529450
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

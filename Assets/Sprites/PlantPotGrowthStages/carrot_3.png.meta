@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: dd9fd8d20bfa1f74d85ac8d9f01242e2
+guid: 6ca164ab831cb3a42bde6eda332c90a9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5166898942785920218
-    second: Orchid1_0
+      213: 5540354210898670013
+    second: carrot_3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Orchid1_0
+      name: carrot_3_0
       rect:
         serializedVersion: 2
-        x: 74
-        y: 223
-        width: 128
-        height: 56
+        x: 66
+        y: 198
+        width: 171
+        height: 111
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 62367e479cc7b48b0800000000000000
-      internalID: -5166898942785920218
+      spriteID: db1747efcca43ec40800000000000000
+      internalID: 5540354210898670013
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Orchid1_0: -5166898942785920218
+      carrot_3_0: 5540354210898670013
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
