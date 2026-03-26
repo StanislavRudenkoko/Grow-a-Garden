@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4180945ba44bb44c9e728b363e761c1, type: 3}
   m_Name: Orchid_Visual
   m_EditorClassIdentifier: Assembly-CSharp::PlantVisualData
-  plantDefinitionId: 
+  plantDefinitionId: orchid
   growthStageSprites:
   - {fileID: -9153205074856453415, guid: 0b29a7ecff733834d95e53b6ac031202, type: 3}
   - {fileID: -2855458541216367180, guid: fe7219086542af1499a5d648f0f4ca66, type: 3}

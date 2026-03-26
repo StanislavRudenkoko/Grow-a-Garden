@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4180945ba44bb44c9e728b363e761c1, type: 3}
   m_Name: Carrot_Visual
   m_EditorClassIdentifier: Assembly-CSharp::PlantVisualData
-  plantDefinitionId: 
+  plantDefinitionId: carrot
   growthStageSprites:
   - {fileID: 5634026908348037240, guid: 09e3448ba82ee1149ade840b4c4dbebd, type: 3}
   - {fileID: -8703343332176484395, guid: 11ff4246cb07012409a4138c7db7744e, type: 3}

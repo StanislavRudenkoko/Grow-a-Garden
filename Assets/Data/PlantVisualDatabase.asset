@@ -16,5 +16,6 @@ MonoBehaviour:
   - soilType: Dirt
     sprite: {fileID: 5634026908348037240, guid: 09e3448ba82ee1149ade840b4c4dbebd, type: 3}
   plantVisuals:
+  - {fileID: 11400000, guid: 999c80866ce9c0e44ae4a4ed5f3bf06c, type: 2}
   - {fileID: 11400000, guid: 1bbc6700ed8ee7a4596ccdae6facdb7f, type: 2}
-  - {fileID: 11400000, guid: 1bbc6700ed8ee7a4596ccdae6facdb7f, type: 2}
+  - {fileID: 11400000, guid: 4e7b543d7be6cdb4b8879355c26c4ab5, type: 2}
