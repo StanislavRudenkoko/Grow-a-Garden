@@ -32,15 +32,18 @@ public class PlantManager : MonoBehaviour
     /// On Scene start load plant sprites and buttons to correct state
     ///</summary>
     void Start()
-    {
-        sr = plant.GetComponent<SpriteRenderer>();
-        soil.SetActive(false);
-        plant.SetActive(false);
-        sr.sprite = growthStages[0];
-        harvestButton.gameObject.SetActive(false);
-        seedButton.gameObject.SetActive(false);
-        waterButton.gameObject.SetActive(false);
-    }
+{
+    var data = PlantData.Instance;
+
+    hasSoil = data.hasSoil;
+    hasSeed = data.hasSeed;
+    currentStage = data.currentStage;
+
+    soil.SetActive(hasSoil);
+    plant.SetActive(hasSeed);
+    sr = plant.GetComponent<SpriteRenderer>();
+    sr.sprite = growthStages[currentStage];
+}
 
     ///<summary>
     /// Every frame check if plant is growing to increase the growth stage
@@ -79,6 +82,11 @@ public class PlantManager : MonoBehaviour
     ///</summary>
     public void BackToGarden()
     {
+    if (PlantData.Instance == null)
+    {
+        Debug.LogError("PlantData instance not found!");
+        return;
+    }
     PlantData.Instance.currentStage = currentStage;
     PlantData.Instance.hasSoil = hasSoil;
     PlantData.Instance.hasSeed = hasSeed;

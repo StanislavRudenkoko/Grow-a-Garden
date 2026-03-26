@@ -22,17 +22,22 @@ public class GardenManager : MonoBehaviour
     ///</summary>
     void Start()
     {
-    int stage = PlantData.Instance.currentStage;
-    bool hasSoil = PlantData.Instance.hasSoil;
-    bool hasSeed = PlantData.Instance.hasSeed;
-    soil.SetActive(hasSoil);
-    plant.SetActive(hasSeed);
-    if (hasSeed)
-    {
+        if (PlantData.Instance == null)
+        {
+            Debug.LogError("PlantData not found!");
+            return;
+        }
         sr = plant.GetComponent<SpriteRenderer>();
-        sr.sprite = growthStages[stage];
+        int stage = Mathf.Clamp(PlantData.Instance.currentStage, 0, growthStages.Length - 1);
+        bool hasSoil = PlantData.Instance.hasSoil;
+        bool hasSeed = PlantData.Instance.hasSeed;
+        soil.SetActive(hasSoil);
+        plant.SetActive(hasSeed);
+        if (hasSeed)
+        {
+            sr.sprite = growthStages[stage];
+        }
     }
-}
 
     ///<summary>
     /// Load the Plant Manager scene from the Garden Scene
