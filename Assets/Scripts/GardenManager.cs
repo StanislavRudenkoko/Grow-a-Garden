@@ -23,18 +23,14 @@ public class GardenManager : MonoBehaviour
 {
     if (PlantData.Instance == null)
     {
-        Debug.LogError("PlantData not found!");
+        Debug.Log("PlantData not found!");
         return;
     }
-    int stage = Mathf.Clamp(PlantData.Instance.currentStage, 0, growthStages.Length - 1);
+    int stage = PlantData.Instance.currentStage;
     bool hasSoil = PlantData.Instance.hasSoil;
     bool hasSeed = PlantData.Instance.hasSeed;
     soil.SetActive(hasSoil);
     flowerRenderer.gameObject.SetActive(hasSeed);
-    if (hasSeed)
-    {
-        flowerRenderer.sprite = growthStages[stage];
-    }
 }
 
     ///<summary>
