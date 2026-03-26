@@ -7,6 +7,7 @@ using UnityEngine.UI;
 /// Populates the store items.
 /// Author: Tin Trinh
 /// Date: Mar. 4, 2026
+/// Revised: Mar.25, 2026
 /// Source: Various discussions on https://discussions.unity.com
 /// </summary>
 public class PopulateStore : MonoBehaviour
@@ -46,6 +47,9 @@ public class PopulateStore : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Updates the quantity of each item.
+    /// </summary>
     public void Refresh()
     {
         foreach (Transform slot in transform)

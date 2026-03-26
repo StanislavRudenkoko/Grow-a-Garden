@@ -1,5 +1,10 @@
 using UnityEngine;
-
+/// <summary>
+/// Item class. Contains the item information and the quantity held by the store and the player.
+/// Author: Tin Trinh
+/// Date: Mar. 25, 2026
+/// Source: None
+/// </summary>
 public class Item : MonoBehaviour
 {
     [SerializeField] private int quantityStore;

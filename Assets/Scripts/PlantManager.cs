@@ -30,7 +30,7 @@ public class PlantManager : MonoBehaviour
 
     void Start()
     {
-        player = ObjectGetter.GetInstance.player;
+        player = ObjectGetter.GetPlayer();
         sr = plant.GetComponent<SpriteRenderer>();
         soil.SetActive(false);
         plant.SetActive(false);

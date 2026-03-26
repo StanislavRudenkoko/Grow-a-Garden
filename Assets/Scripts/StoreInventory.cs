@@ -1,6 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Holds/Populates the store inventory
+/// Author: Tin Trinh
+/// Date: Mar. 25, 2026
+/// Source: None
+/// </summary>
 public class StoreInventory : MonoBehaviour
 {
     [SerializeField]

@@ -1,6 +1,12 @@
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Inventory class.
+/// Author: Tin Trinh
+/// Date: Mar. 25, 2026
+/// Source: None
+/// </summary>
 public class Inventory : MonoBehaviour
 {
     public Player player;

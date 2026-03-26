@@ -1,12 +1,11 @@
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Populates the store items.
+/// Populates the player inventory.
 /// Author: Tin Trinh
-/// Date: Mar. 4, 2026
+/// Date: Mar. 25, 2026
 /// Source: Various discussions on https://discussions.unity.com
 /// </summary>
 public class PopulateInventory : MonoBehaviour
@@ -22,14 +21,8 @@ public class PopulateInventory : MonoBehaviour
         Populate();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     /// <summary>
-    /// Populates the Store items slots.
+    /// Populates the inventory items slots.
     /// </summary>
     void Populate()
     {

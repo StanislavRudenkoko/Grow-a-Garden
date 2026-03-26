@@ -35,12 +35,6 @@ public class Player : MonoBehaviour
         DayCount = 0;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     /// <summary>
     /// Method to buy an item.
     /// </summary>

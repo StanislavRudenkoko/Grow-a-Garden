@@ -1,11 +1,14 @@
 
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 /// <summary>
-/// Store class.
+/// Store class
+/// Author: Tin Trinh
+/// Date: Mar. 4, 2026
+/// Revision: Mar. 25, 2026
+/// Source: None
 /// </summary>
 public class Store : MonoBehaviour
 {
@@ -23,6 +26,11 @@ public class Store : MonoBehaviour
         transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = $"Coins: ${player.Coins}";
     }
 
+    /// <summary>
+    /// Buy an item.
+    /// </summary>
+    /// <param name="amount"></param>
+    /// <param name="item"></param>
     public void BuyItem(int amount, Item item)
     {
         player.BuyItem(amount, item);
