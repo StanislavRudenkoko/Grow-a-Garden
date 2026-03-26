@@ -52,8 +52,14 @@ public class Player : MonoBehaviour
         {
             return false;
         }
+
         Coins -= amount;
-        Inventory.Add(item);
+        if (!Inventory.Contains(item))
+        {
+            Inventory.Add(item);
+        }
+        item.QuantityPlayer += 1;
+        item.QuantityStore -= 1;
         return true;
     }
 
@@ -61,13 +67,16 @@ public class Player : MonoBehaviour
     /// Method for player to gain coins.
     /// </summary>
     /// <param name="amount"></param>
-    /// <returns></returns>
+    /// <returns>a bool</returns>
     public bool GainCoins(int amount)
     {
         Coins += amount;
         return true;
     }
-
+    /// <summary>
+    /// Returns a representation of the player.
+    /// </summary>
+    /// <returns>a string</returns>
     public override string ToString()
     {
         return string.Format("Player: {0} / {1} / {2}", PlayerName, Coins, PlantsHarvested);

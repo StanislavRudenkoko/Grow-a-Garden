@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 140298599}
   m_Layer: 5
   m_Name: Content
-  m_TagString: Untagged
+  m_TagString: Content
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -247,24 +247,14 @@ MonoBehaviour:
   slot: {fileID: -4919192478548750739, guid: 61151427833de8e41911e49a6c6c7bd3, type: 3}
   store: {fileID: 1751509998}
   items:
-  - {fileID: 11400000, guid: 6125d02753e9b6b4fae560e3a4e9ef9b, type: 2}
-  - {fileID: 11400000, guid: 5a54ce1b093b7844f9f64eee57208a7a, type: 2}
-  - {fileID: 11400000, guid: 272e393497e11004eb32cbf310ffb539, type: 2}
-  - {fileID: 11400000, guid: 4f3181f7e38165c44add32390dbe3cd2, type: 2}
-  - {fileID: 11400000, guid: 4c509e20e9b7a1045a32dd5e15c35b35, type: 2}
-  - {fileID: 11400000, guid: 7deef598f630be74c82dcca9d3de112e, type: 2}
-  - {fileID: 11400000, guid: 7deef598f630be74c82dcca9d3de112e, type: 2}
-  - {fileID: 11400000, guid: 7deef598f630be74c82dcca9d3de112e, type: 2}
-  - {fileID: 11400000, guid: 7deef598f630be74c82dcca9d3de112e, type: 2}
-  - {fileID: 11400000, guid: 7deef598f630be74c82dcca9d3de112e, type: 2}
-  - {fileID: 11400000, guid: 7deef598f630be74c82dcca9d3de112e, type: 2}
-  - {fileID: 11400000, guid: 7deef598f630be74c82dcca9d3de112e, type: 2}
-  - {fileID: 11400000, guid: 7deef598f630be74c82dcca9d3de112e, type: 2}
-  - {fileID: 11400000, guid: 7deef598f630be74c82dcca9d3de112e, type: 2}
-  - {fileID: 11400000, guid: 7deef598f630be74c82dcca9d3de112e, type: 2}
-  - {fileID: 11400000, guid: 7deef598f630be74c82dcca9d3de112e, type: 2}
-  - {fileID: 11400000, guid: 7deef598f630be74c82dcca9d3de112e, type: 2}
-  - {fileID: 11400000, guid: 7deef598f630be74c82dcca9d3de112e, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  item: {fileID: 3539512732934134249, guid: 1205539ecfb24db4d9762416ed0c45e4, type: 3}
 --- !u!114 &140298600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -634,7 +624,7 @@ GameObject:
   - component: {fileID: 405745988}
   - component: {fileID: 405745987}
   m_Layer: 5
-  m_Name: Scroll View
+  m_Name: StoreInventoryHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1668,6 +1658,7 @@ GameObject:
   - component: {fileID: 1751509995}
   - component: {fileID: 1751509994}
   - component: {fileID: 1751509998}
+  - component: {fileID: 1751509999}
   m_Layer: 5
   m_Name: Store
   m_TagString: Untagged
@@ -1776,6 +1767,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Store
   player: {fileID: 0}
+--- !u!114 &1751509999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751509993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08333cff0b08d554f8911e568f14e2d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Navigation
 --- !u!1 &1854588060
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,9 +1939,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1751509998}
-        m_TargetAssemblyTypeName: Store, Assembly-CSharp
-        m_MethodName: BackToGarden
+      - m_Target: {fileID: 1751509999}
+        m_TargetAssemblyTypeName: Navigation, Assembly-CSharp
+        m_MethodName: ToGarden
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

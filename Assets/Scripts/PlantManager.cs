@@ -30,7 +30,7 @@ public class PlantManager : MonoBehaviour
 
     void Start()
     {
-        player = PlayerGetter.GetInstance.player;
+        player = ObjectGetter.GetInstance.player;
         sr = plant.GetComponent<SpriteRenderer>();
         soil.SetActive(false);
         plant.SetActive(false);
@@ -106,14 +106,5 @@ public class PlantManager : MonoBehaviour
         timer = 0f;
         waterButton.gameObject.SetActive(true);
         harvestButton.gameObject.SetActive(false);
-    }
-
-    /// <summary>
-    /// TEMP
-    /// </summary>
-    public void ToStore()
-    {
-        DontDestroyOnLoad(player);
-        SceneManager.LoadScene("Store");
     }
 }

@@ -16,5 +16,5 @@ MonoBehaviour:
   description: A bag of carrot seeds.
   category: 0
   price: 15
-  quantity: 5
+  startingQuantity: 3
   itemSprite: {fileID: -8068465142677191720, guid: 16f54730100adbc45a1fd2569ef53a4c, type: 3}

@@ -86,9 +86,9 @@ GameObject:
   - component: {fileID: 6963875539980960100}
   - component: {fileID: 8379531846903940365}
   - component: {fileID: 3140755905903022892}
-  - component: {fileID: -309197031388905826}
+  - component: {fileID: -4919192478548750739}
   m_Layer: 5
-  m_Name: Slot
+  m_Name: SlotStore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &-309197031388905826
+--- !u!114 &-4919192478548750739
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,10 +164,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 587167347070498821}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f56934e2e116f6942b706a3663a0eb28, type: 3}
+  m_Script: {fileID: 11500000, guid: 29212a4b6ae47a44aa1a6766dddd0021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Slot
   info: {fileID: 0}
+  confirmationBox: {fileID: 3268677828489263170, guid: a565f744d327c6a4cbbec7c1e63d3002, type: 3}
 --- !u!1 &2307175913454089854
 GameObject:
   m_ObjectHideFlags: 0

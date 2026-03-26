@@ -9,10 +9,12 @@ public class ConfirmationBox : MonoBehaviour
 {
     public Item Item { get; set; }
     public Store Store {get; set;}
+    public GameObject content;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        content = GameObject.FindGameObjectWithTag("Content");
     }
 
     // Update is called once per frame
@@ -25,8 +27,15 @@ public class ConfirmationBox : MonoBehaviour
     /// </summary>
     public void Buy()
     {
-        // Debug.Log("Player buys Item if coins are sufficient.");
-        Store.BuyItem(Item.Price, Item);
+        if (Item.QuantityStore > 0)
+        {   
+            Store.BuyItem(Item.Price, Item);
+            content.GetComponent<PopulateStore>().Refresh();
+        }
+        else
+        {
+            Debug.Log("another pop up");
+        }
         // logic here
         Destroy(gameObject);
     }

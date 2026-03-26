@@ -9,18 +9,23 @@ using UnityEngine.UI;
 /// Date: Mar. 4, 2026
 /// Source: Various discussions on https://discussions.unity.com
 /// </summary>
-public class PopulateStore : MonoBehaviour
+public class PopulateInventory : MonoBehaviour
 {
-    public SlotStore slot;
-    public Store store;
-    public List<Item> items;
-    public Item item;
+    public Slot slot;
+    public Player player;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        items = ObjectGetter.GetStoreInventory().Items;
+        player = ObjectGetter.GetInstance.player;
         Populate();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
     }
 
     /// <summary>
@@ -28,12 +33,11 @@ public class PopulateStore : MonoBehaviour
     /// </summary>
     void Populate()
     {
-        SlotStore obj;
-        foreach (Item itemInfoWrapper in items)
+        Slot obj;
+        foreach (Item item in player.Inventory)
         {
             obj = Instantiate(slot, transform);
-            obj.info = itemInfoWrapper;
-            obj.Store = store;
+            obj.info = item;
             Image objImage = obj.transform.GetChild(0).GetComponent<Image>();
             TextMeshProUGUI objTitle = obj.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
             TextMeshProUGUI objPrice = obj.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
@@ -42,17 +46,7 @@ public class PopulateStore : MonoBehaviour
             objImage.preserveAspect = true;
             objTitle.text = obj.info.Name;
             objPrice.text = $"${obj.info.Price}";
-            objQuantity.text = $"x{obj.info.QuantityStore}";
+            objQuantity.text = $"x{obj.info.QuantityPlayer}";
         }
-    }
-
-    public void Refresh()
-    {
-        foreach (Transform slot in transform)
-        {
-            TextMeshProUGUI objQuantity = slot.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
-            objQuantity.text = $"x{slot.GetComponent<SlotStore>().info.QuantityStore}";
-        }
-        Debug.Log("Refreshed");
     }
 }

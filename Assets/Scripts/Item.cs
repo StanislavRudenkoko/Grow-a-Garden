@@ -1,26 +1,40 @@
-using NUnit.Framework.Internal.Commands;
 using UnityEngine;
 
-/// <summary>
-/// Item ScriptableObject
-/// Author: Tin Trinh
-/// Date: Mar. 4, 2026
-/// Source: None
-/// </summary>
-[CreateAssetMenu(fileName = "Item", menuName = "Scriptable Objects/Item")]
-public class Item : ScriptableObject
+public class Item : MonoBehaviour
 {
-    [SerializeField] private new string name;
-    [SerializeField] private string description;
-    [SerializeField] private ItemCategory category;
-    [SerializeField] private int price;
-    [SerializeField] private int quantity;
-    [SerializeField] private Sprite itemSprite;
+    [SerializeField] private int quantityStore;
+    [SerializeField] private int quantityPlayer;
+    [SerializeField] private ItemInfo itemInfo;
+    public ItemInfo ItemInfo {set
+        {
+            itemInfo = value;
+        }
+    get => itemInfo;}
 
-    public string Name { get => name; }
-    public string Description { get => description; }
-    public ItemCategory ItemCategory { get => category; }
-    public int Price { get => price; }
-    public int Quantity { get => quantity; }
-    public Sprite ItemSprite { get => itemSprite; }
+    public string Name { get => ItemInfo.Name; }
+    public string Description { get => ItemInfo.Description; }
+    public ItemCategory ItemCategory { get => ItemInfo.ItemCategory; }
+    public int Price { get => ItemInfo.Price; }
+    public Sprite ItemSprite { get => ItemInfo.ItemSprite; }
+    public int QuantityStore { 
+        get => quantityStore; 
+        set { quantityStore = value; } 
+    }
+    public int QuantityPlayer { 
+        get => quantityPlayer; 
+        set { quantityPlayer = value; } 
+    }
+
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 }
