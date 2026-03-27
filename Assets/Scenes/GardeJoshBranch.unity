@@ -3203,7 +3203,12 @@ MonoBehaviour:
   plantData: {fileID: 0}
   soil: {fileID: 1854991397}
   plant: {fileID: 2088286074}
-  growthStages: []
+  growthStages:
+  - {fileID: 1508734276152258813, guid: 79c52ad3ca2c55c4b8a4f8e6a83f56c9, type: 3}
+  - {fileID: 6223568682805356479, guid: 9e373fa13073afa41bc4a4db3f1d03b3, type: 3}
+  - {fileID: -1605047033545464262, guid: 5e02340b0465cc64ca16edc5aa63c195, type: 3}
+  - {fileID: -450928700761594221, guid: 0a9ac0bb38680cd46947dc60a16ee30d, type: 3}
+  - {fileID: -1469759646845738395, guid: 098bc0c10f2a4d940ad7018b92d95635, type: 3}
   growthTime: 3
   soilButton: {fileID: 0}
   seedButton: {fileID: 0}
