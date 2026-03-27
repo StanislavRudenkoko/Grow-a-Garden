@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: f5fe7a670c5ea33459edd35132509557
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - plantData: {instanceID: 0}
+  - soil: {instanceID: 0}
+  - plant: {instanceID: 0}
+  - soilButton: {instanceID: 0}
+  - seedButton: {instanceID: 0}
+  - waterButton: {instanceID: 0}
+  - harvestButton: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
