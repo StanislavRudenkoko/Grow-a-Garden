@@ -2494,14 +2494,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlantManagerPlantState
   plantData: {fileID: 0}
-  soil: {fileID: 0}
-  plant: {fileID: 0}
+  soil: {fileID: 516278652}
+  plant: {fileID: 740994641}
   growthStages: []
   growthTime: 3
-  soilButton: {fileID: 0}
-  seedButton: {fileID: 0}
-  waterButton: {fileID: 0}
-  harvestButton: {fileID: 0}
+  soilButton: {fileID: 1904985633}
+  seedButton: {fileID: 1639272312}
+  waterButton: {fileID: 1193650758}
+  harvestButton: {fileID: 293713}
 --- !u!1 &1904985631
 GameObject:
   m_ObjectHideFlags: 0
@@ -2700,15 +2700,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5fe7a670c5ea33459edd35132509557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlantManagerPlantState
-  plantData: {fileID: 0}
-  soil: {fileID: 0}
-  plant: {fileID: 0}
+  plantData: {fileID: 51414424}
+  soil: {fileID: 516278652}
+  plant: {fileID: 740994641}
   growthStages: []
   growthTime: 3
-  soilButton: {fileID: 0}
-  seedButton: {fileID: 0}
-  waterButton: {fileID: 0}
-  harvestButton: {fileID: 0}
+  soilButton: {fileID: 1904985633}
+  seedButton: {fileID: 1639272312}
+  waterButton: {fileID: 1193650758}
+  harvestButton: {fileID: 293713}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
