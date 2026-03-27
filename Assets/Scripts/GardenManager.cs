@@ -43,7 +43,7 @@ public class GardenManager : MonoBehaviour
         {
             PlantData.Instance.currentPot = value;
         }
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("ViewingPlant");
     }
 
     /// <summary>
