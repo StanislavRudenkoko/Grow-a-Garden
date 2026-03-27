@@ -35,26 +35,25 @@ public class Player : MonoBehaviour
         DayCount = 0;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     /// <summary>
-    /// Method to spend player coins.
+    /// Method to buy an item.
     /// </summary>
     /// <param name="amount"></param>
-    /// <returns></returns>
-    public bool SpendCoins(int amount)
+    /// <returns>a bool</returns>
+    public bool BuyItem(int amount, Item item)
     {
         if (amount > Coins)
         {
-            Debug.Log("Player does not have enough coins, alert pop up");
             return false;
         }
-        Debug.Log("Player's Coins get updated. Remember to update Store");
+
         Coins -= amount;
+        if (!Inventory.Contains(item))
+        {
+            Inventory.Add(item);
+        }
+        item.QuantityPlayer += 1;
+        item.QuantityStore -= 1;
         return true;
     }
 
@@ -62,13 +61,16 @@ public class Player : MonoBehaviour
     /// Method for player to gain coins.
     /// </summary>
     /// <param name="amount"></param>
-    /// <returns></returns>
+    /// <returns>a bool</returns>
     public bool GainCoins(int amount)
     {
         Coins += amount;
         return true;
     }
-
+    /// <summary>
+    /// Returns a representation of the player.
+    /// </summary>
+    /// <returns>a string</returns>
     public override string ToString()
     {
         return string.Format("Player: {0} / {1} / {2}", PlayerName, Coins, PlantsHarvested);
