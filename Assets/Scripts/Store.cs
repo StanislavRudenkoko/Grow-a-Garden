@@ -1,30 +1,39 @@
 
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 /// <summary>
-/// Store class.
+/// Store class
+/// Author: Tin Trinh
+/// Date: Mar. 4, 2026
+/// Revision: Mar. 25, 2026
+/// Source: None
 /// </summary>
 public class Store : MonoBehaviour
 {
-    public Player Player { get; }
+    [SerializeField]
+    private Player player;
+    public StoreInventory StoreInventory {get; set;}
     void Start()
     {
-        transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = $"{Player.Coins} coins";
-    }
-    /// <summary>
-    /// Takes the player back the the Garden scene when they click on the Go to Garden button.
-    /// </summary>
-    public void BackToGarden()
-    {
-        Debug.Log("Need to add data logic that stays between scenes.");
-        SceneManager.LoadScene("Garden");
+        player = ObjectGetter.GetPlayer();
+        StoreInventory = ObjectGetter.GetStoreInventory();
     }
 
-    public void BuyItem(int amount)
+    void Update()
     {
-        Player.SpendCoins(amount);
+        transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = $"Coins: ${player.Coins}";
+    }
+
+    /// <summary>
+    /// Buy an item.
+    /// </summary>
+    /// <param name="amount"></param>
+    /// <param name="item"></param>
+    public void BuyItem(int amount, Item item)
+    {
+        player.BuyItem(amount, item);
     }
 
 

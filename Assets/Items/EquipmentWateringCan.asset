@@ -16,5 +16,5 @@ MonoBehaviour:
   description: Good for watering plants.
   category: 2
   price: 150
-  quantity: 1
+  startingQuantity: 1
   itemSprite: {fileID: -3788094531934222670, guid: 9f79e4d10464e604c966683c125a5256, type: 3}
