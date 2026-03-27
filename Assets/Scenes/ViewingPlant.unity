@@ -2433,7 +2433,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1857869353}
-  - component: {fileID: 1857869354}
   - component: {fileID: 1857869355}
   m_Layer: 0
   m_Name: Pot
@@ -2461,26 +2460,6 @@ Transform:
   - {fileID: 774276366}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1857869354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1857869352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30906d2e5669d984f852ca442b9640bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlantManager
-  visualDatabase: {fileID: 0}
-  plantPotPrefab: {fileID: 0}
-  potParent: {fileID: 0}
-  potSlots: []
-  growthTimePerStage: 10
-  soilTypes:
-  - All purpose soil
-  - Premium soil
 --- !u!114 &1857869355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2700,10 +2679,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5fe7a670c5ea33459edd35132509557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlantManagerPlantState
-  plantData: {fileID: 51414424}
+  plantData: {fileID: 0}
   soil: {fileID: 516278652}
   plant: {fileID: 740994641}
-  growthStages: []
+  growthStages:
+  - {fileID: 1508734276152258813, guid: 79c52ad3ca2c55c4b8a4f8e6a83f56c9, type: 3}
+  - {fileID: 6223568682805356479, guid: 9e373fa13073afa41bc4a4db3f1d03b3, type: 3}
+  - {fileID: -1605047033545464262, guid: 5e02340b0465cc64ca16edc5aa63c195, type: 3}
+  - {fileID: -450928700761594221, guid: 0a9ac0bb38680cd46947dc60a16ee30d, type: 3}
+  - {fileID: -1469759646845738395, guid: 098bc0c10f2a4d940ad7018b92d95635, type: 3}
   growthTime: 3
   soilButton: {fileID: 1904985633}
   seedButton: {fileID: 1639272312}

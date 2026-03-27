@@ -92,6 +92,7 @@ public class PlantManagerPlantState : MonoBehaviour
         PlantData.Instance.currentStage = currentStage;
         PlantData.Instance.hasSoil = hasSoil;
         PlantData.Instance.hasSeed = hasSeed;
+        Debug.Log("Back to Garden");
         SceneManager.LoadScene("GardeJoshBranch");
     }
 
