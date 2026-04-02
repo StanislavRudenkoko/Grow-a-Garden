@@ -5,7 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Dirt
-  - Content
+  - ContentBuy
+  - ContentSell
+  - Store
   layers:
   - Default
   - TransparentFX

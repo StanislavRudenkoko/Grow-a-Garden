@@ -52,8 +52,8 @@ public class Player : MonoBehaviour
         {
             Inventory.Add(item);
         }
-        item.QuantityPlayer += 1;
-        item.QuantityStore -= 1;
+        item.QuantityPlayer++;
+        item.QuantityStore--;
         return true;
     }
 
@@ -62,9 +62,14 @@ public class Player : MonoBehaviour
     /// </summary>
     /// <param name="amount"></param>
     /// <returns>a bool</returns>
-    public bool GainCoins(int amount)
+    public bool SellItem(int amount, Item item)
     {
+        item.QuantityPlayer--;
         Coins += amount;
+        if (item.QuantityPlayer == 0)
+        {
+            Inventory.Remove(item);
+        }
         return true;
     }
     /// <summary>

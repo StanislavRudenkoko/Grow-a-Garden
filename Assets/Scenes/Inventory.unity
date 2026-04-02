@@ -342,6 +342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PopulateInventory
   slot: {fileID: -309197031388905826, guid: 58ad13842aa5a40449a8459c6835fa9f, type: 3}
   player: {fileID: 0}
+  container: {fileID: 271391398}
 --- !u!1 &496855979
 GameObject:
   m_ObjectHideFlags: 0
