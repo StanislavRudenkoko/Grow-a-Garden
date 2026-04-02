@@ -34,9 +34,9 @@ public class SlotSellStore : Slot, IPointerClickHandler
         box.GetComponent<RectTransform>().localPosition = Vector3.zero;
         box.Item = info;
         box.Store = store;
-        TextMeshProUGUI boxTitle = box.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
-        TextMeshProUGUI boxDesc = box.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
-        boxTitle.text = $"Sell {info.Name} for ${info.Price}?";
+        TextMeshProUGUI boxTitle = box.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI boxDesc = box.transform.GetChild(4).GetComponent<TextMeshProUGUI>();
+        boxTitle.text = $"Sell {info.Name} for ${info.SellPrice}?";
         boxDesc.text = $"{info.Description}";
     }
 }

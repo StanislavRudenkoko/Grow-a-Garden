@@ -43,7 +43,7 @@ public class PopulateStoreSell : MonoBehaviour
             objImage.sprite = obj.info.ItemSprite;
             objImage.preserveAspect = true;
             objTitle.text = obj.info.Name;
-            objPrice.text = $"${obj.info.Price}";
+            objPrice.text = $"${obj.info.SellPrice}";
             objQuantity.text = $"x{obj.info.QuantityPlayer}";
         }
     }
