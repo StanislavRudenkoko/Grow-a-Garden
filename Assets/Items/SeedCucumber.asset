@@ -16,5 +16,6 @@ MonoBehaviour:
   description: A bag of cucumber seeds
   category: 0
   price: 15
+  sellPrice: 7
   startingQuantity: 5
   itemSprite: {fileID: 3539419550903272212, guid: c357aa5c6692f1848881d2bd2e8aecb3, type: 3}

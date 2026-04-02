@@ -16,5 +16,6 @@ MonoBehaviour:
   description: Soil good for most occassions.
   category: 1
   price: 50
+  sellPrice: 25
   startingQuantity: 3
   itemSprite: {fileID: -7383982906349164966, guid: 9cd87df4d4bdb8b479e84f0c339c9a8c, type: 3}

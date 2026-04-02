@@ -16,5 +16,6 @@ MonoBehaviour:
   description: A bag of tomato seeds
   category: 0
   price: 15
+  sellPrice: 7
   startingQuantity: 3
   itemSprite: {fileID: 8842680620855116927, guid: 23b9720c7e3f3bd4daec6b6457983b76, type: 3}

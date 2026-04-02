@@ -16,5 +16,6 @@ MonoBehaviour:
   description: Good for digging.
   category: 2
   price: 150
+  sellPrice: 75
   startingQuantity: 1
   itemSprite: {fileID: -3247998400624710456, guid: 64a3e0d036f33be429066a727322a72c, type: 3}
