@@ -31,6 +31,7 @@ public class SlotSellStore : Slot, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         ConfirmationBox box = Instantiate(confirmationBox, store.transform);
+        box.GetComponent<RectTransform>().localPosition = Vector3.zero;
         box.Item = info;
         box.Store = store;
         TextMeshProUGUI boxTitle = box.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
