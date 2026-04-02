@@ -34,5 +34,9 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Game quit");
         Application.Quit();
+
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #endif
     }
 }
