@@ -20,6 +20,7 @@ public class Item : MonoBehaviour
     public string Description { get => ItemInfo.Description; }
     public ItemCategory ItemCategory { get => ItemInfo.ItemCategory; }
     public int Price { get => ItemInfo.Price; }
+    public int SellPrice { get => ItemInfo.SellPrice; }
     public Sprite ItemSprite { get => ItemInfo.ItemSprite; }
     public int QuantityStore { 
         get => quantityStore; 

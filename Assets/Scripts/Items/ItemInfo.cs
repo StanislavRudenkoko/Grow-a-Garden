@@ -14,6 +14,7 @@ public class ItemInfo : ScriptableObject
     [SerializeField] private string description;
     [SerializeField] private ItemCategory category;
     [SerializeField] private int price;
+    [SerializeField] private int sellPrice;
     [SerializeField] private int startingQuantity;
     [SerializeField] private Sprite itemSprite;
 
@@ -21,6 +22,7 @@ public class ItemInfo : ScriptableObject
     public string Description { get => description; }
     public ItemCategory ItemCategory { get => category; }
     public int Price { get => price; }
+    public int SellPrice { get => sellPrice; }
     public int StartingQuantity { get => startingQuantity; }
     public Sprite ItemSprite { get => itemSprite; }
 }

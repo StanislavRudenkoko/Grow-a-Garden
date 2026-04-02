@@ -27,7 +27,7 @@ public class ConfirmationSellBox : ConfirmationBox
     {
         if (Item.QuantityPlayer > 0)
         {   
-            Store.SellItem(Item.Price, Item);
+            Store.SellItem(Item.SellPrice, Item);
             content.GetComponent<PopulateStoreSell>().Refresh();
         }
         else
