@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d69e21ddc15590f44b57a145b025b65b, type: 3}
-  m_Name: SeedOrchid
-  m_EditorClassIdentifier: Assembly-CSharp::Item
-  name: Orchid Seeds
-  description: These are orchid seeds.
+  m_Name: SeedTulip
+  m_EditorClassIdentifier: Assembly-CSharp::ItemInfo
+  name: Tulip Seeds
+  description: These are tulip seeds
   category: 0
   price: 15
   sellPrice: 7
-  startingQuantity: 5
-  itemSprite: {fileID: -6723712817011848175, guid: 29052ea64f4f86a46afb07240ae71174, type: 3}
+  startingQuantity: 3
+  itemSprite: {fileID: -8344658494426402434, guid: 4ceff7e5e05937649b6d68a2ed94d564, type: 3}
