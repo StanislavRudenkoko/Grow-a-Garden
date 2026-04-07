@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d69e21ddc15590f44b57a145b025b65b, type: 3}
-  m_Name: SeedGreenBean
+  m_Name: SeedGreenOnion
   m_EditorClassIdentifier: Assembly-CSharp::ItemInfo
-  name: Green Bean Seeds
-  description: These are green bean seeds
+  name: Green Onion Seeds
+  description: These are for growing Green Onions
   category: 0
   price: 10
-  sellPrice: 5
-  startingQuantity: 4
-  itemSprite: {fileID: -5354289675668601218, guid: 52092181c95d3e44bbee0ab664c7c6f9, type: 3}
+  sellPrice: 4
+  startingQuantity: 5
+  itemSprite: {fileID: -675505358303355686, guid: 19a825320c7ca7149b41667945467f6f, type: 3}
+  produce: {fileID: 11400000, guid: 3da1edac637d708458d848a50dbc0174, type: 2}

@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d69e21ddc15590f44b57a145b025b65b, type: 3}
-  m_Name: SeedCarrot
-  m_EditorClassIdentifier: Assembly-CSharp::Item
-  name: Carrot Seeds
-  description: A bag of carrot seeds.
-  category: 0
-  price: 15
-  sellPrice: 7
-  startingQuantity: 3
-  itemSprite: {fileID: -8068465142677191720, guid: 16f54730100adbc45a1fd2569ef53a4c, type: 3}
+  m_Name: Cucumber
+  m_EditorClassIdentifier: Assembly-CSharp::ItemInfo
+  name: Cucumber
+  description: A cucumber, picked fresh.
+  category: 3
+  price: 0
+  sellPrice: 30
+  startingQuantity: 0
+  itemSprite: {fileID: 0}
+  produce: {fileID: 0}

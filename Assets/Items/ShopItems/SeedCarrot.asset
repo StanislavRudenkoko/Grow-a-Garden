@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d69e21ddc15590f44b57a145b025b65b, type: 3}
-  m_Name: SeedPotato
-  m_EditorClassIdentifier: Assembly-CSharp::ItemInfo
-  name: Potato
-  description: A Potato you can put in the ground and grow more potatoes
+  m_Name: SeedCarrot
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  name: Carrot Seeds
+  description: A bag of carrot seeds.
   category: 0
-  price: 10
-  sellPrice: 5
-  startingQuantity: 5
-  itemSprite: {fileID: 5664694179486358734, guid: ac2fcbb7326348346a76d330855bfb7e, type: 3}
+  price: 15
+  sellPrice: 7
+  startingQuantity: 3
+  itemSprite: {fileID: -8068465142677191720, guid: 16f54730100adbc45a1fd2569ef53a4c, type: 3}
+  produce: {fileID: 11400000, guid: 17de55ba83b77fb4eb714ae48fbf1073, type: 2}

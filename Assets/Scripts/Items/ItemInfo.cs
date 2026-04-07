@@ -1,4 +1,6 @@
+using System;
 using NUnit.Framework.Internal.Commands;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
@@ -17,6 +19,7 @@ public class ItemInfo : ScriptableObject
     [SerializeField] private int sellPrice;
     [SerializeField] private int startingQuantity;
     [SerializeField] private Sprite itemSprite;
+    [SerializeField] private ItemInfo produce;
 
     public string Name { get => name; }
     public string Description { get => description; }
@@ -25,4 +28,5 @@ public class ItemInfo : ScriptableObject
     public int SellPrice { get => sellPrice; }
     public int StartingQuantity { get => startingQuantity; }
     public Sprite ItemSprite { get => itemSprite; }
+    public ItemInfo Produce { get => produce; }
 }

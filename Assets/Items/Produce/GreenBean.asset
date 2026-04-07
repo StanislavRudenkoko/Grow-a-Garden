@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d69e21ddc15590f44b57a145b025b65b, type: 3}
-  m_Name: SeedReaper
+  m_Name: GreenBean
   m_EditorClassIdentifier: Assembly-CSharp::ItemInfo
-  name: Reaper Pepper Seeds
-  description: These are reaper pepper seeds
-  category: 0
-  price: 20
-  sellPrice: 10
-  startingQuantity: 3
-  itemSprite: {fileID: 994357973804514135, guid: 63d33e45361cdf1498ba9a0d9d1d9da8, type: 3}
+  name: Green Bean
+  description: Green beans, picked fresh.
+  category: 3
+  price: 0
+  sellPrice: 30
+  startingQuantity: 0
+  itemSprite: {fileID: 0}
+  produce: {fileID: 0}

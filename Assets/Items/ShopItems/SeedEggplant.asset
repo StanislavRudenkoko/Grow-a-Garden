@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d69e21ddc15590f44b57a145b025b65b, type: 3}
-  m_Name: SeedOrchid
-  m_EditorClassIdentifier: Assembly-CSharp::Item
-  name: Orchid Seeds
-  description: These are orchid seeds.
+  m_Name: SeedEggplant
+  m_EditorClassIdentifier: Assembly-CSharp::ItemInfo
+  name: Eggplant Seeds
+  description: These are eggplant seeds
   category: 0
-  price: 15
-  sellPrice: 7
+  price: 20
+  sellPrice: 10
   startingQuantity: 5
-  itemSprite: {fileID: -6723712817011848175, guid: 29052ea64f4f86a46afb07240ae71174, type: 3}
+  itemSprite: {fileID: 1894558627656159805, guid: 655bc2fc653541d4eb1d7ba248eafd74, type: 3}
+  produce: {fileID: 11400000, guid: 2528c009f517d51458f831a21cd8b26a, type: 2}
