@@ -37,7 +37,7 @@ public class PlantManager : MonoBehaviour
 
     // ── Runtime ───────────────────────────────────────────────────────────────
 
-    private readonly List<PlantPotController> activePots = new List<PlantPotController>();
+    private List<PlantPotController> activePots;
 
     // ── Unity lifecycle ───────────────────────────────────────────────────────
 
@@ -57,10 +57,23 @@ public class PlantManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// On scene start
+    /// </summary>
+    private void Start()
+    {
+        activePots = ObjectGetter.getPots();
+        if (activePots == null)
+        {
+            activePots = new List<PlantPotController>();
+        }
+    }
+
     private void Update()
     {
         foreach (PlantPotController pot in activePots)
         {
+            Debug.Log("This gets here");
             PlantInstance data = pot.potData;
 
             if (!data.hasPlant) continue;
@@ -89,6 +102,7 @@ public class PlantManager : MonoBehaviour
                 }
             }
         }
+
     }
 
     // ── Public API ────────────────────────────────────────────────────────────
