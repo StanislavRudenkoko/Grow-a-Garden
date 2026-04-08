@@ -57,7 +57,7 @@ public class ObjectGetter : MonoBehaviour
 	}
 
 	/// <summary>
-	/// Gets the pots
+	/// Gets the pots.
 	/// </summary>
 	/// <returns></returns>
 	public static List<PlantPotController> getPots()
@@ -65,6 +65,10 @@ public class ObjectGetter : MonoBehaviour
 		return GetInstance.activePots;
 	}
 
+	/// <summary>
+	/// Set current pots in the garden.
+	/// </summary>
+	/// <param name="activePots"></param>
 	public static void setPots(List<PlantPotController> activePots)
 	{
 		GetInstance.activePots = activePots;

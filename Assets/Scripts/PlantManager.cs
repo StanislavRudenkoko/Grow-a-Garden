@@ -204,14 +204,8 @@ public class PlantManager : MonoBehaviour
         Debug.Log("PlantManager was DESTROYED");
     }
 
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
     private void OnDisable()
     {
         Debug.Log("PlantManager was DISABLED");
-        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }
