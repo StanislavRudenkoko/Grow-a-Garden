@@ -1,6 +1,7 @@
 
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 /// <summary>
@@ -17,10 +18,10 @@ public class Store : MonoBehaviour
     public StoreInventory StoreInventory {get; set;}
     public GameObject contentBuy;
     public GameObject contentSell;
-    private bool isBuyMode;
+    public Button buy;
+    public Button sell;
     void Start()
     {
-        isBuyMode = true;
         player = ObjectGetter.GetPlayer();
         StoreInventory = ObjectGetter.GetStoreInventory();
     }
@@ -52,22 +53,20 @@ public class Store : MonoBehaviour
 
     public void SellMode()
     {
-        if (isBuyMode == true)
-        {  
-            contentSell.SetActive(true);
-            contentBuy.SetActive(false);
-            isBuyMode = false;
-            transform.GetChild(0).GetComponentInChildren<TextMeshProUGUI>().text = "Buy";
-            contentSell.GetComponent<PopulateStoreSell>().Refresh();
-        } 
-        else
-        {
-            contentSell.SetActive(false);
-            contentBuy.SetActive(true);
-            isBuyMode = true;
-            transform.GetChild(0).GetComponentInChildren<TextMeshProUGUI>().text = "Sell";
-            
-        }
+        sell.GetComponent<Button>().interactable = false;
+        buy.GetComponent<Button>().interactable = true;
+        contentSell.SetActive(true);
+        contentBuy.SetActive(false);   
+        contentSell.GetComponent<PopulateStoreSell>().Refresh();     
+    }
+
+    public void BuyMode()
+    {
+        buy.GetComponent<Button>().interactable = false;
+        sell.GetComponent<Button>().interactable = true;
+        contentSell.SetActive(false);
+        contentBuy.SetActive(true);
+        contentSell.GetComponent<PopulateStoreSell>().Refresh();
     }
 
 

@@ -18,7 +18,6 @@ public class PopulateInventory : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        player = ObjectGetter.GetInstance.player;
         Populate();
     }
 
@@ -27,6 +26,10 @@ public class PopulateInventory : MonoBehaviour
     /// </summary>
     void Populate()
     {
+        if (!player)
+        {
+            player = ObjectGetter.GetPlayer();
+        }
         Slot obj;
         foreach (Item item in player.Inventory)
         {

@@ -18,11 +18,14 @@ public class PopulateStoreSell : MonoBehaviour
     public Player player;
     public GameObject container;
 
+    void Awake()
+    {
+        player = ObjectGetter.GetPlayer();
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        player = ObjectGetter.GetInstance.player;
-        Populate();
     }
 
     /// <summary>
@@ -30,6 +33,10 @@ public class PopulateStoreSell : MonoBehaviour
     /// </summary>
     void Populate()
     {
+        if (!player)
+        {
+            player = ObjectGetter.GetPlayer();
+        }
         SlotSellStore obj;
         foreach (Item item in player.Inventory)
         {
