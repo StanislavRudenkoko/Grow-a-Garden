@@ -1,6 +1,6 @@
 /// <summary>
 /// PlantManager
-/// Author: Stanislav Rudenko
+/// Author: Stanislav Rudenko, Joshua Trepanier
 /// Date: Mar. 12 - Mar. 26, 2026
 /// Source: with help of Claude AI
 /// </summary>
@@ -42,6 +42,9 @@ public class PlantManager : MonoBehaviour
 
     // ── Unity lifecycle ───────────────────────────────────────────────────────
 
+    /// <summary>
+    /// on scene load
+    /// </summary>
     private void Awake()
     {
         Debug.Log("PlantManager Awake called. Instance is null: " + (Instance == null));
@@ -77,6 +80,9 @@ public class PlantManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Ran every frame
+    /// </summary>
     private void Update()
     {
         ObjectGetter.setPots(activePots);
@@ -157,14 +163,18 @@ public class PlantManager : MonoBehaviour
         Debug.Log("All slots full or no valid slot found");
     }
 
-    /// <summary>Removes the pot from tracking and destroys its GameObject.</summary>
+    /// <summary>
+    /// Removes the pot from tracking and destroys its GameObject.
+    /// </summary>
     public void RemovePot(PlantPotController pot)
     {
         activePots.Remove(pot);
         Destroy(pot.gameObject);
     }
 
-    /// <summary>Returns the index of a soil name in soilTypes (for sprite lookup).</summary>
+    /// <summary>
+    /// Returns the index of a soil name in soilTypes (for sprite lookup).
+    /// </summary>
     public int GetSoilIndex(string soilName)
     {
         return soilTypes.IndexOf(soilName);
@@ -196,6 +206,11 @@ public class PlantManager : MonoBehaviour
 
     // ── Private ───────────────────────────────────────────────────────────────
 
+    /// <summary>
+    /// Spawn a pot in the scene and convert it from a child to a parent to allow
+    /// the pot to be set as DontDestroyOnLoad.
+    /// </summary>
+    /// <param name="position"></param>
     private void SpawnPot(Vector3 position)
     {
         GameObject go = Instantiate(plantPotPrefab, position, Quaternion.identity, potParent);
@@ -206,6 +221,9 @@ public class PlantManager : MonoBehaviour
         activePots.Add(ctrl);
     }
 
+    /// <summary>
+    /// Run when PlantManager is destroyed
+    /// </summary>
     private void OnDestroy()
     {
         Debug.Log("PlantManager was DESTROYED");
@@ -215,6 +233,9 @@ public class PlantManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Run when PlantManager gets disabled
+    /// </summary>
     private void OnDisable()
     {
         Debug.Log("PlantManager was DISABLED");
