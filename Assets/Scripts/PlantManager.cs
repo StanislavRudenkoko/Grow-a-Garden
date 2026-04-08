@@ -6,6 +6,7 @@
 /// </summary>
 
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 /// <summary>
@@ -71,9 +72,9 @@ public class PlantManager : MonoBehaviour
 
     private void Update()
     {
+        ObjectGetter.setPots(activePots);
         foreach (PlantPotController pot in activePots)
         {
-            Debug.Log("This gets here");
             PlantInstance data = pot.potData;
 
             if (!data.hasPlant) continue;
@@ -192,6 +193,9 @@ public class PlantManager : MonoBehaviour
     {
         GameObject go = Instantiate(plantPotPrefab, position, Quaternion.identity, potParent);
         PlantPotController ctrl = go.GetComponent<PlantPotController>();
+
+        go.transform.SetParent(null);
+        DontDestroyOnLoad(go);
         activePots.Add(ctrl);
     }
 
@@ -200,12 +204,14 @@ public class PlantManager : MonoBehaviour
         Debug.Log("PlantManager was DESTROYED");
     }
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
     private void OnDisable()
     {
         Debug.Log("PlantManager was DISABLED");
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
-
-
-
-    
 }
