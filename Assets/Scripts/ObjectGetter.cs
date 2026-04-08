@@ -12,7 +12,6 @@ public class ObjectGetter : MonoBehaviour
     private static ObjectGetter objectGetter;
     public Player player;
     public StoreInventory store;
-	public PlantData plantData;
 	public List<PlantPotController> activePots;
     public static ObjectGetter GetInstance
 	{
@@ -48,16 +47,7 @@ public class ObjectGetter : MonoBehaviour
     }
 
 	/// <summary>
-	/// Gets the plants
-	/// </summary>
-	/// <returns></returns>
-	public static PlantData GetPlantData()
-	{
-		return GetInstance.plantData;
-	}
-
-	/// <summary>
-	/// Gets the pots.
+	/// Gets the pots
 	/// </summary>
 	/// <returns></returns>
 	public static List<PlantPotController> getPots()
