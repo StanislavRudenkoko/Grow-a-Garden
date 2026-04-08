@@ -68,6 +68,13 @@ public class PlantManager : MonoBehaviour
         {
             activePots = new List<PlantPotController>();
         }
+        else
+        {
+            foreach (PlantPotController pot in activePots)
+            {
+                pot.gameObject.SetActive(true);
+            }
+        }
     }
 
     private void Update()
@@ -202,6 +209,10 @@ public class PlantManager : MonoBehaviour
     private void OnDestroy()
     {
         Debug.Log("PlantManager was DESTROYED");
+        foreach (PlantPotController pot in activePots)
+        {
+            pot.gameObject.SetActive(false);
+        }
     }
 
     private void OnDisable()
