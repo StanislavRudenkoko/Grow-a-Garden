@@ -856,8 +856,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 331, y: 381.07303}
-  m_SizeDelta: {x: 1531.566, y: 314.38}
+  m_AnchoredPosition: {x: 273, y: 522}
+  m_SizeDelta: {x: 1531.566, y: 287.382}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1084567648
 MonoBehaviour:
@@ -881,8 +881,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Grow a Garden
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: af0f458d2ae49564ebe5817f8372fa76, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6020e544e81077f44a089e7eb57b7c2e, type: 2}
+  m_sharedMaterial: {fileID: 4631530673978907548, guid: 6020e544e81077f44a089e7eb57b7c2e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -906,8 +906,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 189.8
-  m_fontSizeBase: 189.8
+  m_fontSize: 221.6
+  m_fontSizeBase: 221.6
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -916,9 +916,9 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: -2.4
+  m_characterSpacing: -14.5
   m_characterHorizontalScale: 1
-  m_wordSpacing: -16.89
+  m_wordSpacing: -18.1
   m_lineSpacing: -17.39
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
