@@ -23,7 +23,7 @@ public class PlantInstance : MonoBehaviour
     public PlantStatus status        = PlantStatus.Healthy;
 
     // ── Pot state ─────────────────────────────────────────────────────────────
-    public string soilType = "";       // e.g. "Loamy", "Sandy", "Clay" — empty = no soil
+    public string soilType = "";
     public bool   hasSoil  => !string.IsNullOrEmpty(soilType);
     public bool   hasPlant => !string.IsNullOrEmpty(plantDefinitionId);
 

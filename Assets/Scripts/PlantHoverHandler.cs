@@ -28,6 +28,9 @@ public class PlantHoverHandler : MonoBehaviour, IPointerEnterHandler, IPointerEx
         if (TooltipManager.Instance == null || plantInstance == null)
             return;
 
+        if (!plantInstance.hasPlant)
+            return;
+
         // Use new Input System to get mouse position
         Vector2 mousePos = Mouse.current.position.ReadValue();
 
