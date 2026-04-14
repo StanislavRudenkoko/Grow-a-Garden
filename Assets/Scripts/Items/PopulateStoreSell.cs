@@ -31,7 +31,7 @@ public class PopulateStoreSell : MonoBehaviour
     /// <summary>
     /// Populates the inventory items slots.
     /// </summary>
-    void Populate()
+    void Populate(ItemCategory? itemCategory = null)
     {
         if (!player)
         {
@@ -40,6 +40,10 @@ public class PopulateStoreSell : MonoBehaviour
         SlotSellStore obj;
         foreach (Item item in player.Inventory)
         {
+            if (itemCategory != null && item.ItemCategory != itemCategory)
+            {
+                continue;
+            }
             obj = Instantiate(slot, transform);
             obj.info = item;
             obj.store = store;
@@ -58,12 +62,12 @@ public class PopulateStoreSell : MonoBehaviour
     /// <summary>
     /// Updates the quantity of each item.
     /// </summary>
-    public void Refresh()
+    public void Refresh(ItemCategory? itemCategory = null)
     {
-        foreach(Transform child in container.transform)
+        foreach (Transform child in container.transform)
         {
             Destroy(child.gameObject);
         }
-        Populate();
+        Populate(itemCategory);
     }
 }

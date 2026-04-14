@@ -436,8 +436,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Scrolling
   image: {fileID: 47276294}
-  x: 0.05
-  y: 0.05
+  x: 0.03
+  y: 0.03
 --- !u!114 &47276294
 MonoBehaviour:
   m_ObjectHideFlags: 0

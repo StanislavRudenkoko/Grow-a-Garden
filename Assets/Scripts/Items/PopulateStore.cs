@@ -27,11 +27,15 @@ public class PopulateStore : MonoBehaviour
     /// <summary>
     /// Populates the Store items slots.
     /// </summary>
-    void Populate()
+    void Populate(ItemCategory? itemCategory = null)
     {
         SlotStore obj;
         foreach (Item itemInfoWrapper in items)
         {
+            if (itemCategory != null && itemInfoWrapper.ItemCategory != itemCategory)
+            {
+                continue;
+            }
             obj = Instantiate(slot, transform);
             obj.info = itemInfoWrapper;
             obj.store = store;
@@ -50,7 +54,7 @@ public class PopulateStore : MonoBehaviour
     /// <summary>
     /// Updates the quantity of each item.
     /// </summary>
-    public void Refresh()
+    public void UpdateQuantity()
     {
         foreach (Transform slot in transform)
         {
@@ -58,5 +62,16 @@ public class PopulateStore : MonoBehaviour
             objQuantity.text = $"x{slot.GetComponent<SlotStore>().info.QuantityStore}";
         }
         Debug.Log("Refreshed");
+    }
+    /// <summary>
+    /// Updates the items.
+    /// </summary>
+    public void Refresh(ItemCategory? itemCategory = null)
+    {
+        foreach (Transform child in this.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        Populate(itemCategory);
     }
 }

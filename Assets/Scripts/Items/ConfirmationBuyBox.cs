@@ -28,9 +28,9 @@ public class ConfirmationBuyBox : ConfirmationBox
     void Buy()
     {
         if (Item.QuantityStore > 0)
-        {   
+        {
             Store.BuyItem(Item.Price, Item);
-            content.GetComponent<PopulateStore>().Refresh();
+            content.GetComponent<PopulateStore>().UpdateQuantity();
         }
         else
         {
