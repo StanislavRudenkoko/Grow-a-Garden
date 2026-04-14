@@ -32,7 +32,6 @@ public class PlantManager : MonoBehaviour
     public float growthTimePerStage = 10f;  // seconds per growth stage
 
     [Header("Soil Types")]
-    // Fill this list in the Inspector with your soil names, e.g. Dirt, Loamy, Sandy, Clay
     public List<string> soilTypes = new List<string> { "All purpose soil", "Premium soil" };
 
     // ── Runtime ───────────────────────────────────────────────────────────────

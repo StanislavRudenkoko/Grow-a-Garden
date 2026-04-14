@@ -40,11 +40,11 @@ public class PlantInstanceTooltipUI : TooltipBase
         currentInstance = instance;
 
         nameText.text = instance.customName;
-        growthText.text = "Growth Stage: " + instance.currentGrowthStage;
-        waterText.text = "Water Level: " + instance.waterLevel + "%";
+        growthText.text = "Growth: Stage " + instance.currentGrowthStage;
+        waterText.text = "Water: " + instance.waterLevel + "%";
         healthText.text = "Health: " + instance.health + "%";
-        fretilizerText.text = "Fertilizer Level: " + instance.fertilizer + "%";
-        statusText.text = instance.status.ToString();
+        fretilizerText.text = "Fertilizer: " + instance.fertilizer + "%";
+        statusText.text = "Status: " + instance.status.ToString();
 
         PlantDefinition def = PlantDatabaseManager.Instance
             .GetPlantDefinition(instance.plantDefinitionId);
