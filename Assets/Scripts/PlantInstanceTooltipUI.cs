@@ -19,6 +19,7 @@ public class PlantInstanceTooltipUI : TooltipBase
     public TMP_Text waterText;
     public TMP_Text healthText;
     public TMP_Text statusText;
+    public TMP_Text fretilizerText;
 
     [Header("Definition Fields")]
     public TMP_Text descriptionText;
@@ -40,8 +41,9 @@ public class PlantInstanceTooltipUI : TooltipBase
 
         nameText.text = instance.customName;
         growthText.text = "Growth Stage: " + instance.currentGrowthStage;
-        waterText.text = "Water Level: " + instance.waterLevel;
+        waterText.text = "Water Level: " + instance.waterLevel + "%";
         healthText.text = "Health: " + instance.health + "%";
+        fretilizerText.text = "Fertilizer Level: " + instance.fertilizer + "%";
         statusText.text = instance.status.ToString();
 
         PlantDefinition def = PlantDatabaseManager.Instance

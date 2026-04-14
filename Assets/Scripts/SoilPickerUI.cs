@@ -64,10 +64,8 @@ public class SoilPickerUI : MonoBehaviour
 
     private void OnSoilSelected(string soilType)
     {
-        //targetPot.potData.soilType = soilType; use dirt for now
-        targetPot.potData.soilType = "Dirt";
+        targetPot.potData.soilType = soilType;
         targetPot.RefreshVisuals();
-
         gameObject.SetActive(false);
         ownerDropdown.Close();
     }

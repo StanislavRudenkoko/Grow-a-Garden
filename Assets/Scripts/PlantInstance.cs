@@ -18,8 +18,10 @@ public class PlantInstance : MonoBehaviour
 
     // ── Growth ────────────────────────────────────────────────────────────────
     public int    currentGrowthStage = 0;
+    public int    daysToGrow         = 0;
     public float  waterLevel         = 0f;
     public float  health             = 100f;
+    public float  fertilizer         = 0f;
     public PlantStatus status        = PlantStatus.Healthy;
 
     // ── Pot state ─────────────────────────────────────────────────────────────
@@ -36,7 +38,9 @@ public class PlantInstance : MonoBehaviour
         plantDefinitionId  = "";
         customName         = "";
         currentGrowthStage = 0;
+        daysToGrow         = 0;
         waterLevel         = 0f;
+        fertilizer         = 0f;
         health             = 100f;
         status             = PlantStatus.Healthy;
         timer              = 0f;
