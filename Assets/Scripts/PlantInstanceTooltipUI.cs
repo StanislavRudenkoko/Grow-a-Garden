@@ -9,7 +9,7 @@ using TMPro;
 
 /// <summary>
 /// Combined tooltip UI displaying live <see cref="PlantInstance"/> stats
-/// alongside static <see cref="PlantDefinition"/> info (name, growth, water, description).
+/// alongside static <see cref="PlantDefinition"/> info (name, growth, water, health, status, description).
 /// </summary>
 public class PlantInstanceTooltipUI : TooltipBase
 {
@@ -17,6 +17,8 @@ public class PlantInstanceTooltipUI : TooltipBase
     public TMP_Text nameText;
     public TMP_Text growthText;
     public TMP_Text waterText;
+    public TMP_Text healthText;
+    public TMP_Text statusText;
 
     [Header("Definition Fields")]
     public TMP_Text descriptionText;
@@ -37,8 +39,10 @@ public class PlantInstanceTooltipUI : TooltipBase
         currentInstance = instance;
 
         nameText.text = instance.customName;
-        growthText.text = "Stage: " + instance.currentGrowthStage;
-        waterText.text = "Water: " + instance.waterLevel;
+        growthText.text = "Growth Stage: " + instance.currentGrowthStage;
+        waterText.text = "Water Level: " + instance.waterLevel;
+        healthText.text = "Health: " + instance.health + "%";
+        statusText.text = instance.status.ToString();
 
         PlantDefinition def = PlantDatabaseManager.Instance
             .GetPlantDefinition(instance.plantDefinitionId);

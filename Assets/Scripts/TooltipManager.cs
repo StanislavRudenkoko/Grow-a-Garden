@@ -16,7 +16,6 @@ public class TooltipManager : MonoBehaviour
     public static TooltipManager Instance;
 
     public PlantInstanceTooltipUI instanceTooltip;
-    public PlantDefinitionTooltipUI definitionTooltip;
 
     public float hoverDelay = 0.2f;
 
@@ -58,13 +57,5 @@ public class TooltipManager : MonoBehaviour
             StopCoroutine(showCoroutine);
 
         instanceTooltip.Hide();
-        definitionTooltip.Hide();
-    }
-
-    /// <summary>Shows the definition tooltip beside an anchor (e.g. instance tooltip position).</summary>
-    public void ShowDefinition(PlantDefinition definition, Vector2 anchorPosition)
-    {
-        definitionTooltip.SetData(definition);
-        definitionTooltip.ShowBeside(anchorPosition);
     }
 }
