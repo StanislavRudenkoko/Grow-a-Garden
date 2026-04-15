@@ -1,6 +1,6 @@
 /// <summary>
 /// PlantManager
-/// Author: Stanislav Rudenko
+/// Author: Stanislav Rudenko, Tin Trinh
 /// Date: Mar. 12 - Mar. 26, 2026
 /// Source: with help of Claude AI
 /// </summary>
@@ -126,7 +126,7 @@ public class PlantManager : MonoBehaviour
             if (!occupied)
             {
                 Debug.Log("Spawning pot at: " + slot.position);
-                SpawnPot(slot.position);
+                SpawnPot(slot.position, slot.GetSiblingIndex());
                 return;
             }
         }
@@ -173,9 +173,32 @@ public class PlantManager : MonoBehaviour
 
     // ── Private ───────────────────────────────────────────────────────────────
 
-    private void SpawnPot(Vector3 position)
+    private void SpawnPot(Vector3 position, int index)
     {
         GameObject go = Instantiate(plantPotPrefab, position, Quaternion.identity, potParent);
+
+        // sets the plant + front of the pot in front of the previous pot
+        int plantIndex;
+        int potIndex;
+        if (index < 4)
+        {
+            plantIndex = 2;
+            potIndex = 3;
+        }
+        else if (index < 8)
+        {
+            plantIndex = 4;
+            potIndex = 5;
+        }
+        else
+        {
+            plantIndex = 6;
+            potIndex = 7;
+        }
+        go.transform.GetChild(2).GetComponent<SpriteRenderer>().sortingOrder = plantIndex;
+        go.transform.GetChild(3).GetComponent<SpriteRenderer>().sortingOrder = potIndex;
+
+
         PlantPotController ctrl = go.GetComponent<PlantPotController>();
         activePots.Add(ctrl);
     }
@@ -192,5 +215,5 @@ public class PlantManager : MonoBehaviour
 
 
 
-    
+
 }
