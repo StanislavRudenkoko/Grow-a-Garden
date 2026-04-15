@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 /// <summary>
-/// Slot class that represents a single item slot in the store.
+/// Slot class that represents a single item slot in the store (buy mode).
 /// Author: Tin Trinh
 /// Date: Mar. 4, 2026
 /// Source: None

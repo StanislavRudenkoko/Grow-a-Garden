@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.5772, y: 125.7}
-  m_SizeDelta: {x: 205.9985, y: 40.907}
+  m_AnchoredPosition: {x: 0.5772, y: 114.019394}
+  m_SizeDelta: {x: 205.9985, y: 64.2682}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6449795986889943366
 CanvasRenderer:
@@ -92,15 +92,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
-  m_fontSizeBase: 32
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -230,6 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotSellStore
   info: {fileID: 0}
+  itemText: {fileID: 0}
   confirmationBox: {fileID: 417304679240042686, guid: c9e5730827580c249bf31323214f7d8a, type: 3}
   store: {fileID: 2809680604909585327, guid: d02bf616efccda644a43082911d618bd, type: 3}
 --- !u!1 &7583991476975020611
@@ -324,8 +325,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
-  m_fontSizeBase: 32
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -461,8 +462,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
-  m_fontSizeBase: 32
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -540,8 +541,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.15551, y: 5.6974}
-  m_SizeDelta: {x: 280.49, y: 199.1}
+  m_AnchoredPosition: {x: 0.15551, y: -5.9836}
+  m_SizeDelta: {x: 280.49, y: 175.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9156480964740890696
 CanvasRenderer:
