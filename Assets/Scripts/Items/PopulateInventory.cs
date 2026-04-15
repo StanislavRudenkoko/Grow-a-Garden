@@ -47,9 +47,12 @@ public class PopulateInventory : MonoBehaviour
             objImage.sprite = obj.info.ItemSprite;
             objImage.preserveAspect = true;
             objTitle.text = obj.info.Name;
-            objPrice.text = $"${obj.info.Price}";
-            if (itemCategory != ItemCategory.EQUIPMENT)
+            if (item.ItemCategory != ItemCategory.EQUIPMENT)
                 objQuantity.text = $"x{obj.info.QuantityPlayer}";
+            else
+            {
+                objQuantity.text = "";
+            }
         }
     }
     /// <summary>
