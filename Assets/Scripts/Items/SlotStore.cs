@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -13,19 +14,31 @@ public class SlotStore : Slot, IPointerClickHandler
     public ConfirmationBox confirmationBox;
     public Store store;
 
+    void Update()
+    {
+        if (info.QuantityStore == 0)
+        {
+            interactable = false;
+        }
+    }
+
     /// <summary>
     /// Opens a confirmation box when an item is clicked.
     /// </summary>
     /// <param name="eventData"></param>
-    public void OnPointerClick(PointerEventData eventData)
+    public virtual void OnPointerClick(PointerEventData eventData)
     {
-        ConfirmationBox box = Instantiate(confirmationBox, store.transform);
-        box.GetComponent<RectTransform>().localPosition = Vector3.zero;
-        box.Item = info;
-        box.Store = store;
-        TextMeshProUGUI boxTitle = box.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
-        TextMeshProUGUI boxDesc = box.transform.GetChild(4).GetComponent<TextMeshProUGUI>();
-        boxTitle.text = $"Buy {info.Name} for ${info.Price}?";
-        boxDesc.text = $"{info.Description}";
+        if (interactable)
+        {
+            ConfirmationBox box = Instantiate(confirmationBox, store.transform);
+            box.GetComponent<RectTransform>().localPosition = Vector3.zero;
+            box.Item = info;
+            box.Store = store;
+            box.Slot = this;
+            TextMeshProUGUI boxTitle = box.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI boxDesc = box.transform.GetChild(4).GetComponent<TextMeshProUGUI>();
+            boxTitle.text = $"Buy {info.Name} for ${info.Price}?";
+            boxDesc.text = $"{info.Description}";
+        }
     }
 }

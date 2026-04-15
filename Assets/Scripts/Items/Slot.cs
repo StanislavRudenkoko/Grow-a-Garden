@@ -15,12 +15,14 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public Item info;
     public GameObject itemText;
+    public bool interactable;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         itemText = gameObject.transform.root.GetChild(3).gameObject;
+        interactable = true;
     }
 
     /// <summary>
@@ -29,11 +31,14 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     /// <param name="eventData"></param>
     public void OnPointerEnter(PointerEventData eventData)
     {
-        this.GetComponent<Image>().color = Color.yellow;
-        TextMeshProUGUI itemNameDisplay = itemText.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-        TextMeshProUGUI itemDescDisplay = itemText.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
-        itemNameDisplay.text = info.Name;
-        itemDescDisplay.text = info.Description;
+        if (interactable)
+        {
+            this.GetComponent<Image>().color = Color.yellow;
+            TextMeshProUGUI itemNameDisplay = itemText.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI itemDescDisplay = itemText.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+            itemNameDisplay.text = info.Name;
+            itemDescDisplay.text = info.Description;
+        }
     }
 
     /// <summary>

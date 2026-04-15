@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 /// <summary>
@@ -9,29 +10,47 @@ using UnityEngine.UI;
 /// </summary>
 public class ConfirmationBuyBox : ConfirmationBox
 {
+    public Transform speechBubble;
+    public Player player;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         content = GameObject.FindGameObjectWithTag("ContentBuy");
+        speechBubble = content.transform.root.GetChild(3);
+        player = ObjectGetter.GetPlayer();
     }
 
     /// <summary>
     /// Buys the item when clicked. *The logic is currently not implemented
     /// </summary>
-    void Buy()
+    public void Buy()
     {
-        if (Item.QuantityStore > 0)
+        if (player.Coins < Item.Price)
+        {
+            NotEnoughCoins();
+        }
+        else if (Item.QuantityStore > 0)
         {
             Store.BuyItem(Item.Price, Item);
             content.GetComponent<PopulateStore>().UpdateQuantity();
+            if (Item.QuantityStore == 0)
+            {
+                Slot.interactable = false;
+            }
+            Destroy(this.gameObject);
         }
-        else
-        {
-            Debug.Log("another pop up");
-        }
-        // logic here
-        Destroy(this.gameObject);
+
+
+
+    }
+
+    private void NotEnoughCoins()
+    {
+        this.transform.GetChild(1).gameObject.SetActive(false);
+        this.transform.GetChild(2).GetComponentInChildren<TextMeshProUGUI>().text = "Okay";
+        this.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = $"Could not buy {Item.Name}!";
+        this.transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = "Insufficient coins.";
     }
 
     /// <summary>

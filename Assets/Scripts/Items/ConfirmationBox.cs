@@ -8,8 +8,9 @@ using UnityEngine;
 public abstract class ConfirmationBox : MonoBehaviour
 {
     public Item Item { get; set; }
-    public Store Store {get; set;}
+    public Store Store { get; set; }
     public GameObject content;
+    public Slot Slot { get; set; }
 
 
     public abstract void Action();
