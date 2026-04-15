@@ -1,11 +1,12 @@
 /// <summary>
 /// PlantManager
-/// Author: Stanislav Rudenko, Tin Trinh
+/// Author: Stanislav Rudenko, Joshua Trepanier, Tin Trinh
 /// Date: Mar. 12 - Mar. 26, 2026
 /// Source: with help of Claude AI
 /// </summary>
 
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 /// <summary>
@@ -32,7 +33,7 @@ public class PlantManager : MonoBehaviour
     public List<string> soilTypes = new List<string> { "All purpose soil", "Premium soil" };
 
     // ── Runtime ───────────────────────────────────────────────────────────────
-    private readonly List<PlantPotController> activePots = new List<PlantPotController>();
+    private List<PlantPotController> activePots;
 
     // ── Constants ─────────────────────────────────────────────────────────────
     private const float HealthDrainDry = 15f;
@@ -44,6 +45,9 @@ public class PlantManager : MonoBehaviour
     private const float HealthWiltThreshold = 65f;
 
     // ── Unity lifecycle ───────────────────────────────────────────────────────
+    /// <summary>
+    /// on scene load
+    /// </summary>
     private void Awake()
     {
         Debug.Log("PlantManager Awake called. Instance is null: " + (Instance == null));
@@ -60,13 +64,33 @@ public class PlantManager : MonoBehaviour
         }
     }
 
-    // ── Day tick ──────────────────────────────────────────────────────────────
+    /// <summary>
+    /// On scene start
+    /// </summary>
+    private void Start()
+    {
+        activePots = ObjectGetter.getPots();
+        if (activePots == null)
+        {
+            activePots = new List<PlantPotController>();
+        }
+        else
+        {
+            foreach (PlantPotController pot in activePots)
+            {
+                pot.gameObject.SetActive(true);
+            }
+        }
+    }
 
+
+    // ── Day tick ──────────────────────────────────────────────────────────────
     /// <summary>
     /// Call this from your "Next Day" button. Advances all plant simulations by one day.
     /// </summary>
     public void ProcessNextDay()
     {
+        ObjectGetter.setPots(activePots);
         foreach (PlantPotController pot in activePots)
         {
             PlantInstance data = pot.potData;
@@ -135,6 +159,7 @@ public class PlantManager : MonoBehaviour
             data.status = PlantStatus.Thirsty;
         else
             data.status = PlantStatus.Healthy;
+
     }
 
     // ── Public API ────────────────────────────────────────────────────────────
@@ -181,14 +206,18 @@ public class PlantManager : MonoBehaviour
         Debug.Log("All slots full or no valid slot found");
     }
 
-    /// <summary>Removes the pot from tracking and destroys its GameObject.</summary>
+    /// <summary>
+    /// Removes the pot from tracking and destroys its GameObject.
+    /// </summary>
     public void RemovePot(PlantPotController pot)
     {
         activePots.Remove(pot);
         Destroy(pot.gameObject);
     }
 
-    /// <summary>Returns the index of a soil name in soilTypes (for sprite lookup).</summary>
+    /// <summary>
+    /// Returns the index of a soil name in soilTypes (for sprite lookup).
+    /// </summary>
     public int GetSoilIndex(string soilName)
     {
         return soilTypes.IndexOf(soilName);
@@ -216,6 +245,12 @@ public class PlantManager : MonoBehaviour
 
     // ── Private ───────────────────────────────────────────────────────────────
 
+    /// <summary>
+    /// Spawn a pot in the scene and convert it from a child to a parent to allow
+    /// the pot to be set as DontDestroyOnLoad.
+    /// </summary>
+    /// <param name="position"></param>
+    /// <param name="index"></param>
     private void SpawnPot(Vector3 position, int index)
     {
         GameObject go = Instantiate(plantPotPrefab, position, Quaternion.identity, potParent);
@@ -241,14 +276,27 @@ public class PlantManager : MonoBehaviour
         go.transform.GetChild(3).GetComponent<SpriteRenderer>().sortingOrder = potIndex;
 
         PlantPotController ctrl = go.GetComponent<PlantPotController>();
+
+        go.transform.SetParent(null);
+        DontDestroyOnLoad(go);
         activePots.Add(ctrl);
     }
 
+    /// <summary>
+    /// Run when PlantManager is destroyed
+    /// </summary>
     private void OnDestroy()
     {
         Debug.Log("PlantManager was DESTROYED");
+        foreach (PlantPotController pot in activePots)
+        {
+            pot.gameObject.SetActive(false);
+        }
     }
 
+    /// <summary>
+    /// Run when PlantManager gets disabled
+    /// </summary>
     private void OnDisable()
     {
         Debug.Log("PlantManager was DISABLED");
