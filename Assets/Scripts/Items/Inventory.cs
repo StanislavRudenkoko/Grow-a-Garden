@@ -14,14 +14,8 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         player = ObjectGetter.GetInstance.player;
-        TextMeshProUGUI coins = this.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI coins = this.transform.GetChild(4).GetComponent<TextMeshProUGUI>();
         coins.text = $"Coins: ${player.Coins}";
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
 }

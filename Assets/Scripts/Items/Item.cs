@@ -36,17 +36,4 @@ public class Item : MonoBehaviour
         set { quantityPlayer = value; }
     }
     public ItemInfo Produce { get => ItemInfo.Produce; }
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

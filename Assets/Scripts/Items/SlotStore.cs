@@ -13,19 +13,6 @@ public class SlotStore : Slot, IPointerClickHandler
     public ConfirmationBox confirmationBox;
     public Store store;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     /// <summary>
     /// Opens a confirmation box when an item is clicked.
     /// </summary>

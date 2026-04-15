@@ -8,7 +8,7 @@ using UnityEngine.UI;
 /// Store class
 /// Author: Tin Trinh
 /// Date: Mar. 4, 2026
-/// Revision: Mar. 25, 2026
+/// Revision: Apr. 14, 2026
 /// Source: None
 /// </summary>
 public class Store : MonoBehaviour
@@ -30,7 +30,7 @@ public class Store : MonoBehaviour
 
     void Update()
     {
-        transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = $"Coins: ${player.Coins}";
+        transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = $"Coins: ${player.Coins}";
     }
 
     /// <summary>
@@ -53,6 +53,9 @@ public class Store : MonoBehaviour
         player.SellItem(amount, item);
     }
 
+    /// <summary>
+    /// Switches store to sell mode.
+    /// </summary>
     public void SellMode()
     {
         sell.GetComponent<Button>().interactable = false;
@@ -64,6 +67,9 @@ public class Store : MonoBehaviour
         contentSell.GetComponent<PopulateStoreSell>().Refresh();
     }
 
+    /// <summary>
+    /// Switches store to buy mode.
+    /// </summary>
     public void BuyMode()
     {
         buy.GetComponent<Button>().interactable = false;
@@ -75,6 +81,11 @@ public class Store : MonoBehaviour
         contentSell.GetComponent<PopulateStoreSell>().Refresh();
     }
 
+    /// <summary>
+    /// Disables all buttons in a group and enables the specified one.
+    /// </summary>
+    /// <param name="categoryGroup"></param>
+    /// <param name="index"></param>
     private void CategoryPress(GameObject categoryGroup, int index)
     {
         var children = categoryGroup.transform.GetComponentsInChildren<Button>();
@@ -85,42 +96,65 @@ public class Store : MonoBehaviour
         children[index].interactable = false;
     }
 
+    /// <summary>
+    /// Switches category to all items in buy section.
+    /// </summary>
     public void BuyAllButton()
     {
         CategoryPress(categoriesBuy, 0);
         contentBuy.GetComponent<PopulateStore>().Refresh();
     }
+    /// <summary>
+    /// Switches category to equipment in buy section.
+    /// </summary>
     public void BuyEquipmentButton()
     {
         CategoryPress(categoriesBuy, 1);
         contentBuy.GetComponent<PopulateStore>().Refresh(ItemCategory.EQUIPMENT);
     }
+    /// <summary>
+    /// Switches category to soil in buy section.
+    /// </summary>
     public void BuySoilButton()
     {
         CategoryPress(categoriesBuy, 2);
         contentBuy.GetComponent<PopulateStore>().Refresh(ItemCategory.SOIL);
     }
+    /// <summary>
+    /// Switches category to seeds in buy section.
+    /// </summary>
     public void BuySeedsButton()
     {
         CategoryPress(categoriesBuy, 3);
         contentBuy.GetComponent<PopulateStore>().Refresh(ItemCategory.SEED);
     }
+    /// <summary>
+    /// Switches category to all items in sell section.
+    /// </summary>
     public void SellAllButton()
     {
         CategoryPress(categoriesSell, 0);
         contentSell.GetComponent<PopulateStoreSell>().Refresh();
     }
-
+    /// <summary>
+    /// Switches category to produce in buy section.
+    /// </summary>
     public void SellProduceButton()
     {
         CategoryPress(categoriesSell, 1);
         contentSell.GetComponent<PopulateStoreSell>().Refresh(ItemCategory.PRODUCE);
     }
+    /// <summary>
+    /// Switches category to soil in buy section.
+    /// </summary>
     public void SellSoilButton()
     {
         CategoryPress(categoriesSell, 2);
         contentSell.GetComponent<PopulateStoreSell>().Refresh(ItemCategory.SOIL);
     }
+    /// <summary>
+    /// Switches category to seeds in buy section.
+    /// </summary>
     public void SellSeedsButton()
     {
         CategoryPress(categoriesSell, 3);

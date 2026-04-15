@@ -23,11 +23,6 @@ public class PopulateStoreSell : MonoBehaviour
         player = ObjectGetter.GetPlayer();
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-    }
-
     /// <summary>
     /// Populates the inventory items slots.
     /// </summary>

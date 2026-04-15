@@ -6,7 +6,7 @@ public class Slot : MonoBehaviour, IPointerEnterHandler
 {
     public Item info;
 
-        /// <summary>
+    /// <summary>
     /// Displays information when mouse is hovering over a slot.
     /// </summary>
     /// <param name="eventData"></param>
