@@ -1,20 +1,20 @@
 {
-  "version": "1.0",
+  "version": "1.2",
   "plants": [
     {
       "id": "orchid",
       "displayName": "Orchid",
       "scientificName": "Phalaenopsis amabilis",
       "family": "Orchidaceae",
-      "descriptionShort": "An elegant flowering plant prized for its delicate blooms and long-lasting beauty.",
+      "descriptionShort": "Orchid (Phalaenopsis amabilis, family Orchidaceae) is a tropical epiphytic plant known for its long-lasting blooms. It grows naturally on trees in humid environments, requiring indirect light, airy roots, and infrequent but careful watering to avoid root rot.",
       "growth": {
         "totalGrowthStages": 4,
         "daysPerStage": 4,
         "regrowable": true
       },
       "environmentRequirements": {
-        "idealSoilTypes": ["Dirt"],
-        "waterPerDay": 1,
+        "idealSoilTypes": ["Premium soil"],
+        "waterLevels": 20,
         "sunlightLevel": "PartialSun",
         "temperatureMin": 16,
         "temperatureMax": 29
@@ -30,15 +30,15 @@
       "displayName": "Green Onion",
       "scientificName": "Allium fistulosum",
       "family": "Amaryllidaceae",
-      "descriptionShort": "A quick-growing allium with a mild flavor, harvested young for its tender green stalks.",
+      "descriptionShort": "Green Onion (Allium fistulosum, family Amaryllidaceae) is a hardy perennial allium cultivated for its mild, hollow green stalks. It grows rapidly and prefers consistent moisture, making it ideal for frequent harvesting in temperate climates.",
       "growth": {
         "totalGrowthStages": 3,
         "daysPerStage": 2,
         "regrowable": true
       },
       "environmentRequirements": {
-        "idealSoilTypes": [""],
-        "waterPerDay": 2,
+        "idealSoilTypes": ["All purpose soil"],
+        "waterLevels": 60,
         "sunlightLevel": "FullSun",
         "temperatureMin": 7,
         "temperatureMax": 24
@@ -54,15 +54,15 @@
       "displayName": "Strawberry",
       "scientificName": "Fragaria × ananassa",
       "family": "Rosaceae",
-      "descriptionShort": "A sweet fruiting plant that produces bright red berries and can regrow after harvest.",
+      "descriptionShort": "Strawberry (Fragaria × ananassa, family Rosaceae) is a low-growing perennial that produces sweet red fruits. It requires rich soil, consistent watering, and full sunlight to maintain fruit production and quality.",
       "growth": {
         "totalGrowthStages": 5,
         "daysPerStage": 3,
         "regrowable": true
       },
       "environmentRequirements": {
-        "idealSoilTypes": [""],
-        "waterPerDay": 3,
+        "idealSoilTypes": ["Premium soil"],
+        "waterLevels": 70,
         "sunlightLevel": "FullSun",
         "temperatureMin": 15,
         "temperatureMax": 26
@@ -78,15 +78,15 @@
       "displayName": "Tomato",
       "scientificName": "Solanum lycopersicum",
       "family": "Solanaceae",
-      "descriptionShort": "A warm-season garden favorite that produces juicy red fruits and thrives in sunny conditions.",
+      "descriptionShort": "Tomato (Solanum lycopersicum, family Solanaceae) is a warm-season fruiting plant that thrives in sunlight and nutrient-rich soil. It requires steady watering to prevent cracking and blossom-end rot during fruit development.",
       "growth": {
         "totalGrowthStages": 5,
         "daysPerStage": 2,
         "regrowable": false
       },
       "environmentRequirements": {
-        "idealSoilTypes": [""],
-        "waterPerDay": 3,
+        "idealSoilTypes": ["Premium soil"],
+        "waterLevels": 80,
         "sunlightLevel": "FullSun",
         "temperatureMin": 18,
         "temperatureMax": 30
@@ -102,15 +102,15 @@
       "displayName": "Eggplant",
       "scientificName": "Solanum melongena",
       "family": "Solanaceae",
-      "descriptionShort": "A heat-loving vegetable with deep purple fruits that takes patience to grow but rewards generously.",
+      "descriptionShort": "Eggplant (Solanum melongena, family Solanaceae) is a heat-loving crop producing glossy purple fruits. It requires warm soil, high sunlight, and regular watering to sustain healthy fruit growth.",
       "growth": {
         "totalGrowthStages": 5,
         "daysPerStage": 4,
         "regrowable": false
       },
       "environmentRequirements": {
-        "idealSoilTypes": ["Dirt"],
-        "waterPerDay": 3,
+        "idealSoilTypes": ["Premium soil"],
+        "waterLevels": 75,
         "sunlightLevel": "FullSun",
         "temperatureMin": 20,
         "temperatureMax": 34
@@ -126,15 +126,15 @@
       "displayName": "Reaper",
       "scientificName": "Capsicum chinense 'Carolina Reaper'",
       "family": "Solanaceae",
-      "descriptionShort": "The world's hottest pepper. Thrives in dry, sandy soil under intense heat — not for the faint of heart.",
+      "descriptionShort": "Reaper (Capsicum chinense 'Carolina Reaper', family Solanaceae) is one of the hottest peppers in the world. It thrives in hot climates with well-drained soil and prefers moderate watering to maintain fruit intensity.",
       "growth": {
         "totalGrowthStages": 6,
         "daysPerStage": 4,
         "regrowable": false
       },
       "environmentRequirements": {
-        "idealSoilTypes": ["Dirt"],
-        "waterPerDay": 1,
+        "idealSoilTypes": ["All purpose soil"],
+        "waterLevels": 40,
         "sunlightLevel": "FullSun",
         "temperatureMin": 22,
         "temperatureMax": 38
@@ -150,15 +150,15 @@
       "displayName": "Daisy",
       "scientificName": "Bellis perennis",
       "family": "Asteraceae",
-      "descriptionShort": "A cheerful wildflower with white petals and a yellow center, blooming reliably in cool conditions.",
+      "descriptionShort": "Daisy (Bellis perennis, family Asteraceae) is a hardy flowering plant commonly found in meadows. It tolerates cooler temperatures and moderate watering, making it easy to maintain.",
       "growth": {
         "totalGrowthStages": 3,
         "daysPerStage": 2,
         "regrowable": true
       },
       "environmentRequirements": {
-        "idealSoilTypes": ["Dirt"],
-        "waterPerDay": 1,
+        "idealSoilTypes": ["All purpose soil"],
+        "waterLevels": 50,
         "sunlightLevel": "PartialSun",
         "temperatureMin": 5,
         "temperatureMax": 22
@@ -174,15 +174,15 @@
       "displayName": "Carrot",
       "scientificName": "Daucus carota",
       "family": "Apiaceae",
-      "descriptionShort": "A root vegetable that grows underground and prefers loose soil and consistent moisture.",
+      "descriptionShort": "Carrot (Daucus carota, family Apiaceae) is a root vegetable that develops underground storage roots. It requires loose, well-drained soil and steady watering to prevent splitting.",
       "growth": {
         "totalGrowthStages": 4,
         "daysPerStage": 2,
         "regrowable": false
       },
       "environmentRequirements": {
-        "idealSoilTypes": ["Dirt"],
-        "waterPerDay": 2,
+        "idealSoilTypes": ["All purpose soil"], 
+        "waterLevels": 65,
         "sunlightLevel": "FullSun",
         "temperatureMin": 10,
         "temperatureMax": 24
@@ -198,15 +198,15 @@
       "displayName": "Tulip",
       "scientificName": "Tulipa gesneriana",
       "family": "Liliaceae",
-      "descriptionShort": "A classic spring bulb flower that blooms in vivid colors and prefers cool, well-drained soil.",
+      "descriptionShort": "Tulip (Tulipa gesneriana, family Liliaceae) is a spring-blooming bulb plant known for its vibrant flowers. It prefers cool climates and minimal watering to avoid bulb rot.",
       "growth": {
         "totalGrowthStages": 4,
         "daysPerStage": 3,
         "regrowable": false
       },
       "environmentRequirements": {
-        "idealSoilTypes": ["Dirt"],
-        "waterPerDay": 1,
+        "idealSoilTypes": ["All purpose soil"],
+        "waterLevels": 30,
         "sunlightLevel": "FullSun",
         "temperatureMin": 4,
         "temperatureMax": 18
@@ -222,15 +222,15 @@
       "displayName": "Potato",
       "scientificName": "Solanum tuberosum",
       "family": "Solanaceae",
-      "descriptionShort": "A hardy tuber crop that grows well in cool climates and nutrient-rich soil.",
+      "descriptionShort": "Potato (Solanum tuberosum, family Solanaceae) is a staple tuber crop that grows underground. It requires consistent moisture during tuber formation but should not be overwatered.",
       "growth": {
         "totalGrowthStages": 5,
         "daysPerStage": 3,
         "regrowable": false
       },
       "environmentRequirements": {
-        "idealSoilTypes": ["Dirt"],
-        "waterPerDay": 2,
+        "idealSoilTypes": ["All purpose soil"],
+        "waterLevels": 60,
         "sunlightLevel": "FullSun",
         "temperatureMin": 10,
         "temperatureMax": 22
@@ -246,15 +246,15 @@
       "displayName": "Cucumber",
       "scientificName": "Cucumis sativus",
       "family": "Cucurbitaceae",
-      "descriptionShort": "A fast-growing vine vegetable that loves heat, moisture, and plenty of room to sprawl.",
+      "descriptionShort": "Cucumber (Cucumis sativus, family Cucurbitaceae) is a fast-growing vine that produces crisp fruits. It requires high water intake and warm temperatures to sustain rapid growth.",
       "growth": {
         "totalGrowthStages": 5,
         "daysPerStage": 2,
         "regrowable": false
       },
       "environmentRequirements": {
-        "idealSoilTypes": ["Dirt"],
-        "waterPerDay": 4,
+        "idealSoilTypes": ["Premium soil"],
+        "waterLevels": 90,
         "sunlightLevel": "FullSun",
         "temperatureMin": 18,
         "temperatureMax": 32
@@ -270,15 +270,15 @@
       "displayName": "Green Beans",
       "scientificName": "Phaseolus vulgaris",
       "family": "Fabaceae",
-      "descriptionShort": "A productive bush plant that yields tender pods over several harvests in warm, sunny weather.",
+      "descriptionShort": "Green Beans (Phaseolus vulgaris, family Fabaceae) are productive legumes that enrich soil through nitrogen fixation. They grow best with moderate watering and full sunlight, producing multiple harvests.",
       "growth": {
         "totalGrowthStages": 4,
         "daysPerStage": 2,
         "regrowable": true
       },
       "environmentRequirements": {
-        "idealSoilTypes": ["Dirt"],
-        "waterPerDay": 2,
+        "idealSoilTypes": ["All purpose soil"],
+        "waterLevels": 65,
         "sunlightLevel": "FullSun",
         "temperatureMin": 16,
         "temperatureMax": 30

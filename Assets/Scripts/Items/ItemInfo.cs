@@ -1,6 +1,3 @@
-using System;
-using NUnit.Framework.Internal.Commands;
-using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>

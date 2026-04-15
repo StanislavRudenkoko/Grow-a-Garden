@@ -57,7 +57,7 @@ public class PlantPotController : MonoBehaviour, IPointerClickHandler
         {
             if (potData.hasSoil)
             {
-                soilSpriteRenderer.sprite = db.GetSoilSprite(potData.soilType);
+                soilSpriteRenderer.sprite = db.GetSoilSprite("Dirt");
                 soilSpriteRenderer.gameObject.SetActive(true);
             }
             else

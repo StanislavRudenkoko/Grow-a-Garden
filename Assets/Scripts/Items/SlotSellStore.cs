@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 /// <summary>
-/// Slot class that represents a single item slot in the store.
+/// Slot class that represents a single item slot in the store (sell mode).
 /// Author: Tin Trinh
 /// Date: Mar. 4, 2026
 /// Source: None
@@ -12,17 +12,6 @@ public class SlotSellStore : Slot, IPointerClickHandler
 {
     public ConfirmationBox confirmationBox;
     public Store store;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     /// <summary>
     /// Opens a confirmation box when an item is clicked.

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 /// Populates the player inventory.
 /// Author: Tin Trinh
 /// Date: Mar. 25, 2026
+/// Revision: Apr. 14, 2026
 /// Source: Various discussions on https://discussions.unity.com
 /// </summary>
 public class PopulateInventory : MonoBehaviour
@@ -18,18 +19,25 @@ public class PopulateInventory : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        player = ObjectGetter.GetInstance.player;
         Populate();
     }
 
     /// <summary>
     /// Populates the inventory items slots.
     /// </summary>
-    void Populate()
+    void Populate(ItemCategory? itemCategory = null)
     {
+        if (!player)
+        {
+            player = ObjectGetter.GetPlayer();
+        }
         Slot obj;
         foreach (Item item in player.Inventory)
         {
+            if (itemCategory != null && item.ItemCategory != itemCategory)
+            {
+                continue;
+            }
             obj = Instantiate(slot, transform);
             obj.info = item;
             Image objImage = obj.transform.GetChild(0).GetComponent<Image>();
@@ -40,15 +48,20 @@ public class PopulateInventory : MonoBehaviour
             objImage.preserveAspect = true;
             objTitle.text = obj.info.Name;
             objPrice.text = $"${obj.info.Price}";
-            objQuantity.text = $"x{obj.info.QuantityPlayer}";
+            if (itemCategory != ItemCategory.EQUIPMENT)
+                objQuantity.text = $"x{obj.info.QuantityPlayer}";
         }
     }
-    public void Refresh()
+    /// <summary>
+    /// Refreshes the inventory.
+    /// </summary>
+    /// <param name="itemCategory"></param>
+    public void Refresh(ItemCategory? itemCategory = null)
     {
-        foreach(Transform child in container.transform)
+        foreach (Transform child in container.transform)
         {
             Destroy(child.gameObject);
         }
-        Populate();
+        Populate(itemCategory);
     }
 }

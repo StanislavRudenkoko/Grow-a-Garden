@@ -16,21 +16,15 @@ public class ConfirmationBuyBox : ConfirmationBox
         content = GameObject.FindGameObjectWithTag("ContentBuy");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     /// <summary>
     /// Buys the item when clicked. *The logic is currently not implemented
     /// </summary>
     void Buy()
     {
         if (Item.QuantityStore > 0)
-        {   
+        {
             Store.BuyItem(Item.Price, Item);
-            content.GetComponent<PopulateStore>().Refresh();
+            content.GetComponent<PopulateStore>().UpdateQuantity();
         }
         else
         {
@@ -40,6 +34,9 @@ public class ConfirmationBuyBox : ConfirmationBox
         Destroy(this.gameObject);
     }
 
+    /// <summary>
+    /// Defines the action.
+    /// </summary>
     public override void Action()
     {
         Buy();

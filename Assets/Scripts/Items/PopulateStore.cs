@@ -15,23 +15,29 @@ public class PopulateStore : MonoBehaviour
     public SlotStore slot;
     public Store store;
     public List<Item> items;
+    public StoreInventory storeInventory;
     public Item item;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        items = ObjectGetter.GetStoreInventory().Items;
+        storeInventory = ObjectGetter.GetStoreInventory();
+        items = storeInventory.Items;
         Populate();
     }
 
     /// <summary>
     /// Populates the Store items slots.
     /// </summary>
-    void Populate()
+    void Populate(ItemCategory? itemCategory = null)
     {
         SlotStore obj;
         foreach (Item itemInfoWrapper in items)
         {
+            if (itemCategory != null && itemInfoWrapper.ItemCategory != itemCategory)
+            {
+                continue;
+            }
             obj = Instantiate(slot, transform);
             obj.info = itemInfoWrapper;
             obj.store = store;
@@ -50,13 +56,34 @@ public class PopulateStore : MonoBehaviour
     /// <summary>
     /// Updates the quantity of each item.
     /// </summary>
-    public void Refresh()
+    public void UpdateQuantity()
     {
         foreach (Transform slot in transform)
         {
+            Item item = slot.GetComponent<SlotStore>().info;
             TextMeshProUGUI objQuantity = slot.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
-            objQuantity.text = $"x{slot.GetComponent<SlotStore>().info.QuantityStore}";
+            objQuantity.text = $"x{item.QuantityStore}";
+            if (item.QuantityStore == 0)
+            {
+                if (item.ItemCategory == ItemCategory.EQUIPMENT)
+                {
+                    storeInventory.RemoveItem(item);
+                    Destroy(slot.gameObject);
+                }
+                objQuantity.text = "Sold out";
+                slot.transform.GetChild(0).GetComponent<Image>().color = Color.gray;
+            }
         }
-        Debug.Log("Refreshed");
+    }
+    /// <summary>
+    /// Updates the items.
+    /// </summary>
+    public void Refresh(ItemCategory? itemCategory = null)
+    {
+        foreach (Transform child in this.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        Populate(itemCategory);
     }
 }

@@ -18,21 +18,27 @@ public class PopulateStoreSell : MonoBehaviour
     public Player player;
     public GameObject container;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-        player = ObjectGetter.GetInstance.player;
-        Populate();
+        player = ObjectGetter.GetPlayer();
     }
 
     /// <summary>
     /// Populates the inventory items slots.
     /// </summary>
-    void Populate()
+    void Populate(ItemCategory? itemCategory = null)
     {
+        if (!player)
+        {
+            player = ObjectGetter.GetPlayer();
+        }
         SlotSellStore obj;
         foreach (Item item in player.Inventory)
         {
+            if (itemCategory != null && item.ItemCategory != itemCategory || item.ItemCategory == ItemCategory.EQUIPMENT)
+            {
+                continue;
+            }
             obj = Instantiate(slot, transform);
             obj.info = item;
             obj.store = store;
@@ -51,12 +57,12 @@ public class PopulateStoreSell : MonoBehaviour
     /// <summary>
     /// Updates the quantity of each item.
     /// </summary>
-    public void Refresh()
+    public void Refresh(ItemCategory? itemCategory = null)
     {
-        foreach(Transform child in container.transform)
+        foreach (Transform child in container.transform)
         {
             Destroy(child.gameObject);
         }
-        Populate();
+        Populate(itemCategory);
     }
 }
