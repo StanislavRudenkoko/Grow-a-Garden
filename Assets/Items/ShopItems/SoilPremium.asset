@@ -15,7 +15,8 @@ MonoBehaviour:
   name: Premium Soil
   description: Soil rich in nutrients.
   category: 1
-  price: 100
-  sellPrice: 50
+  price: 40
+  sellPrice: 20
   startingQuantity: 3
   itemSprite: {fileID: 8845415217610155990, guid: 5d8ef1f19f07e80449c6c0859156e5ad, type: 3}
+  produce: {fileID: 0}

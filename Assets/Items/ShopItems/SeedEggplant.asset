@@ -17,6 +17,6 @@ MonoBehaviour:
   category: 0
   price: 20
   sellPrice: 10
-  startingQuantity: 5
+  startingQuantity: 3
   itemSprite: {fileID: 1894558627656159805, guid: 655bc2fc653541d4eb1d7ba248eafd74, type: 3}
   produce: {fileID: 11400000, guid: 2528c009f517d51458f831a21cd8b26a, type: 2}
