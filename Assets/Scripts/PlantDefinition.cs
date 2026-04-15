@@ -35,7 +35,7 @@ public class PlantDefinition
     public class EnvironmentRequirements
     {
         public List<string> idealSoilTypes;
-        public int waterPerDay;
+        public int waterLevels;
         public string sunlightLevel; // "FullSun", "PartialSun", "Shade"
         public int temperatureMin;
         public int temperatureMax;

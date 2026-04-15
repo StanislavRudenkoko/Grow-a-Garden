@@ -78,7 +78,7 @@ public class PlantManager : MonoBehaviour
             if (def == null) continue;
 
             // ── 1. Water drain ────────────────────────────────────────────────
-            data.waterLevel = Mathf.Max(0f, data.waterLevel - def.environmentRequirements.waterPerDay);
+            data.waterLevel = Mathf.Max(0f, data.waterLevel - def.environmentRequirements.waterLevels);
 
             // ── 2. Health / fertilizer ────────────────────────────────────────
             if (data.waterLevel == 0f)
