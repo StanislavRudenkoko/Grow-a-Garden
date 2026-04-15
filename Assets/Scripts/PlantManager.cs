@@ -199,6 +199,7 @@ public class PlantManager : MonoBehaviour
             {
                 Debug.Log("Spawning pot at: " + slot.position);
                 SpawnPot(slot.position, slot.GetSiblingIndex());
+                ObjectGetter.setPots(activePots);
                 return;
             }
         }
@@ -212,6 +213,7 @@ public class PlantManager : MonoBehaviour
     public void RemovePot(PlantPotController pot)
     {
         activePots.Remove(pot);
+        ObjectGetter.setPots(activePots);
         Destroy(pot.gameObject);
     }
 
