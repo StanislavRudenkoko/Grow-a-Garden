@@ -42,10 +42,10 @@ public class PopulateStoreSell : MonoBehaviour
             obj = Instantiate(slot, transform);
             obj.info = item;
             obj.store = store;
-            Image objImage = obj.transform.GetChild(0).GetComponent<Image>();
-            TextMeshProUGUI objTitle = obj.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
-            TextMeshProUGUI objPrice = obj.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
-            TextMeshProUGUI objQuantity = obj.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
+            Image objImage = obj.transform.GetChild(1).GetComponent<Image>();
+            TextMeshProUGUI objTitle = obj.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI objPrice = obj.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI objQuantity = obj.transform.GetChild(4).GetComponent<TextMeshProUGUI>();
             objImage.sprite = obj.info.ItemSprite;
             objImage.preserveAspect = true;
             objTitle.text = obj.info.Name;
