@@ -41,10 +41,10 @@ public class PopulateStore : MonoBehaviour
             obj = Instantiate(slot, transform);
             obj.info = itemInfoWrapper;
             obj.store = store;
-            Image objImage = obj.transform.GetChild(0).GetComponent<Image>();
-            TextMeshProUGUI objTitle = obj.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
-            TextMeshProUGUI objPrice = obj.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
-            TextMeshProUGUI objQuantity = obj.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
+            Image objImage = obj.transform.GetChild(1).GetComponent<Image>();
+            TextMeshProUGUI objTitle = obj.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI objPrice = obj.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI objQuantity = obj.transform.GetChild(4).GetComponent<TextMeshProUGUI>();
             objImage.sprite = obj.info.ItemSprite;
             objImage.preserveAspect = true;
             objTitle.text = obj.info.Name;
@@ -61,7 +61,7 @@ public class PopulateStore : MonoBehaviour
         foreach (Transform slot in transform)
         {
             Item item = slot.GetComponent<SlotStore>().info;
-            TextMeshProUGUI objQuantity = slot.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI objQuantity = slot.transform.GetChild(4).GetComponent<TextMeshProUGUI>();
             objQuantity.text = $"x{item.QuantityStore}";
             if (item.QuantityStore == 0)
             {
@@ -71,7 +71,7 @@ public class PopulateStore : MonoBehaviour
                     Destroy(slot.gameObject);
                 }
                 objQuantity.text = "Sold out";
-                slot.transform.GetChild(0).GetComponent<Image>().color = Color.gray;
+                slot.transform.GetChild(1).GetComponent<Image>().color = Color.gray;
             }
         }
     }

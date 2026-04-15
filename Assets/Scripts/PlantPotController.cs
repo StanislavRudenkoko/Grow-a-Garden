@@ -45,7 +45,9 @@ public class PlantPotController : MonoBehaviour, IPointerClickHandler
             PotDropdownUI.Instance.OpenFor(this);
     }
 
-    /// <summary>Syncs soil and plant sprites to <see cref="PlantInstance"/> state.</summary>
+    /// <summary>
+    /// Syncs soil and plant sprites to <see cref="PlantInstance"/> state.
+    /// </summary>
     public void RefreshVisuals()
     {
         PlantVisualDatabase db = PlantManager.Instance.visualDatabase;
