@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 /// <summary>
 /// Class to hold objects that needs to persist between scenes. Singleton
@@ -11,6 +12,7 @@ public class ObjectGetter : MonoBehaviour
     private static ObjectGetter objectGetter;
     public Player player;
     public StoreInventory store;
+	public List<PlantPotController> activePots;
     public static ObjectGetter GetInstance
 	{
 		get
@@ -43,6 +45,28 @@ public class ObjectGetter : MonoBehaviour
     {
         return GetInstance.store;
     }
+
+	/// <summary>
+	/// Gets the pots
+	/// </summary>
+	/// <returns></returns>
+	public static List<PlantPotController> getPots()
+	{
+		return GetInstance.activePots;
+	}
+
+	/// <summary>
+	/// Set current pots in the garden.
+	/// </summary>
+	/// <param name="activePots"></param>
+	public static void setPots(List<PlantPotController> activePots)
+	{
+		GetInstance.activePots = activePots;
+		foreach (PlantPotController pot in activePots)
+        {
+			DontDestroyOnLoad(pot);
+		}
+	}
 	/// <summary>
 	/// Sets the player.
 	/// </summary>
@@ -52,6 +76,7 @@ public class ObjectGetter : MonoBehaviour
 		GetInstance.player = player;
 		DontDestroyOnLoad(player);
 	}
+
 	/// <summary>
 	/// Sets the store inventory
 	/// </summary>

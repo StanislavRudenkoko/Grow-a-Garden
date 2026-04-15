@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using UnityEngine;
 
 
@@ -14,6 +15,9 @@ public class PlantData : MonoBehaviour
     public bool hasSoil;
     public bool hasSeed;
     public int currentPot;
+
+    // new
+    public PlantInstance[] plantInstance;
 
     ///<summary>
     /// Singleton disign pattern to make sure only one PlantData object is made
