@@ -79,7 +79,7 @@ public class SeedPickerUI : MonoBehaviour
         data.waterLevel = 0f;
         data.health = 100f;
         data.status = PlantStatus.Healthy;
-
+        data.daysToGrow = def.growth.daysPerStage;
         targetPot.RefreshVisuals();
 
         // Re-initialize hover handler so tooltip works

@@ -92,6 +92,7 @@ public class PotDropdownUI : MonoBehaviour
         {
             AddButton("Harvest", OnHarvest);
             AddButton("Add Fertilizer", OnAddFertilizer);
+            AddButton("Water", OnWater);
             AddButton("Remove Plant", OnRemovePlant);
         }
     }
@@ -138,10 +139,29 @@ public class PotDropdownUI : MonoBehaviour
         Close();
     }
 
+    private void OnWater()
+    {
+        PlantInstance instance = currentPot.potData;
+        if (instance == null) return;
+
+        instance.waterLevel += 100f;
+        PlantManager.DeriveStatus(instance);
+        if (instance.status == PlantStatus.Thirsty)
+            instance.status = PlantStatus.Healthy;
+
+        currentPot.RefreshVisuals();
+        Close();
+    }
+
     private void OnAddFertilizer()
     {
-        // TODO: implement fertilizer logic
-        Debug.Log("Fertilizer not yet implemented.");
+        PlantInstance instance = currentPot.potData;
+        if (instance == null) return;
+
+        instance.fertilizer = Mathf.Min(instance.health + 100f, 100f);
+
+
+        currentPot.RefreshVisuals();
         Close();
     }
 

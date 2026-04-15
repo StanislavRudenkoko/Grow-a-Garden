@@ -11,7 +11,7 @@ using UnityEngine;
 /// <summary>
 /// Manages all pots in the scene:
 ///   • Spawning / removing pots
-///   • The growth update loop
+///   • The day-tick growth loop
 ///   • Soil type registry
 ///   • Plant compatibility queries
 /// </summary>
@@ -24,22 +24,26 @@ public class PlantManager : MonoBehaviour
     public PlantVisualDatabase visualDatabase;
 
     [Header("Prefab & Layout")]
-    public GameObject plantPotPrefab;   // the PlantPot prefab
-    public Transform potParent;        // empty GameObject that holds all pots
-    public Transform[] potSlots;        // 12 pre-placed slot transforms in the scene
-
-    [Header("Growth")]
-    public float growthTimePerStage = 10f;  // seconds per growth stage
+    public GameObject plantPotPrefab;
+    public Transform potParent;
+    public Transform[] potSlots;
 
     [Header("Soil Types")]
     public List<string> soilTypes = new List<string> { "All purpose soil", "Premium soil" };
 
     // ── Runtime ───────────────────────────────────────────────────────────────
-
     private readonly List<PlantPotController> activePots = new List<PlantPotController>();
 
-    // ── Unity lifecycle ───────────────────────────────────────────────────────
+    // ── Constants ─────────────────────────────────────────────────────────────
+    private const float HealthDrainDry = 15f;
+    private const float HealthDrainOverwater = 8f;
+    private const float FertilizerHealAmount = 10f;
+    private const float FertilizerCostAmount = 20f;
+    private const float WaterOverflowThreshold = 200f;
+    private const float WaterThirstyThreshold = 20f;
+    private const float HealthWiltThreshold = 65f;
 
+    // ── Unity lifecycle ───────────────────────────────────────────────────────
     private void Awake()
     {
         Debug.Log("PlantManager Awake called. Instance is null: " + (Instance == null));
@@ -56,7 +60,12 @@ public class PlantManager : MonoBehaviour
         }
     }
 
-    private void Update()
+    // ── Day tick ──────────────────────────────────────────────────────────────
+
+    /// <summary>
+    /// Call this from your "Next Day" button. Advances all plant simulations by one day.
+    /// </summary>
+    public void ProcessNextDay()
     {
         foreach (PlantPotController pot in activePots)
         {
@@ -68,26 +77,64 @@ public class PlantManager : MonoBehaviour
                 .GetPlantDefinition(data.plantDefinitionId);
             if (def == null) continue;
 
-            int maxStage = def.growth.totalGrowthStages - 1;
-            if (data.currentGrowthStage >= maxStage) continue;
+            // ── 1. Water drain ────────────────────────────────────────────────
+            data.waterLevel = Mathf.Max(0f, data.waterLevel - def.environmentRequirements.waterPerDay);
 
-            // Start growing if watered
-            if (data.status == PlantStatus.Healthy && data.waterLevel > 0)
-                data.status = PlantStatus.Growing;
-
-            if (data.status == PlantStatus.Growing)
+            // ── 2. Health / fertilizer ────────────────────────────────────────
+            if (data.waterLevel == 0f)
             {
-                data.timer += Time.deltaTime;
-                if (data.timer >= growthTimePerStage)
+                // Dry — lose health, fertilizer does nothing
+                data.health = Mathf.Max(0f, data.health - HealthDrainDry);
+            }
+            else if (data.waterLevel > WaterOverflowThreshold)
+            {
+                // Overwatered — lose health, fertilizer does nothing
+                data.health = Mathf.Max(0f, data.health - HealthDrainOverwater);
+            }
+            else if (data.fertilizer > 0f && data.health < 100f)
+            {
+                // Good water + fertilizer present — heal and consume fertilizer
+                data.health = Mathf.Min(100f, data.health + FertilizerHealAmount);
+                data.fertilizer = Mathf.Max(0f, data.fertilizer - FertilizerCostAmount);
+            }
+
+            // ── 3. Status derivation ──────────────────────────────────────────
+            DeriveStatus(data);
+
+            // ── 4. Growth ─────────────────────────────────────────────────────
+            int maxStage = def.growth.totalGrowthStages - 1;
+
+            if (data.status == PlantStatus.Healthy && data.currentGrowthStage < maxStage)
+            {
+                data.daysToGrow--;
+
+                if (data.daysToGrow <= 0)
                 {
-                    data.timer = 0f;
-                    data.waterLevel = 0f;
-                    data.status = PlantStatus.Healthy;
-                    data.currentGrowthStage = Mathf.Min(data.currentGrowthStage + 1, maxStage);
+                    data.currentGrowthStage++;
                     pot.RefreshVisuals();
+
+                    // Reset counter only if there are more stages left
+                    if (data.currentGrowthStage < maxStage)
+                        data.daysToGrow = def.growth.daysPerStage;
                 }
             }
         }
+    }
+
+    /// <summary>
+    /// Derives and assigns plant status from current health and water values.
+    /// Call this after any interaction that modifies health or waterLevel.
+    /// </summary>
+    public static void DeriveStatus(PlantInstance data)
+    {
+        if (data.health < HealthWiltThreshold)
+            data.status = PlantStatus.Wilting;
+        else if (data.waterLevel > WaterOverflowThreshold)
+            data.status = PlantStatus.Overwatered;
+        else if (data.waterLevel < WaterThirstyThreshold)
+            data.status = PlantStatus.Thirsty;
+        else
+            data.status = PlantStatus.Healthy;
     }
 
     // ── Public API ────────────────────────────────────────────────────────────
@@ -149,15 +196,11 @@ public class PlantManager : MonoBehaviour
 
     /// <summary>
     /// Returns all PlantDefinitions whose idealSoilTypes include the given soil.
-    /// In a real game you would also filter by the player's seed inventory.
     /// </summary>
     public List<PlantDefinition> GetCompatiblePlants(string soilType)
     {
         List<PlantDefinition> result = new List<PlantDefinition>();
 
-        // PlantDatabaseManager holds all definitions loaded from plants.json
-        // We iterate by asking it for each known id — extend this if you add
-        // a public GetAll() method to PlantDatabaseManager.
         foreach (string id in PlantDatabaseManager.Instance.GetAllIds())
         {
             PlantDefinition def = PlantDatabaseManager.Instance.GetPlantDefinition(id);
@@ -177,7 +220,6 @@ public class PlantManager : MonoBehaviour
     {
         GameObject go = Instantiate(plantPotPrefab, position, Quaternion.identity, potParent);
 
-        // sets the plant + front of the pot in front of the previous pot
         int plantIndex;
         int potIndex;
         if (index < 4)
@@ -198,7 +240,6 @@ public class PlantManager : MonoBehaviour
         go.transform.GetChild(2).GetComponent<SpriteRenderer>().sortingOrder = plantIndex;
         go.transform.GetChild(3).GetComponent<SpriteRenderer>().sortingOrder = potIndex;
 
-
         PlantPotController ctrl = go.GetComponent<PlantPotController>();
         activePots.Add(ctrl);
     }
@@ -212,8 +253,4 @@ public class PlantManager : MonoBehaviour
     {
         Debug.Log("PlantManager was DISABLED");
     }
-
-
-
-
 }

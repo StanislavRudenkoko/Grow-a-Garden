@@ -59,6 +59,6 @@ public enum PlantStatus
 {
     Healthy,
     Thirsty,
-    Growing,
+    Overwatered,
     Wilting
 }

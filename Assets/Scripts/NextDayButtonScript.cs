@@ -1,8 +1,7 @@
 using UnityEngine;
-
 /// <summary>
 /// Logic for when NextDayButton is clicked
-/// Authors:  , Tin Trinh
+/// Authors: Stanislav Rudenko, Tin Trinh
 /// Date: Apr. 14, 2026
 /// Source: 
 /// </summary>
@@ -12,37 +11,15 @@ public class NextDayButton : MonoBehaviour
     private StoreInventory storeInventory;
     private Player player;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // Set player and store inventory.
         storeInventory = ObjectGetter.GetStoreInventory();
         player = ObjectGetter.GetPlayer();
-
     }
 
     public void OnNextDay()
     {
-        foreach (PlantPotController pot in FindObjectsByType<PlantPotController>(FindObjectsSortMode.None))
-        {
-            PlantInstance data = pot.potData;
-
-            if (!data.hasPlant) continue;
-
-            PlantDefinition def = PlantDatabaseManager.Instance
-                .GetPlantDefinition(data.plantDefinitionId);
-
-            if (def == null) continue;
-
-            int maxStage = def.growth.totalGrowthStages - 1;
-
-            if (data.currentGrowthStage < maxStage)
-            {
-                data.currentGrowthStage++;
-                pot.RefreshVisuals();
-            }
-        }
-
+        PlantManager.Instance.ProcessNextDay();
         StockInventory();
         IncrementDay();
     }
