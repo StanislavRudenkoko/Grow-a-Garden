@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d69e21ddc15590f44b57a145b025b65b, type: 3}
-  m_Name: EquipmentWateringCan
-  m_EditorClassIdentifier: Assembly-CSharp::Item
-  name: Watering Can
-  description: Good for watering plants.
-  category: 2
-  price: 100
-  sellPrice: 0
-  startingQuantity: 1
-  itemSprite: {fileID: -3788094531934222670, guid: 9f79e4d10464e604c966683c125a5256, type: 3}
+  m_Name: SoilFertilizer
+  m_EditorClassIdentifier: Assembly-CSharp::ItemInfo
+  name: Fertilizer
+  description: Give it to your plants to help them grow big and strong.
+  category: 1
+  price: 30
+  sellPrice: 15
+  startingQuantity: 5
+  itemSprite: {fileID: 9180071042818975321, guid: 699439557253c4e48b41371a5414eb71, type: 3}
   produce: {fileID: 0}
