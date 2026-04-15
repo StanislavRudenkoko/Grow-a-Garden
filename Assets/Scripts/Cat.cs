@@ -8,7 +8,7 @@ public class Cat : MonoBehaviour, IPointerClickHandler
     public GameObject speechBubble;
     private string[] catDialogue = new string[]{
         "Meow~",
-        "Find what your lookin fur?",
+        "Find what you're lookin fur?",
         "Meo meo meo",
         "The store restocks everrryday.",
         "Hiya!",
