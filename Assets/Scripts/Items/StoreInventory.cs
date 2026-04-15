@@ -27,7 +27,11 @@ public class StoreInventory : MonoBehaviour
             newItem.QuantityStore = itemInfo.StartingQuantity;
             items.Add(newItem);
         }
+    }
 
+    public void RemoveItem(Item itemToRemove)
+    {
+        Items.Remove(itemToRemove);
     }
 
 }

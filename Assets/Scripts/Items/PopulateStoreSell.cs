@@ -35,7 +35,7 @@ public class PopulateStoreSell : MonoBehaviour
         SlotSellStore obj;
         foreach (Item item in player.Inventory)
         {
-            if (itemCategory != null && item.ItemCategory != itemCategory)
+            if (itemCategory != null && item.ItemCategory != itemCategory || item.ItemCategory == ItemCategory.EQUIPMENT)
             {
                 continue;
             }

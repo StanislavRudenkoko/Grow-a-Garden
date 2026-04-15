@@ -15,12 +15,14 @@ public class PopulateStore : MonoBehaviour
     public SlotStore slot;
     public Store store;
     public List<Item> items;
+    public StoreInventory storeInventory;
     public Item item;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        items = ObjectGetter.GetStoreInventory().Items;
+        storeInventory = ObjectGetter.GetStoreInventory();
+        items = storeInventory.Items;
         Populate();
     }
 
@@ -58,10 +60,20 @@ public class PopulateStore : MonoBehaviour
     {
         foreach (Transform slot in transform)
         {
+            Item item = slot.GetComponent<SlotStore>().info;
             TextMeshProUGUI objQuantity = slot.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
-            objQuantity.text = $"x{slot.GetComponent<SlotStore>().info.QuantityStore}";
+            objQuantity.text = $"x{item.QuantityStore}";
+            if (item.QuantityStore == 0)
+            {
+                if (item.ItemCategory == ItemCategory.EQUIPMENT)
+                {
+                    storeInventory.RemoveItem(item);
+                    Destroy(slot.gameObject);
+                }
+                objQuantity.text = "Sold out";
+                slot.transform.GetChild(0).GetComponent<Image>().color = Color.gray;
+            }
         }
-        Debug.Log("Refreshed");
     }
     /// <summary>
     /// Updates the items.
