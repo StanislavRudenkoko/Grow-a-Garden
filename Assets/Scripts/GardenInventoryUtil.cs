@@ -35,7 +35,8 @@ public static class GardenInventoryUtil
         if (!player.Inventory.Contains(produceItem))
             player.Inventory.Add(produceItem);
 
-        produceItem.QuantityPlayer++;
+        int produceGained = UnityEngine.Random.Range(3, 6);
+        produceItem.QuantityPlayer += produceGained;
         player.PlantsHarvested++;
         return true;
     }
