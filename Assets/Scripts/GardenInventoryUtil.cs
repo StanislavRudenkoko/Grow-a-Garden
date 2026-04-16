@@ -62,7 +62,8 @@ public static class GardenInventoryUtil
                 return item;
         }
 
-        return null;
+        // Produce ItemInfos are often not listed in StoreInventory.itemsinfo, so no row exists yet.
+        return store.GetOrCreateItemForInfo(produceInfo);
     }
 
     public static Item FindPlayerSoilItem(Player player, string soilTypeId)

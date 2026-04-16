@@ -8,7 +8,7 @@
       "family": "Orchidaceae",
       "descriptionShort": "Orchid (Phalaenopsis amabilis, family Orchidaceae) is a tropical epiphytic plant known for its long-lasting blooms. It grows naturally on trees in humid environments, requiring indirect light, airy roots, and infrequent but careful watering to avoid root rot.",
       "growth": {
-        "totalGrowthStages": 4,
+        "totalGrowthStages": 6,
         "daysPerStage": 4,
         "regrowable": true
       },
@@ -128,7 +128,7 @@
       "family": "Solanaceae",
       "descriptionShort": "Reaper (Capsicum chinense 'Carolina Reaper', family Solanaceae) is one of the hottest peppers in the world. It thrives in hot climates with well-drained soil and prefers moderate watering to maintain fruit intensity.",
       "growth": {
-        "totalGrowthStages": 6,
+        "totalGrowthStages": 5,
         "daysPerStage": 4,
         "regrowable": false
       },
@@ -152,7 +152,7 @@
       "family": "Asteraceae",
       "descriptionShort": "Daisy (Bellis perennis, family Asteraceae) is a hardy flowering plant commonly found in meadows. It tolerates cooler temperatures and moderate watering, making it easy to maintain.",
       "growth": {
-        "totalGrowthStages": 3,
+        "totalGrowthStages": 5,
         "daysPerStage": 2,
         "regrowable": true
       },
@@ -176,7 +176,7 @@
       "family": "Apiaceae",
       "descriptionShort": "Carrot (Daucus carota, family Apiaceae) is a root vegetable that develops underground storage roots. It requires loose, well-drained soil and steady watering to prevent splitting.",
       "growth": {
-        "totalGrowthStages": 4,
+        "totalGrowthStages": 5,
         "daysPerStage": 2,
         "regrowable": false
       },
@@ -200,7 +200,7 @@
       "family": "Liliaceae",
       "descriptionShort": "Tulip (Tulipa gesneriana, family Liliaceae) is a spring-blooming bulb plant known for its vibrant flowers. It prefers cool climates and minimal watering to avoid bulb rot.",
       "growth": {
-        "totalGrowthStages": 4,
+        "totalGrowthStages": 5,
         "daysPerStage": 3,
         "regrowable": false
       },
@@ -224,7 +224,7 @@
       "family": "Solanaceae",
       "descriptionShort": "Potato (Solanum tuberosum, family Solanaceae) is a staple tuber crop that grows underground. It requires consistent moisture during tuber formation but should not be overwatered.",
       "growth": {
-        "totalGrowthStages": 5,
+        "totalGrowthStages": 6,
         "daysPerStage": 3,
         "regrowable": false
       },
@@ -248,7 +248,7 @@
       "family": "Cucurbitaceae",
       "descriptionShort": "Cucumber (Cucumis sativus, family Cucurbitaceae) is a fast-growing vine that produces crisp fruits. It requires high water intake and warm temperatures to sustain rapid growth.",
       "growth": {
-        "totalGrowthStages": 5,
+        "totalGrowthStages": 6,
         "daysPerStage": 2,
         "regrowable": false
       },
@@ -272,7 +272,7 @@
       "family": "Fabaceae",
       "descriptionShort": "Green Beans (Phaseolus vulgaris, family Fabaceae) are productive legumes that enrich soil through nitrogen fixation. They grow best with moderate watering and full sunlight, producing multiple harvests.",
       "growth": {
-        "totalGrowthStages": 4,
+        "totalGrowthStages": 7,
         "daysPerStage": 2,
         "regrowable": true
       },
