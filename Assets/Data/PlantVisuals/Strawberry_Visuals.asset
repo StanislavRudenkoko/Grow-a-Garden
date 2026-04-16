@@ -15,6 +15,7 @@ MonoBehaviour:
   plantDefinitionId: strawberry
   growthStageSprites:
   - {fileID: 1508734276152258813, guid: 79c52ad3ca2c55c4b8a4f8e6a83f56c9, type: 3}
+  - {fileID: 1691484974780995949, guid: e84fb804b3fcbc04ab6e8d0574f12a2d, type: 3}
   - {fileID: 2292551306490396414, guid: e1da3a317dfcc6649955e90b803b839f, type: 3}
   - {fileID: 1034863347390083544, guid: 7d3e08371cdafda49980515758fd4503, type: 3}
   - {fileID: -9110031067387630099, guid: 7d6636af6e989d14bb765cf9c2c58870, type: 3}

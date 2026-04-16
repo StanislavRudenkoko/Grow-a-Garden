@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantVisualData
   plantDefinitionId: green_onion
   growthStageSprites:
+  - {fileID: 1508734276152258813, guid: 79c52ad3ca2c55c4b8a4f8e6a83f56c9, type: 3}
   - {fileID: -1951622841736846692, guid: ba2486605b09c7e4faa18d5e56f4fd71, type: 3}
   - {fileID: 180281536181072523, guid: 659ae6e4a0a4e12428237c4e6fa626c9, type: 3}
   - {fileID: -6140210138070669398, guid: d28be09551052e346a21076dedaa5631, type: 3}
