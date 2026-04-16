@@ -33,7 +33,7 @@ public class PlantHoverHandler : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
         // Use new Input System to get mouse position
         Vector2 mousePos = Mouse.current.position.ReadValue();
-
+        mousePos.y -= 50f;
         TooltipManager.Instance.RequestShow(plantInstance, mousePos);
     }
 
