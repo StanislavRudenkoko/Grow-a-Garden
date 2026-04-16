@@ -1,32 +1,14 @@
-/// <summary>
-/// PotDropdownUI
-/// Author: Stanislav Rudenko
-/// Date: Mar. 12 - Mar. 26, 2026
-/// Source: with help of Claude AI
-/// </summary>
-
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-/// <summary>
-/// A single context-menu panel that dynamically builds buttons
-/// based on the state of the clicked pot.
-///
-/// HOW TO SET UP IN UNITY:
-///   1. Create a Canvas child panel (e.g. "PotDropdownUI").
-///   2. Give it a VerticalLayoutGroup so buttons stack neatly.
-///   3. Create a Button prefab with a TMP_Text child — assign to buttonPrefab.
-///   4. Attach this script to the panel.
-///   5. Set this panel inactive by default.
-/// </summary>
 public class PotDropdownUI : MonoBehaviour
 {
     public static PotDropdownUI Instance;
 
     [Header("References")]
-    public GameObject buttonPrefab;   // a Button prefab with TMP_Text child
+    public GameObject buttonPrefab;
     public SoilPickerUI soilPicker;
     public SeedPickerUI seedPicker;
 
@@ -42,24 +24,20 @@ public class PotDropdownUI : MonoBehaviour
 
     // ── Public API ────────────────────────────────────────────────────────────
 
-    /// <summary>Opens the menu for <paramref name="pot"/> and builds context actions.</summary>
     public void OpenFor(PlantPotController pot)
     {
-        // Close sub-panels
         soilPicker.gameObject.SetActive(false);
         seedPicker.gameObject.SetActive(false);
 
         currentPot = pot;
         BuildButtons();
 
-        // Position the dropdown near the pot in screen space
         Vector3 screenPos = Camera.main.WorldToScreenPoint(pot.transform.position);
         transform.position = screenPos + new Vector3(120, 0, 0);
 
         gameObject.SetActive(true);
     }
 
-    /// <summary>Hides this panel and sub-pickers.</summary>
     public void Close()
     {
         gameObject.SetActive(false);
@@ -69,30 +47,81 @@ public class PotDropdownUI : MonoBehaviour
 
     // ── Private helpers ───────────────────────────────────────────────────────
 
+    private List<Item> GetInventoryByCategory(System.Func<Item, bool> predicate)
+    {
+        var player = ObjectGetter.GetPlayer();
+        if (player == null) return new List<Item>();
+
+        var result = new List<Item>();
+        foreach (var item in player.Inventory)
+        {
+            if (item != null && item.QuantityPlayer > 0 && predicate(item))
+                result.Add(item);
+        }
+        return result;
+    }
+
+    private bool HasSoilInInventory() => GetInventoryByCategory(i => i.ItemCategory == ItemCategory.SOIL).Count > 0;
+    private bool HasSeedInInventory() => GetInventoryByCategory(i => i.ItemCategory == ItemCategory.SEED).Count > 0;
+    private bool HasWateringCan()
+    {
+        var player = ObjectGetter.GetPlayer();
+        return PlayerEquipmentInventory.HasWateringCan(player?.Inventory);
+    }
+    private bool HasFertilizer() => GetInventoryByCategory(i => i.ItemCategory == ItemCategory.FERTILIZER).Count > 0;
+
     private void BuildButtons()
     {
-        // Clear old buttons
         foreach (var b in spawnedButtons) Destroy(b);
         spawnedButtons.Clear();
 
         PlantInstance data = currentPot.potData;
 
+        GardenInventoryUtil.ClearDeadPlantIfAny(currentPot);
+        data = currentPot.potData;
+
         if (!data.hasSoil)
         {
-            AddButton("Add Soil", OnAddSoil);
+            if (HasSoilInInventory())
+                AddButton("Add Soil", OnAddSoil);
+            else
+                AddDisabledButton("No soil in inventory");
+
             AddButton("Remove Pot", OnRemovePot);
         }
         else if (!data.hasPlant)
         {
-            AddButton("Add Plant", OnAddPlant);
+            if (HasSeedInInventory())
+                AddButton("Add Plant", OnAddPlant);
+            else
+                AddDisabledButton("No seeds in inventory");
+
             AddButton("Remove Soil", OnRemoveSoil);
             AddButton("Remove Pot", OnRemovePot);
         }
         else
         {
-            AddButton("Harvest", OnHarvest);
-            AddButton("Add Fertilizer", OnAddFertilizer);
-            AddButton("Water", OnWater);
+            PlantDefinition def = PlantDatabaseManager.Instance
+                   .GetPlantDefinition(data.plantDefinitionId);
+
+            bool isFullyGrown = def != null &&
+                data.currentGrowthStage >= def.growth.totalGrowthStages - 1;
+
+            if (isFullyGrown)
+                AddButton("Harvest", OnHarvest);
+            else
+                AddDisabledButton("Not ready to harvest");
+
+            if (HasFertilizer())
+                AddButton("Add Fertilizer", OnAddFertilizer);
+            else
+                AddDisabledButton("No fertilizer in inventory");
+
+            if (HasWateringCan())
+                AddButton("Water", OnWater);
+            else
+                AddDisabledButton("No watering can");
+
             AddButton("Remove Plant", OnRemovePlant);
         }
     }
@@ -105,17 +134,26 @@ public class PotDropdownUI : MonoBehaviour
         spawnedButtons.Add(go);
     }
 
+    private void AddDisabledButton(string label)
+    {
+        GameObject go = Instantiate(buttonPrefab, transform);
+        go.GetComponentInChildren<TMP_Text>().text = label;
+
+        Button btn = go.GetComponent<Button>();
+        btn.interactable = false;
+
+        spawnedButtons.Add(go);
+    }
+
     // ── Button callbacks ──────────────────────────────────────────────────────
 
     private void OnAddSoil()
     {
-        // Open the soil sub-panel beside this dropdown
         soilPicker.OpenFor(currentPot, this);
     }
 
     private void OnAddPlant()
     {
-        // Open the seed sub-panel beside this dropdown
         seedPicker.OpenFor(currentPot, this);
     }
 
@@ -134,8 +172,18 @@ public class PotDropdownUI : MonoBehaviour
 
     private void OnHarvest()
     {
-        currentPot.potData.ClearPlant();
+        PlantInstance data = currentPot.potData;
+        PlantDefinition def = PlantDatabaseManager.Instance.GetPlantDefinition(data.plantDefinitionId);
+        if (!GardenInventoryUtil.IsFullyGrown(data, def))
+            return;
+
+        Player player = ObjectGetter.GetPlayer();
+        if (!GardenInventoryUtil.TryGrantProduceHarvest(player, def))
+            Debug.LogWarning("Harvest: produce was not added (see console).");
+
+        data.ClearPlant();
         currentPot.RefreshVisuals();
+        currentPot.GetComponent<PlantHoverHandler>()?.Initialize(data);
         Close();
     }
 
@@ -158,8 +206,12 @@ public class PotDropdownUI : MonoBehaviour
         PlantInstance instance = currentPot.potData;
         if (instance == null) return;
 
-        instance.fertilizer = Mathf.Min(instance.health + 100f, 100f);
+        Player player = ObjectGetter.GetPlayer();
+        Item fert = GardenInventoryUtil.FindPlayerFertilizerItem(player);
+        if (!GardenInventoryUtil.TryConsumeOneFromInventory(player, fert))
+            return;
 
+        instance.fertilizer = Mathf.Min(instance.health + 100f, 100f);
 
         currentPot.RefreshVisuals();
         Close();
@@ -172,7 +224,6 @@ public class PotDropdownUI : MonoBehaviour
         Close();
     }
 
-    // Close the dropdown if the player clicks anywhere else
     private void Update()
     {
         if (gameObject.activeSelf && Input.GetMouseButtonDown(0))
@@ -189,9 +240,7 @@ public class PotDropdownUI : MonoBehaviour
                     seedPicker.GetComponent<RectTransform>(), Input.mousePosition);
 
             if (!insideDropdown && !insideSoilPicker && !insideSeedPicker)
-            {
                 Close();
-            }
         }
     }
 }

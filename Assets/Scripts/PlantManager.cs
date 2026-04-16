@@ -30,6 +30,7 @@ public class PlantManager : MonoBehaviour
     public Transform[] potSlots;
 
     [Header("Soil Types")]
+    /// <summary>Must match <c>idealSoilTypes</c> in plant data (e.g. plants.json).</summary>
     public List<string> soilTypes = new List<string> { "All purpose soil", "Premium soil" };
 
     // ── Runtime ───────────────────────────────────────────────────────────────
@@ -122,6 +123,16 @@ public class PlantManager : MonoBehaviour
                 data.fertilizer = Mathf.Max(0f, data.fertilizer - FertilizerCostAmount);
             }
 
+            if (data.health <= 0f)
+            {
+                data.ClearPlant();
+                pot.RefreshVisuals();
+                PlantHoverHandler hover = pot.GetComponent<PlantHoverHandler>();
+                if (hover != null)
+                    hover.Initialize(pot.potData);
+                continue;
+            }
+
             // ── 3. Status derivation ──────────────────────────────────────────
             DeriveStatus(data);
 
@@ -170,7 +181,6 @@ public class PlantManager : MonoBehaviour
     public void AddPot()
     {
         Debug.Log("AddPot called");
-
         if (plantPotPrefab == null)
         {
             Debug.LogError("plantPotPrefab is NULL");

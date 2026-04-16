@@ -8,5 +8,6 @@ public enum ItemCategory
     SEED,
     SOIL,
     EQUIPMENT,
-    PRODUCE
+    PRODUCE,
+    FERTILIZER
 }

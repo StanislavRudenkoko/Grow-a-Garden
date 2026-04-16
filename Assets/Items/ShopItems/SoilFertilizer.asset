@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemInfo
   name: Fertilizer
   description: Give it to your plants to help them grow big and strong.
-  category: 1
+  category: 4
   price: 30
   sellPrice: 15
   startingQuantity: 5
