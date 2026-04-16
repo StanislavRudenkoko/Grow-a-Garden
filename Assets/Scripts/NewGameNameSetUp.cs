@@ -1,3 +1,4 @@
+using System.Globalization;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -27,7 +28,7 @@ public class NewGameNameSetUp : MonoBehaviour
         DontDestroyOnLoad(player);
         ObjectGetter.SetPlayer(player);
         ObjectGetter.SetStoreInventory(storeInventory);
-        string name = nameInput.text;
+        string name = nameInput.text.Trim();
         player.PlayerName = name;
         SceneManager.LoadScene("Garden");
     }

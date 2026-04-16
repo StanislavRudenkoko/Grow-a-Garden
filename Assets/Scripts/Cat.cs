@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class Cat : MonoBehaviour, IPointerClickHandler
 {
     public GameObject speechBubble;
+    public Player player;
     private string[] catDialogue = new string[]{
         "Meow~",
         "Find what you're lookin fur?",
@@ -28,6 +29,12 @@ public class Cat : MonoBehaviour, IPointerClickHandler
         "prrrrrrrrrrrrr",
         "Hey, watch the tail!",
         };
+
+    void Start()
+    {
+        player = ObjectGetter.GetPlayer();
+        speechBubble.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = $"Mrrrow.\nWelcome, {player.PlayerName}-mew.";
+    }
 
     public void OnPointerClick(PointerEventData eventData)
     {
