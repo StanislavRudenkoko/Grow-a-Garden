@@ -1301,7 +1301,7 @@ RectTransform:
   m_GameObject: {fileID: 485705044}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.0153, y: 3.0153, z: 3.0153}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 698136499}
@@ -1331,12 +1331,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Bla bla bla
-
-'
+  m_text: "\t\t\t     How to Play\nAdd Soil to an empty pot, then plant a Seed from
+    your inventory\nWater your plant to raise its water level \u2014 plants won't
+    grow without water\nApply Fertilizer to boost your plant's health level\nKeep
+    an eye on your plant's Status \u2014 it can be Healthy, Growing, Thirsty, or
+    Wilting\nA Wilting plant has low health; restore it with fertilizer before it
+    dies\nOnce your plant reaches its final growth stage, Harvest it to collect your
+    produce"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: af0f458d2ae49564ebe5817f8372fa76, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1360,10 +1364,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 25.4
+  m_fontSizeBase: 30
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -1399,7 +1403,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -218.6555, y: -152.55185, z: -216.15063, w: -147.61557}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1873,7 +1877,7 @@ RectTransform:
   m_GameObject: {fileID: 698136498}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.30842248, y: 0.45632815, z: 1}
+  m_LocalScale: {x: 0.51897955, y: 0.55717665, z: 1.221}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 485705045}
@@ -1881,7 +1885,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 277, y: 187}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &698136500
