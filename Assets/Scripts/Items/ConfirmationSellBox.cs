@@ -20,13 +20,11 @@ public class ConfirmationSellBox : ConfirmationBox
     public void Sell()
     {
         if (Item.QuantityPlayer > 0)
-        {   
-            Store.SellItem(Item.SellPrice, Item);
-            content.GetComponent<PopulateStoreSell>().Refresh();
-        }
-        else
         {
-            Debug.Log("another pop up");
+            Store.SellItem(Item.SellPrice, Item);
+            content.GetComponent<PopulateStoreSell>().Refresh(
+                content.transform.root.gameObject.GetComponent<Store>().sellCategory
+            );
         }
         // logic here
         Destroy(this.gameObject);
@@ -34,7 +32,7 @@ public class ConfirmationSellBox : ConfirmationBox
     /// <summary>
     /// Defines the action.
     /// </summary>
-        public override void Action()
+    public override void Action()
     {
         Sell();
     }

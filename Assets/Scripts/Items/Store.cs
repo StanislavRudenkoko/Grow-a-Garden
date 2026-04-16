@@ -23,6 +23,7 @@ public class Store : MonoBehaviour
     public GameObject speechBubble;
     public Button buy;
     public Button sell;
+    public ItemCategory? sellCategory;
     void Start()
     {
         player = ObjectGetter.GetPlayer();
@@ -44,7 +45,8 @@ public class Store : MonoBehaviour
         if (amount < player.Coins)
         {
             player.BuyItem(amount, item);
-        } else
+        }
+        else
         {
             speechBubble.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "";
             speechBubble.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "You don't have enough coins for that!";
@@ -150,6 +152,7 @@ public class Store : MonoBehaviour
     public void SellAllButton()
     {
         CategoryPress(categoriesSell, 0);
+        sellCategory = null;
         contentSell.GetComponent<PopulateStoreSell>().Refresh();
     }
     /// <summary>
@@ -158,6 +161,7 @@ public class Store : MonoBehaviour
     public void SellProduceButton()
     {
         CategoryPress(categoriesSell, 1);
+        sellCategory = ItemCategory.PRODUCE;
         contentSell.GetComponent<PopulateStoreSell>().Refresh(ItemCategory.PRODUCE);
     }
     /// <summary>
@@ -166,6 +170,7 @@ public class Store : MonoBehaviour
     public void SellSoilButton()
     {
         CategoryPress(categoriesSell, 2);
+        sellCategory = ItemCategory.SOIL;
         contentSell.GetComponent<PopulateStoreSell>().Refresh(ItemCategory.SOIL);
     }
     /// <summary>
@@ -174,6 +179,7 @@ public class Store : MonoBehaviour
     public void SellFertilizerButton()
     {
         CategoryPress(categoriesSell, 3);
+        sellCategory = ItemCategory.FERTILIZER;
         contentSell.GetComponent<PopulateStoreSell>().Refresh(ItemCategory.FERTILIZER);
     }
     /// <summary>
@@ -182,6 +188,7 @@ public class Store : MonoBehaviour
     public void SellSeedsButton()
     {
         CategoryPress(categoriesSell, 4);
+        sellCategory = ItemCategory.SEED;
         contentSell.GetComponent<PopulateStoreSell>().Refresh(ItemCategory.SEED);
     }
 
