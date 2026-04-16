@@ -129,11 +129,19 @@ public class Store : MonoBehaviour
         contentBuy.GetComponent<PopulateStore>().Refresh(ItemCategory.SOIL);
     }
     /// <summary>
+    /// Switches category to fertilizer in buy section.
+    /// </summary>
+    public void BuyFertilizerButton()
+    {
+        CategoryPress(categoriesBuy, 3);
+        contentBuy.GetComponent<PopulateStore>().Refresh(ItemCategory.FERTILIZER);
+    }
+    /// <summary>
     /// Switches category to seeds in buy section.
     /// </summary>
     public void BuySeedsButton()
     {
-        CategoryPress(categoriesBuy, 3);
+        CategoryPress(categoriesBuy, 4);
         contentBuy.GetComponent<PopulateStore>().Refresh(ItemCategory.SEED);
     }
     /// <summary>
@@ -161,11 +169,19 @@ public class Store : MonoBehaviour
         contentSell.GetComponent<PopulateStoreSell>().Refresh(ItemCategory.SOIL);
     }
     /// <summary>
+    /// Switches category to soil in buy section.
+    /// </summary>
+    public void SellFertilizerButton()
+    {
+        CategoryPress(categoriesSell, 3);
+        contentSell.GetComponent<PopulateStoreSell>().Refresh(ItemCategory.FERTILIZER);
+    }
+    /// <summary>
     /// Switches category to seeds in buy section.
     /// </summary>
     public void SellSeedsButton()
     {
-        CategoryPress(categoriesSell, 3);
+        CategoryPress(categoriesSell, 4);
         contentSell.GetComponent<PopulateStoreSell>().Refresh(ItemCategory.SEED);
     }
 

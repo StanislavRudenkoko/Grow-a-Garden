@@ -52,14 +52,19 @@ public class Inventory : MonoBehaviour
         CategoryPress(2);
         inventoryHolder.GetComponent<PopulateInventory>().Refresh(ItemCategory.SOIL);
     }
-    public void BuySeedsButton()
+    public void BuyFertilizerButton()
     {
         CategoryPress(3);
+        inventoryHolder.GetComponent<PopulateInventory>().Refresh(ItemCategory.FERTILIZER);
+    }
+    public void BuySeedsButton()
+    {
+        CategoryPress(4);
         inventoryHolder.GetComponent<PopulateInventory>().Refresh(ItemCategory.SEED);
     }
     public void BuyProduceButton()
     {
-        CategoryPress(4);
+        CategoryPress(5);
         inventoryHolder.GetComponent<PopulateInventory>().Refresh(ItemCategory.PRODUCE);
     }
 
