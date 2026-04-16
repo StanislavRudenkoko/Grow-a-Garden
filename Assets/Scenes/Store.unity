@@ -4973,6 +4973,7 @@ MonoBehaviour:
   contentSell: {fileID: 5827727138370680960}
   categoriesBuy: {fileID: 1609862450}
   categoriesSell: {fileID: 1281806386}
+  speechBubble: {fileID: 1382370976}
   buy: {fileID: 1870522357}
   sell: {fileID: 3482107767122388585}
 --- !u!114 &7171298758151633464

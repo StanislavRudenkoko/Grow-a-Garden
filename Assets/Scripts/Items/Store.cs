@@ -20,6 +20,7 @@ public class Store : MonoBehaviour
     public GameObject contentSell;
     public GameObject categoriesBuy;
     public GameObject categoriesSell;
+    public GameObject speechBubble;
     public Button buy;
     public Button sell;
     void Start()
@@ -40,7 +41,14 @@ public class Store : MonoBehaviour
     /// <param name="item"></param>
     public void BuyItem(int amount, Item item)
     {
-        player.BuyItem(amount, item);
+        if (amount < player.Coins)
+        {
+            player.BuyItem(amount, item);
+        } else
+        {
+            speechBubble.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "";
+            speechBubble.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "You don't have enough coins for that!";
+        }
     }
 
     /// <summary>
