@@ -34,4 +34,28 @@ public class StoreInventory : MonoBehaviour
         Items.Remove(itemToRemove);
     }
 
+    /// <summary>
+    /// Returns an existing store row for this <see cref="ItemInfo"/>, or instantiates one (e.g. produce
+    /// rows are often omitted from <see cref="itemsinfo"/> but are still referenced by seeds).
+    /// </summary>
+    public Item GetOrCreateItemForInfo(ItemInfo info)
+    {
+        if (info == null || item == null) return null;
+        if (items == null)
+            items = new List<Item>();
+
+        foreach (Item existing in items)
+        {
+            if (existing != null && existing.ItemInfo == info)
+                return existing;
+        }
+
+        Item newItem = Instantiate(item, transform);
+        newItem.ItemInfo = info;
+        newItem.QuantityStore = info.StartingQuantity;
+        newItem.QuantityPlayer = 0;
+        items.Add(newItem);
+        return newItem;
+    }
+
 }
