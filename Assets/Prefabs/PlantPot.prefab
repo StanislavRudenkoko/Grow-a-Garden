@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2260127926906371051}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.27, z: 0}
+  m_LocalPosition: {x: -0.035, y: 1.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -81,15 +81,15 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 11ff4246cb07012409a4138c7db7744e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.92, y: 0.91}
+  m_Size: {x: 2.92, y: 4.58}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
 --- !u!1 &2306526342097084655
 GameObject:
@@ -145,8 +145,10 @@ MonoBehaviour:
   plantDefinitionId: 
   customName: 
   currentGrowthStage: 0
+  daysToGrow: 0
   waterLevel: 0
   health: 100
+  fertilizer: 0
   status: 0
   soilType: 
   timer: 0

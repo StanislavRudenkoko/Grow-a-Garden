@@ -103,12 +103,12 @@ TextureImporter:
       name: greenbean_3_0
       rect:
         serializedVersion: 2
-        x: 66
-        y: 198
-        width: 171
-        height: 202
+        x: 0
+        y: 0
+        width: 292
+        height: 458
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7427a6b1a6cb1d64388ca1b24afd88a4
     internalID: 0
     vertices: []
     indices: 

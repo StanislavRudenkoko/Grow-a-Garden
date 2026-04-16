@@ -103,12 +103,12 @@ TextureImporter:
       name: reaper_3_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 178
-        width: 203
-        height: 230
+        x: 0
+        y: 0
+        width: 292
+        height: 458
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 68e192547ab35b4458aa3db7c9a3c582
     internalID: 0
     vertices: []
     indices: 

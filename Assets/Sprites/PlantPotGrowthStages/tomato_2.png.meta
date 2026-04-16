@@ -103,12 +103,12 @@ TextureImporter:
       name: tomato_2_0
       rect:
         serializedVersion: 2
-        x: 66
-        y: 198
-        width: 171
-        height: 143
+        x: 0
+        y: 0
+        width: 292
+        height: 458
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1ef19deda3724d447b74b1c8341d34fb
     internalID: 0
     vertices: []
     indices: 

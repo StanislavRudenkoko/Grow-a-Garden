@@ -103,12 +103,12 @@ TextureImporter:
       name: Orchid_1_0
       rect:
         serializedVersion: 2
-        x: 74
-        y: 223
-        width: 128
-        height: 56
+        x: 0
+        y: 0
+        width: 292
+        height: 458
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2eef74f410eb0d64d91b5b08e939e7ef
     internalID: 0
     vertices: []
     indices: 
