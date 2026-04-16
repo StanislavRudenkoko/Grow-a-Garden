@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Coins = 300;
+        Coins = 500;
         Inventory = new List<Item>();
         PlantsHarvested = 0;
         DayCount = 1;

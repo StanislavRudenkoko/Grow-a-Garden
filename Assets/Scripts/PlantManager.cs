@@ -8,6 +8,7 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using TMPro;
 
 /// <summary>
 /// Manages all pots in the scene:
@@ -19,6 +20,7 @@ using UnityEngine;
 public class PlantManager : MonoBehaviour
 {
     public static PlantManager Instance;
+    public Player player;
 
     // ── Inspector ─────────────────────────────────────────────────────────────
     [Header("Visuals")]
@@ -28,6 +30,7 @@ public class PlantManager : MonoBehaviour
     public GameObject plantPotPrefab;
     public Transform potParent;
     public Transform[] potSlots;
+    public GameObject dayCounter;
 
     [Header("Soil Types")]
     /// <summary>Must match <c>idealSoilTypes</c> in plant data (e.g. plants.json).</summary>
@@ -82,6 +85,7 @@ public class PlantManager : MonoBehaviour
                 pot.gameObject.SetActive(true);
             }
         }
+        player = ObjectGetter.GetPlayer();
     }
 
 
@@ -154,6 +158,7 @@ public class PlantManager : MonoBehaviour
                 }
             }
         }
+        dayCounter.GetComponent<TextMeshProUGUI>().text = $"Day: {player.DayCount + 1}";
     }
 
     /// <summary>
