@@ -1,7 +1,6 @@
-using System;
+
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 /// <summary>
 /// Confirmation box
 /// Author: Tin Trinh
@@ -22,7 +21,7 @@ public class ConfirmationBuyBox : ConfirmationBox
     }
 
     /// <summary>
-    /// Buys the item when clicked. *The logic is currently not implemented
+    /// Buys the item when clicked if conditions are met.
     /// </summary>
     public void Buy()
     {
@@ -45,6 +44,9 @@ public class ConfirmationBuyBox : ConfirmationBox
 
     }
 
+    /// <summary>
+    /// Changes the dialogue box to show that the player does not have enough coins to buy the item.
+    /// </summary>
     private void NotEnoughCoins()
     {
         this.transform.GetChild(1).gameObject.SetActive(false);

@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
     }
 
     /// <summary>
-    /// Continues game when clicked.
+    /// Continues game when clicked. *Unused.
     /// </summary>
     public void ContinueGame()
     {

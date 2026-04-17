@@ -1,8 +1,13 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// Cat class to interact with the cat in the store.
+/// Author: Tin Trinh
+/// Date: Apr. 15, 2026
+/// Source: None
+/// </summary>
 public class Cat : MonoBehaviour, IPointerClickHandler
 {
     public GameObject speechBubble;
@@ -36,6 +41,10 @@ public class Cat : MonoBehaviour, IPointerClickHandler
         speechBubble.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = $"Mrrrow.\nWelcome, {player.PlayerName}-mew.";
     }
 
+    /// <summary>
+    /// Replaces the dialogue in the speech bubble to a cat dialogue phrase.
+    /// </summary>
+    /// <param name="eventData"></param>
     public void OnPointerClick(PointerEventData eventData)
     {
         speechBubble.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "";

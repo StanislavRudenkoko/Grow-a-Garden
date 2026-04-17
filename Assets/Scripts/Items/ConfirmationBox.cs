@@ -12,7 +12,9 @@ public abstract class ConfirmationBox : MonoBehaviour
     public GameObject content;
     public Slot Slot { get; set; }
 
-
+    /// <summary>
+    /// Abstract action button for when the left button is clicked.
+    /// </summary>
     public abstract void Action();
 
     /// <summary>

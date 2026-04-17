@@ -3,7 +3,7 @@ using UnityEngine;
 
 /// <summary>
 /// Holds/Populates the store inventory
-/// Author: Tin Trinh
+/// Author: Tin Trinh, Stan
 /// Date: Mar. 25, 2026
 /// Revision: Apr. 14, 2026
 /// Source: None
@@ -16,6 +16,7 @@ public class StoreInventory : MonoBehaviour
     public List<Item> Items { get => items; set { items = value; } }
     public Item item;
 
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Item newItem;
@@ -29,6 +30,10 @@ public class StoreInventory : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Removes an item from the store inventory.
+    /// </summary>
+    /// <param name="itemToRemove"></param>
     public void RemoveItem(Item itemToRemove)
     {
         Items.Remove(itemToRemove);
@@ -54,7 +59,6 @@ public class StoreInventory : MonoBehaviour
         newItem.ItemInfo = info;
         newItem.QuantityStore = info.StartingQuantity;
         newItem.QuantityPlayer = 0;
-        items.Add(newItem);
         return newItem;
     }
 

@@ -37,32 +37,54 @@ public class Inventory : MonoBehaviour
         children[index].interactable = false;
     }
 
-    public void BuyAllButton()
+    /// <summary>
+    /// Changes the category of the inventory to show all.
+    /// </summary>
+    public void InventoryAllButton()
     {
         CategoryPress(0);
         inventoryHolder.GetComponent<PopulateInventory>().Refresh();
     }
-    public void BuyEquipmentButton()
+
+    /// <summary>
+    /// Changes the category of the inventory to equipment.
+    /// </summary>
+    public void InventoryEquipmentButton()
     {
         CategoryPress(1);
         inventoryHolder.GetComponent<PopulateInventory>().Refresh(ItemCategory.EQUIPMENT);
     }
-    public void BuySoilButton()
+    /// <summary>
+    /// Changes the category of the inventory to soil.
+    /// </summary>
+    public void InventorySoilButton()
     {
         CategoryPress(2);
         inventoryHolder.GetComponent<PopulateInventory>().Refresh(ItemCategory.SOIL);
     }
-    public void BuyFertilizerButton()
+    /// <summary>
+    /// Changes the category of the inventory to fertilizer.
+    /// </summary>
+
+    public void InventoryFertilizerButton()
     {
         CategoryPress(3);
         inventoryHolder.GetComponent<PopulateInventory>().Refresh(ItemCategory.FERTILIZER);
     }
-    public void BuySeedsButton()
+    /// <summary>
+    /// Changes the category of the inventory to seeds.
+    /// </summary>
+
+    public void InventorySeedsButton()
     {
         CategoryPress(4);
         inventoryHolder.GetComponent<PopulateInventory>().Refresh(ItemCategory.SEED);
     }
-    public void BuyProduceButton()
+    /// <summary>
+    /// Changes the category of the inventory to produce.
+    /// </summary>
+
+    public void InventoryProduceButton()
     {
         CategoryPress(5);
         inventoryHolder.GetComponent<PopulateInventory>().Refresh(ItemCategory.PRODUCE);

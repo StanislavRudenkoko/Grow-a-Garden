@@ -24,12 +24,15 @@ public class Store : MonoBehaviour
     public Button buy;
     public Button sell;
     public ItemCategory? sellCategory;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = ObjectGetter.GetPlayer();
         StoreInventory = ObjectGetter.GetStoreInventory();
     }
 
+    // Update is called once per frame
     void Update()
     {
         transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = $"Coins: ${player.Coins}";
