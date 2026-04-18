@@ -8,7 +8,7 @@
       "family": "Orchidaceae",
       "descriptionShort": "Orchid (Phalaenopsis amabilis, family Orchidaceae) is a tropical epiphytic plant known for its long-lasting blooms. It grows naturally on trees in humid environments, requiring indirect light, airy roots, and infrequent but careful watering to avoid root rot.",
       "growth": {
-        "totalGrowthStages": 6,
+        "totalGrowthStages": 5,
         "daysPerStage": 4,
         "regrowable": true
       },
@@ -80,7 +80,7 @@
       "family": "Solanaceae",
       "descriptionShort": "Tomato (Solanum lycopersicum, family Solanaceae) is a warm-season fruiting plant that thrives in sunlight and nutrient-rich soil. It requires steady watering to prevent cracking and blossom-end rot during fruit development.",
       "growth": {
-        "totalGrowthStages": 5,
+        "totalGrowthStages": 6,
         "daysPerStage": 2,
         "regrowable": false
       },
