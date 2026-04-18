@@ -16,7 +16,6 @@ public class PlantData : MonoBehaviour
     public bool hasSeed;
     public int currentPot;
 
-    // new
     public PlantInstance[] plantInstance;
 
     ///<summary>

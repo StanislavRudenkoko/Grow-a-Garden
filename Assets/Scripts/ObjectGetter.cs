@@ -47,7 +47,7 @@ public class ObjectGetter : MonoBehaviour
     }
 
 	/// <summary>
-	/// Gets the pots
+	/// Get current players pots
 	/// </summary>
 	/// <returns></returns>
 	public static List<PlantPotController> getPots()

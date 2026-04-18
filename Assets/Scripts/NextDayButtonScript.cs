@@ -17,6 +17,9 @@ public class NextDayButton : MonoBehaviour
         player = ObjectGetter.GetPlayer();
     }
 
+    /// <summary>
+    /// Pressing the next day button in the garden
+    /// </summary>
     public void OnNextDay()
     {
         PlantManager.Instance.ProcessNextDay();
