@@ -15,7 +15,7 @@ public class ConfirmationSellBox : ConfirmationBox
     }
 
     /// <summary>
-    /// Buys the item when clicked. *The logic is currently not implemented
+    /// Buys the item when clicked.
     /// </summary>
     public void Sell()
     {
