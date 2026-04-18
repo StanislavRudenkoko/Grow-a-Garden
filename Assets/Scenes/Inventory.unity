@@ -313,7 +313,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496855985}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: BuySoilButton
+        m_MethodName: InventorySoilButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -788,7 +788,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496855985}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: BuySeedsButton
+        m_MethodName: InventorySeedsButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1954,7 +1954,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496855985}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: BuyProduceButton
+        m_MethodName: InventoryProduceButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2135,7 +2135,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496855985}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: BuyAllButton
+        m_MethodName: InventoryAllButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2948,7 +2948,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496855985}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: BuyEquipmentButton
+        m_MethodName: InventoryEquipmentButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3567,7 +3567,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496855985}
         m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: BuyFertilizerButton
+        m_MethodName: InventoryFertilizerButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

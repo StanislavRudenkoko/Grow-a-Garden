@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 /// <summary>
 /// Class to hold objects that needs to persist between scenes. Singleton
-/// Author: Tin Trinh
+/// Author: Tin Trinh, Joshua Trepanier
 /// Date: Mar. 25, 2026
 /// Source: None
 /// </summary>
