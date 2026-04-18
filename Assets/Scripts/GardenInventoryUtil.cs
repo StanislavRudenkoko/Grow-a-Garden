@@ -1,3 +1,10 @@
+/// <summary>
+/// GardenInventoryUtil
+/// Author: Stanislav Rudenko
+/// Date: Apr. 17, 2026
+/// Source: with help of Claude AI
+/// </summary>
+
 using System;
 using UnityEngine;
 
@@ -6,12 +13,15 @@ using UnityEngine;
 /// </summary>
 public static class GardenInventoryUtil
 {
+    /// <summary>Returns whether the plant has reached its final growth stage.</summary>
     public static bool IsFullyGrown(PlantInstance data, PlantDefinition def)
     {
         if (data == null || def?.growth == null) return false;
         return data.currentGrowthStage >= def.growth.totalGrowthStages - 1;
     }
 
+    /// <summary>Decrements <paramref name="item"/> quantity for <paramref name="player"/> by one and removes the stack if empty.</summary>
+    /// <returns><c>true</c> if an item was consumed.</returns>
     public static bool TryConsumeOneFromInventory(Player player, Item item)
     {
         if (player == null || item == null || item.QuantityPlayer <= 0) return false;
@@ -21,6 +31,7 @@ public static class GardenInventoryUtil
         return true;
     }
 
+    /// <summary>Adds random produce (3–5) for <paramref name="def"/> to the player and increments harvest stats.</summary>
     public static bool TryGrantProduceHarvest(Player player, PlantDefinition def)
     {
         if (player == null || def == null) return false;
@@ -41,6 +52,7 @@ public static class GardenInventoryUtil
         return true;
     }
 
+    /// <summary>Resolves the produce <see cref="Item"/> for a plant by matching store seed → produce in <see cref="StoreInventory"/>.</summary>
     public static Item FindStoreProduceItemForPlant(PlantDefinition def)
     {
         StoreInventory store = ObjectGetter.GetStoreInventory();
@@ -67,6 +79,7 @@ public static class GardenInventoryUtil
         return store.GetOrCreateItemForInfo(produceInfo);
     }
 
+    /// <summary>Finds a soil stack in the player inventory whose name matches <paramref name="soilTypeId"/>.</summary>
     public static Item FindPlayerSoilItem(Player player, string soilTypeId)
     {
         if (player?.Inventory == null) return null;
@@ -79,6 +92,7 @@ public static class GardenInventoryUtil
         return null;
     }
 
+    /// <summary>Finds a seed stack in the player inventory that corresponds to <paramref name="def"/>.</summary>
     public static Item FindPlayerSeedItem(Player player, PlantDefinition def)
     {
         if (player?.Inventory == null) return null;
@@ -91,6 +105,7 @@ public static class GardenInventoryUtil
         return null;
     }
 
+    /// <summary>Returns any fertilizer item the player holds with quantity &gt; 0, or <c>null</c>.</summary>
     public static Item FindPlayerFertilizerItem(Player player)
     {
         if (player?.Inventory == null) return null;
@@ -102,6 +117,7 @@ public static class GardenInventoryUtil
         return null;
     }
 
+    /// <summary>If the pot has a dead plant (health ≤ 0), clears plant data and refreshes visuals and hover state.</summary>
     public static void ClearDeadPlantIfAny(PlantPotController pot)
     {
         if (pot == null) return;
@@ -117,6 +133,7 @@ public static class GardenInventoryUtil
 
     // ── Soil labels (shop name vs gameplay soil id) ───────────────────────
 
+    /// <summary>Compares a display/inventory soil name to a gameplay soil id after normalization.</summary>
     public static bool SoilLabelsMatch(string inventoryItemName, string soilTypeId) =>
         NormalizeSoilLabel(inventoryItemName) == NormalizeSoilLabel(soilTypeId);
 
@@ -131,6 +148,7 @@ public static class GardenInventoryUtil
 
     // ── Seed item vs plant definition (same rules as SeedPickerUI) ───────────
 
+    /// <summary>Whether <paramref name="item"/> represents the same plant as <paramref name="def"/> (id, name, snake_case rules).</summary>
     public static bool SeedItemMatchesPlant(Item item, PlantDefinition def)
     {
         if (def == null || string.IsNullOrEmpty(def.id)) return false;

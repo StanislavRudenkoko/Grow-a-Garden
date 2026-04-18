@@ -1,12 +1,25 @@
+/// <summary>
+/// PlantDatabaseManager
+/// Author: Stanislav Rudenko
+/// Date: Apr. 17, 2026
+/// Source: with help of Claude AI
+/// </summary>
+
 using UnityEngine;
 using System.Collections.Generic;
 
+/// <summary>
+/// Loads plant definitions from <c>Resources/plants.json</c> and exposes lookups by id.
+/// Persists as a singleton across scenes.
+/// </summary>
 public class PlantDatabaseManager : MonoBehaviour
 {
+    /// <summary>Singleton instance; created on first load and not destroyed on scene change.</summary>
     public static PlantDatabaseManager Instance;
 
     private Dictionary<string, PlantDefinition> plantDict;
 
+    /// <summary>Initializes the singleton, loads the plant dictionary, or destroys duplicate instances.</summary>
     void Awake()
     {
         if (Instance == null)
@@ -21,6 +34,7 @@ public class PlantDatabaseManager : MonoBehaviour
         }
     }
 
+    /// <summary>Parses <c>plants.json</c> and fills <see cref="plantDict"/> keyed by <see cref="PlantDefinition.id"/>.</summary>
     private void LoadPlants()
     {
         TextAsset jsonFile = Resources.Load<TextAsset>("plants"); // plants.json in Resources/
@@ -38,6 +52,7 @@ public class PlantDatabaseManager : MonoBehaviour
         }
     }
 
+    /// <summary>Returns the plant definition for <paramref name="id"/>, or <c>null</c> if missing.</summary>
     public PlantDefinition GetPlantDefinition(string id)
     {
         if (plantDict != null && plantDict.TryGetValue(id, out PlantDefinition def))
@@ -55,6 +70,7 @@ public class PlantDatabaseManager : MonoBehaviour
             yield return key;
     }
 
+    /// <summary>JSON root object matching the shape of <c>plants.json</c>.</summary>
     [System.Serializable]
     private class PlantsWrapper
     {
